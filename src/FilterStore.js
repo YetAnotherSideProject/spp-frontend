@@ -1,6 +1,50 @@
 import {} from "mobx-react";
 import { observable, action, autorun } from "mobx";
 
+//warning getMinDate exists in this class and out of it
+const getMinDate = () => {
+  const date = new Date();
+  date.setMonth(new Date().getMonth() - 18);
+  return date.toISOString().slice(0, 7);
+};
+
+const resetCopy = {
+  sidebarHidden: false,
+  country: "de",
+  searchQuery: "",
+  filterType: "totalscore",
+  decayFactor: 0.2,
+  isDescending: true,
+  scaleInput: true,
+  emptySmartphones: false,
+  release_minimum: getMinDate(),
+  release_maximum: new Date().toISOString().slice(0, 7),
+  price_minimum_1: 0,
+  price_maximum_1: 1500,
+  size_minimum_1: 4.6,
+  size_maximum_1: 7,
+  size_minimum_2: 135,
+  size_maximum_2: 170,
+  size_minimum_3: 65,
+  size_maximum_3: 80,
+  design: 1,
+  cpu: 1,
+  updates: 1,
+  camera: 1,
+  battery: 1,
+  storage: 8,
+  headphoneJack: false,
+  simCards: false,
+  sdSlot: false,
+  notch: false,
+  waterproof: "",
+  selectedBrands: [],
+  selectedFavorites: {},
+  onlyShowFavedPhones: false,
+  showBacksideDefault: false,
+  showPhonesWithoutPrices: true,
+};
+
 class FilterStore {
   @observable
   lightmode = true;
@@ -241,50 +285,6 @@ class FilterStore {
 }
 
 const filterStore = new FilterStore();
-
-//warning getMinDate exists in this class and out of it
-const getMinDate = () => {
-  const date = new Date();
-  date.setMonth(new Date().getMonth() - 18);
-  return date.toISOString().slice(0, 7);
-};
-
-const resetCopy = {
-  sidebarHidden: false,
-  country: "de",
-  searchQuery: "",
-  filterType: "totalscore",
-  decayFactor: 0.2,
-  isDescending: true,
-  scaleInput: true,
-  emptySmartphones: false,
-  release_minimum: getMinDate(),
-  release_maximum: new Date().toISOString().slice(0, 7),
-  price_minimum_1: 0,
-  price_maximum_1: 1500,
-  size_minimum_1: 4.6,
-  size_maximum_1: 7,
-  size_minimum_2: 135,
-  size_maximum_2: 170,
-  size_minimum_3: 65,
-  size_maximum_3: 80,
-  design: 1,
-  cpu: 1,
-  updates: 1,
-  camera: 1,
-  battery: 1,
-  storage: 8,
-  headphoneJack: false,
-  simCards: false,
-  sdSlot: false,
-  notch: false,
-  waterproof: "",
-  selectedBrands: [],
-  selectedFavorites: {},
-  onlyShowFavedPhones: false,
-  showBacksideDefault: false,
-  showPhonesWithoutPrices: true,
-};
 
 window.addEventListener("popstate", () => filterStore.loadURL(), false);
 
