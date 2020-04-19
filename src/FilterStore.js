@@ -36,7 +36,7 @@ class FilterStore {
   @observable
   price_minimum_1 = 0;
   @observable
-  price_maximum_1 = 1200;
+  price_maximum_1 = 1500;
 
   @observable
   size_minimum_1 = 4.6;
@@ -46,12 +46,12 @@ class FilterStore {
   @observable
   size_minimum_2 = 135;
   @observable
-  size_maximum_2 = 165;
+  size_maximum_2 = 170;
 
   @observable
   size_minimum_3 = 65;
   @observable
-  size_maximum_3 = 78;
+  size_maximum_3 = 80;
 
   @observable
   design = 1;
