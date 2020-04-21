@@ -512,7 +512,7 @@ radio {
 }
 
 .filterBox {
-  max-height: 350px;
+  max-height: 400px;
   align-items: center;
   overflow: hidden;
   padding-left: 20px;

@@ -134,6 +134,14 @@ class SmartphoneStore {
           continue;
         }
 
+        //notch
+        if (
+          FilterStore.refreshRate &&
+          phone.refreshRate < FilterStore.refreshRate
+        ) {
+          continue;
+        }
+
         //brands
         if (
           FilterStore.selectedBrands.length > 0 &&
@@ -150,16 +158,26 @@ class SmartphoneStore {
             continue;
           }
           for (let c = 0; c < phone.models[t].types.length; c++) {
+            console.log(FilterStore.fiveg);
+            console.log(phone.models[t].types[c].fiveg);
             //price
             if (
-              phone.models[t].types[c].price === -1 &&
-              FilterStore.showPhonesWithoutPrices
+              (FilterStore.price_minimum_1 > phone.models[t].types[c].price ||
+                FilterStore.price_maximum_1 < phone.models[t].types[c].price) &&
+              ((FilterStore.showPhonesWithoutPrices &&
+                phone.models[t].types[c].price !== -1) ||
+                !FilterStore.showPhonesWithoutPrices)
             ) {
-              // no price info but ignore when showPhonesWithoutPrices is true
-            } else if (
-              FilterStore.price_minimum_1 > phone.models[t].types[c].price ||
-              FilterStore.price_maximum_1 < phone.models[t].types[c].price
-            ) {
+              if (phone.models[t].types.length === 1) {
+                phone.models.splice(t, 1);
+                t--;
+                break;
+              } else {
+                phone.models[t].types.splice(c, 1);
+                c--;
+              }
+            } // fiveg
+            else if (FilterStore.fiveg && !phone.models[t].types[c].fiveg) {
               if (phone.models[t].types.length === 1) {
                 phone.models.splice(t, 1);
                 t--;

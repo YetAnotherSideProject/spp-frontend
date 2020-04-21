@@ -37,7 +37,9 @@ const resetCopy = {
   simCards: false,
   sdSlot: false,
   notch: false,
+  fiveg: false,
   waterproof: "",
+  refreshRate: 60,
   selectedBrands: [],
   selectedFavorites: {},
   onlyShowFavedPhones: false,
@@ -119,7 +121,11 @@ class FilterStore {
   @observable
   notch = false;
   @observable
+  fiveg = false;
+  @observable
   waterproof = "";
+  @observable
+  refreshRate = 60;
 
   @observable
   selectedBrands = [];

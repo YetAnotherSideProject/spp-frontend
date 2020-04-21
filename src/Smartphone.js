@@ -109,14 +109,9 @@ const Smartphone = observer(
                       key={type.id}
                       className="smartphone-price-item"
                     >
-                      {type.name +
-                        " " +
-                        model.memory +
-                        "GB " +
-                        model.storage +
-                        "GB " +
-                        (type.price !== -1 ? type.price : "N/A") +
-                        "€"}
+                      {`${type.name} ${model.memory}GB ${model.storage}GB ${
+                        type.fiveg ? "5G" : ""
+                      } ${type.price !== -1 ? type.price : "N/A"}€`}
                     </option>
                   ))}
                   {modelIndex < smartphone.models.length - 1 && (
@@ -142,9 +137,8 @@ const Smartphone = observer(
           </div>
 
           <div className="flexBetween">
-            <span>
-              <span>{smartphone.batterysize}mAh</span>
-            </span>
+            <span>{smartphone.batterysize}mAh</span>
+            <span>{smartphone.refreshRate + "Hz Refresh rate"}</span>
           </div>
           <div className="flexBetween" />
 

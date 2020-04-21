@@ -74,6 +74,10 @@ export const Area3 = observer(() => {
         <ToggleSwitch name="notch" />
       </div>
       <div className="flex">
+        <p>5G</p>
+        <ToggleSwitch name="fiveg" />
+      </div>
+      <div className="flex">
         <label className="filterBoxLabel">Waterproof</label>
         <TextSelect
           name="waterproof"
@@ -82,6 +86,17 @@ export const Area3 = observer(() => {
             ["4", "IP X4 Splashing water"],
             ["7", "IP X7 Immersion up to 1m"],
             ["8", "IP X8 Immersion beyond 1m"],
+          ]}
+        />
+      </div>
+      <div className="flex">
+        <label className="filterBoxLabel">Refresh rate</label>
+        <TextSelect
+          name="refreshRate"
+          options={[
+            ["60", "60Hz"],
+            ["90", "90Hz"],
+            ["120", "120Hz"],
           ]}
         />
       </div>
