@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { observer } from "mobx-react";
+import { observer } from "mobx-react-lite";
 import amazonIcon from "./images/Amazon-Favicon-64x64.png";
 import { monthDiff, getAttributeFromSmartphone } from "./helperFunctions";
 

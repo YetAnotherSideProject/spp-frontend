@@ -2,15 +2,15 @@ import React, { useState, useEffect, Suspense } from "react";
 
 import "./App.css";
 
-import Header from "./Header.js";
-import SidebarContainer from "./Sidebar/SidebarContainer.js";
-import Content from "./Content.js";
-import ContentReleases from "./ContentReleases.js";
-import About from "./About.js";
+import { Header } from "./Header.js";
+import { SidebarContainer } from "./Sidebar/SidebarContainer.js";
+import { Content } from "./Content.js";
+import { ContentReleases } from "./ContentReleases.js";
+import { About } from "./About.js";
 
 import FilterStore from "./FilterStore.js";
 
-import { observer } from "mobx-react";
+import { observer } from "mobx-react-lite";
 import SmartphoneStore from "./SmartphoneStore";
 
 const ContentCharts = React.lazy(() => import("./ContentCharts"));
@@ -41,7 +41,7 @@ const LoadingInfo = () => (
   </div>
 );
 
-const getContentWithURL = currentURL => {
+const getContentWithURL = (currentURL) => {
   let content = <Content />;
   switch (currentURL) {
     case "/about":

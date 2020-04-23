@@ -1,9 +1,9 @@
 import React from "react";
-import { observer } from "mobx-react";
-import ToggleSwitch from "../ToggleSwitch";
-import FilterBox from "../FilterBox";
-import TextSelect from "../TextSelect";
-import TextField from "../TextField";
+import { observer } from "mobx-react-lite";
+import { ToggleSwitch } from "../ToggleSwitch";
+import { FilterBox } from "../FilterBox";
+import { TextSelect } from "../TextSelect";
+import { TextField } from "../TextField";
 
 import Slider from "@material-ui/core/Slider";
 import FilterStore from "../FilterStore.js";
@@ -26,7 +26,7 @@ const changeAttributeDateSlider = (e, value) => {
   );
 };
 
-const getMinDateinMonths = minDate => {
+const getMinDateinMonths = (minDate) => {
   let monthsMin = 0;
   const start = new Date("2017-01");
   const min = new Date(minDate);
@@ -40,7 +40,7 @@ const getMinDateinMonths = minDate => {
   return monthsMin;
 };
 
-const getMaxDateInMonths = maxDate => {
+const getMaxDateInMonths = (maxDate) => {
   let monthsMax = 0;
   const start = new Date("2017-01");
   const max = new Date(maxDate);
@@ -72,7 +72,7 @@ export const Area1 = observer(() => {
               ["totalscore", "Total Score"],
               ["length", "Body-Size"],
               ["display", "Screen-Size"],
-              ["released", "Release Date"]
+              ["released", "Release Date"],
             ]}
           />
           <div style={{ display: "flex", overflow: "hidden" }}>
@@ -112,7 +112,7 @@ export const Area1 = observer(() => {
               pushable={1}
               value={[
                 getMinDateinMonths(FilterStore.release_minimum),
-                getMaxDateInMonths(FilterStore.release_maximum)
+                getMaxDateInMonths(FilterStore.release_maximum),
               ]}
               onChange={changeAttributeDateSlider}
             />

@@ -1,27 +1,22 @@
-import React, { Component } from "react";
-import { observer } from "mobx-react";
+import React from "react";
+import { observer } from "mobx-react-lite";
 
 import FilterStore from "./FilterStore.js";
 
-@observer
-class TextField extends Component {
-  changeAttribute = e => {
-    FilterStore.changeAttribute(this.props.name, e.target.value);
+export const TextField = observer(({ name, big }) => {
+  const changeAttribute = (e) => {
+    FilterStore.changeAttribute(name, e.target.value);
   };
 
-  render() {
-    return (
-      <input
-        id={this.props.name}
-        className={this.props.big ? "bigInput" : "smallInput"}
-        size="2"
-        type="text"
-        value={FilterStore[this.props.name]}
-        onChange={this.changeAttribute}
-        autoComplete="new-password"
-      />
-    );
-  }
-}
-
-export default TextField;
+  return (
+    <input
+      id={name}
+      className={big ? "bigInput" : "smallInput"}
+      size="2"
+      type="text"
+      value={FilterStore[name]}
+      onChange={changeAttribute}
+      autoComplete="new-password"
+    />
+  );
+});

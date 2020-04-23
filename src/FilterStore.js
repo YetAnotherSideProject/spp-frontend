@@ -1,4 +1,3 @@
-import {} from "mobx-react";
 import { observable, action, autorun } from "mobx";
 
 //warning getMinDate exists in this class and out of it

@@ -1,8 +1,8 @@
 import React from "react";
-import { observer } from "mobx-react";
-import FilterBox from "../FilterBox";
-import ToggleSwitch from "../ToggleSwitch";
-import TextSelect from "../TextSelect";
+import { observer } from "mobx-react-lite";
+import { FilterBox } from "../FilterBox";
+import { ToggleSwitch } from "../ToggleSwitch";
+import { TextSelect } from "../TextSelect";
 
 import Slider from "@material-ui/core/Slider";
 import FilterStore from "../FilterStore.js";

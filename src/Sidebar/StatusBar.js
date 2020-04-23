@@ -1,5 +1,5 @@
 import React from "react";
-import { observer } from "mobx-react";
+import { observer } from "mobx-react-lite";
 import FilterStore from "../FilterStore.js";
 import SmartphoneStore from "../SmartphoneStore.js";
 
@@ -9,9 +9,9 @@ const shareCurrentFilters = () => {
       .share({
         title: "smartphone-picker",
         text: "Check out my filtered list of smartphones!",
-        url: window.location.href
+        url: window.location.href,
       })
-      .catch(error => console.log("Error sharing", error));
+      .catch((error) => console.log("Error sharing", error));
   } else {
     navigator.clipboard.writeText(window.location.href);
   }

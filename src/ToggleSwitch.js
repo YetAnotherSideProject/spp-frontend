@@ -1,22 +1,17 @@
-import React, { Component } from "react";
-import { observer } from "mobx-react";
+import React from "react";
+import { observer } from "mobx-react-lite";
 
 import Switch from "@material-ui/core/Switch";
 import FilterStore from "./FilterStore.js";
 
-@observer
-class ToggleSwitch extends Component {
-  render() {
-    return (
-      <Switch
-        checked={FilterStore[this.props.name]}
-        onChange={() => {
-          FilterStore.toggleAttribute(this.props.name);
-        }}
-        color="primary"
-      />
-    );
-  }
-}
-
-export default ToggleSwitch;
+export const ToggleSwitch = observer(({ name }) => {
+  return (
+    <Switch
+      checked={FilterStore[name]}
+      onChange={() => {
+        FilterStore.toggleAttribute(name);
+      }}
+      color="primary"
+    />
+  );
+});

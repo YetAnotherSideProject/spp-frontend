@@ -8,7 +8,7 @@ class SmartphoneStore {
   @observable
   hasLoaded = false;
 
-  constructor(props) {
+  constructor() {
     this.loadJSON();
   }
 
@@ -158,8 +158,6 @@ class SmartphoneStore {
             continue;
           }
           for (let c = 0; c < phone.models[t].types.length; c++) {
-            console.log(FilterStore.fiveg);
-            console.log(phone.models[t].types[c].fiveg);
             //price
             if (
               (FilterStore.price_minimum_1 > phone.models[t].types[c].price ||

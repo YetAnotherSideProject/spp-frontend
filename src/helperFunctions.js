@@ -1,12 +1,12 @@
-export function monthDiff(dateFrom, dateTo) {
+export const monthDiff = (dateFrom, dateTo) => {
   return (
     dateTo.getMonth() -
     dateFrom.getMonth() +
     12 * (dateTo.getFullYear() - dateFrom.getFullYear())
   );
-}
+};
 
-export function getAttributeFromSmartphone(smartphone, attribute) {
+export const getAttributeFromSmartphone = (smartphone, attribute) => {
   switch (attribute) {
     case "price":
       return smartphone.models[0].types[0][attribute] + "€";
@@ -20,4 +20,4 @@ export function getAttributeFromSmartphone(smartphone, attribute) {
     default:
       return smartphone[attribute];
   }
-}
+};

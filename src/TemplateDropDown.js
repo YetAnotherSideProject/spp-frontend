@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-function TemplateDropDown({ summary, detailCategories }) {
+export const TemplateDropDown = ({ summary, detailCategories }) => {
   const detailsRef = useRef();
   return (
     <details
@@ -70,6 +70,4 @@ function TemplateDropDown({ summary, detailCategories }) {
       </div>
     </details>
   );
-}
-
-export default TemplateDropDown;
+};
