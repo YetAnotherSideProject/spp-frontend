@@ -118,6 +118,7 @@ body,
   border-right: 1px solid var(--border-color);
   transition: transform 0.25s ease;
   box-sizing: border-box;
+  overflow-y: auto;
 }
 
 .sidebar.hidden {
@@ -971,4 +972,23 @@ textarea {
   color: var(--first-color);
   font-weight: 700;
   cursor: pointer;
+}
+
+.active-filters-item {
+  display: flex;
+  align-items: center;
+  padding: 2px 4px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  border: 1px solid var(--first-color);
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: var(--first-color);
+  color: var(--foreground-color);
+}
+
+.active-filters-item-button {
+  margin-left: 4px;
+  display: flex;
+  border: none;
 }

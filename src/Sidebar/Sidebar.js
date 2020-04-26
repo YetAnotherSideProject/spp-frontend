@@ -5,6 +5,7 @@ import { Area2 } from "./Area2";
 import { Area3 } from "./Area3";
 import { Area4 } from "./Area4";
 import { Area5 } from "./Area5";
+import { ActiveFilters } from "./ActiveFilters";
 
 export const Sidebar = () => {
   return (
@@ -15,6 +16,7 @@ export const Sidebar = () => {
       <Area3></Area3>
       <Area4></Area4>
       <Area5></Area5>
+      <ActiveFilters></ActiveFilters>
     </React.Fragment>
   );
 };

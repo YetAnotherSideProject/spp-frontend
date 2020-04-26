@@ -1,13 +1,20 @@
 import { observable, action, autorun } from "mobx";
 
-//warning getMinDate exists in this class and out of it
 const getMinDate = () => {
   const date = new Date();
   date.setMonth(new Date().getMonth() - 18);
   return date.toISOString().slice(0, 7);
 };
 
-const resetCopy = {
+const getSidebarHiddenInitialState = () => {
+  const viewportWidth = window.innerWidth;
+  if (viewportWidth > 640) {
+    return false;
+  }
+  return true;
+};
+
+export const resetCopy = {
   sidebarHidden: false,
   country: "de",
   searchQuery: "",
@@ -50,15 +57,12 @@ class FilterStore {
   @observable
   lightmode = true;
   @observable
-  sidebarHidden = this.getSidebarHiddenInitialState();
+  sidebarHidden = getSidebarHiddenInitialState();
   @observable
   country = "de";
 
   @observable
   activeFilterBox = "Sorting Options";
-
-  @observable
-  currentQuery = "";
 
   @observable
   searchQuery = "";
@@ -73,7 +77,7 @@ class FilterStore {
   @observable
   emptySmartphones = false;
   @observable
-  release_minimum = this.getMinDate();
+  release_minimum = getMinDate();
 
   @observable
   release_maximum = new Date().toISOString().slice(0, 7);
@@ -137,21 +141,6 @@ class FilterStore {
   showBacksideDefault = false;
   @observable
   showPhonesWithoutPrices = false;
-
-  getSidebarHiddenInitialState = () => {
-    const viewportWidth = window.innerWidth;
-    if (viewportWidth > 640) {
-      return false;
-    }
-    return true;
-  };
-
-  //warning getMinDate exists in this class and out of it
-  getMinDate = () => {
-    const date = new Date();
-    date.setMonth(new Date().getMonth() - 18);
-    return date.toISOString().slice(0, 7);
-  };
 
   @action
   toggleAttribute = (name) => {
@@ -233,7 +222,6 @@ class FilterStore {
     for (key in this) {
       switch (key) {
         //Define filters which aren't expected to be included in the url
-        case "currentQuery":
         case "country":
         case "updateURL":
         case "sidebarHidden":
@@ -241,8 +229,6 @@ class FilterStore {
         case "loadURL":
         case "updateURLtoRepresentFilter":
         case "lightmode":
-        case "getMinDate":
-        case "getSidebarHiddenInitialState":
           break;
         case "selectedBrands":
           if (this[key] && resetCopy && this[key].length > 0) {
@@ -277,7 +263,6 @@ class FilterStore {
         finalquery;
 
       window.history.pushState({ path: newurl }, "", newurl);
-      this.currentQuery = finalquery;
     }
   };
 
