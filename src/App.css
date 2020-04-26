@@ -991,4 +991,9 @@ textarea {
   margin-left: 4px;
   display: flex;
   border: none;
+  cursor: pointer;
+}
+
+.active-filters-item-button:hover > svg {
+  fill: var(--just-yellow);
 }
