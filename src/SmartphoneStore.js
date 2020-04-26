@@ -41,157 +41,158 @@ class SmartphoneStore {
         ) {
           continue;
         }
-      } else {
-        if (FilterStore.searchQuery !== "") {
-          //searchQuery
-          const lowerCaseName = (phone.brand + " " + phone.name).toLowerCase();
-          if (!lowerCaseName.includes(FilterStore.searchQuery.toLowerCase())) {
-            continue;
-          }
-        }
+      }
 
-        //release-date
-        if (
-          FilterStore.release_minimum > phone.released ||
-          FilterStore.release_maximum < phone.released
-        ) {
-          continue;
-        }
-
-        //display
-        if (
-          FilterStore.size_minimum_1 > phone.display ||
-          FilterStore.size_maximum_1 < phone.display
-        ) {
-          continue;
-        }
-
-        //length
-        if (
-          FilterStore.size_minimum_2 > phone.length ||
-          FilterStore.size_maximum_2 < phone.length
-        ) {
-          continue;
-        }
-
-        //width
-        if (
-          FilterStore.size_minimum_3 > phone.width ||
-          FilterStore.size_maximum_3 < phone.width
-        ) {
-          continue;
-        }
-
-        //design
-        if (phone.design < FilterStore.design) {
-          continue;
-        }
-
-        //processor
-        if (phone.cpu < FilterStore.cpu) {
-          continue;
-        }
-
-        //software updates
-        if (phone.updates < FilterStore.updates) {
-          continue;
-        }
-
-        //camera
-        if (phone.camera < FilterStore.camera) {
-          continue;
-        }
-
-        //battery
-        if (phone.battery < FilterStore.battery) {
-          continue;
-        }
-
-        //waterproof
-        if (FilterStore.waterproof !== "") {
-          if (phone.waterproof < FilterStore.waterproof) {
-            continue;
-          }
-        }
-
-        //headphonejack
-        if (FilterStore.headphoneJack && !phone.headphoneJack) {
-          continue;
-        }
-
-        //simCardInput
-        if (FilterStore.simCards && !phone.dualSim) {
-          continue;
-        }
-
-        //sdSLot
-        if (FilterStore.sdSlot && !phone.sdSlot) {
-          continue;
-        }
-
-        //notch
-        if (FilterStore.notch && phone.notchType === "NOTCH") {
-          continue;
-        }
-
-        //notch
-        if (
-          FilterStore.refreshRate &&
-          phone.refreshRate < FilterStore.refreshRate
-        ) {
-          continue;
-        }
-
-        //brands
-        if (
-          FilterStore.selectedBrands.length > 0 &&
-          FilterStore.selectedBrands.indexOf(phone.brand) === -1
-        ) {
-          continue;
-        }
-
-        for (let t = 0; t < phone.models.length; t++) {
-          //storage
-          if (phone.models[t].storage < FilterStore.storage) {
-            phone.models.splice(t, 1);
-            t--;
-            continue;
-          }
-          for (let c = 0; c < phone.models[t].types.length; c++) {
-            //price
-            if (
-              (FilterStore.price_minimum_1 > phone.models[t].types[c].price ||
-                FilterStore.price_maximum_1 < phone.models[t].types[c].price) &&
-              ((FilterStore.showPhonesWithoutPrices &&
-                phone.models[t].types[c].price !== -1) ||
-                !FilterStore.showPhonesWithoutPrices)
-            ) {
-              if (phone.models[t].types.length === 1) {
-                phone.models.splice(t, 1);
-                t--;
-                break;
-              } else {
-                phone.models[t].types.splice(c, 1);
-                c--;
-              }
-            } // fiveg
-            else if (FilterStore.fiveg && !phone.models[t].types[c].fiveg) {
-              if (phone.models[t].types.length === 1) {
-                phone.models.splice(t, 1);
-                t--;
-                break;
-              } else {
-                phone.models[t].types.splice(c, 1);
-                c--;
-              }
-            }
-          }
-        }
-
-        if (phone.models.length < 1) {
+      if (FilterStore.searchQuery !== "") {
+        //searchQuery
+        const lowerCaseName = (phone.brand + " " + phone.name).toLowerCase();
+        if (!lowerCaseName.includes(FilterStore.searchQuery.toLowerCase())) {
           continue;
         }
       }
+
+      //release-date
+      if (
+        FilterStore.release_minimum > phone.released ||
+        FilterStore.release_maximum < phone.released
+      ) {
+        continue;
+      }
+
+      //display
+      if (
+        FilterStore.size_minimum_1 > phone.display ||
+        FilterStore.size_maximum_1 < phone.display
+      ) {
+        continue;
+      }
+
+      //length
+      if (
+        FilterStore.size_minimum_2 > phone.length ||
+        FilterStore.size_maximum_2 < phone.length
+      ) {
+        continue;
+      }
+
+      //width
+      if (
+        FilterStore.size_minimum_3 > phone.width ||
+        FilterStore.size_maximum_3 < phone.width
+      ) {
+        continue;
+      }
+
+      //design
+      if (phone.design < FilterStore.design) {
+        continue;
+      }
+
+      //processor
+      if (phone.cpu < FilterStore.cpu) {
+        continue;
+      }
+
+      //software updates
+      if (phone.updates < FilterStore.updates) {
+        continue;
+      }
+
+      //camera
+      if (phone.camera < FilterStore.camera) {
+        continue;
+      }
+
+      //battery
+      if (phone.battery < FilterStore.battery) {
+        continue;
+      }
+
+      //waterproof
+      if (FilterStore.waterproof !== "") {
+        if (phone.waterproof < FilterStore.waterproof) {
+          continue;
+        }
+      }
+
+      //headphonejack
+      if (FilterStore.headphoneJack && !phone.headphoneJack) {
+        continue;
+      }
+
+      //simCardInput
+      if (FilterStore.simCards && !phone.dualSim) {
+        continue;
+      }
+
+      //sdSLot
+      if (FilterStore.sdSlot && !phone.sdSlot) {
+        continue;
+      }
+
+      //notch
+      if (FilterStore.notch && phone.notchType === "NOTCH") {
+        continue;
+      }
+
+      //notch
+      if (
+        FilterStore.refreshRate &&
+        phone.refreshRate < FilterStore.refreshRate
+      ) {
+        continue;
+      }
+
+      //brands
+      if (
+        FilterStore.selectedBrands.length > 0 &&
+        FilterStore.selectedBrands.indexOf(phone.brand) === -1
+      ) {
+        continue;
+      }
+
+      for (let t = 0; t < phone.models.length; t++) {
+        //storage
+        if (phone.models[t].storage < FilterStore.storage) {
+          phone.models.splice(t, 1);
+          t--;
+          continue;
+        }
+        for (let c = 0; c < phone.models[t].types.length; c++) {
+          //price
+          if (
+            (FilterStore.price_minimum_1 > phone.models[t].types[c].price ||
+              FilterStore.price_maximum_1 < phone.models[t].types[c].price) &&
+            ((FilterStore.showPhonesWithoutPrices &&
+              phone.models[t].types[c].price !== -1) ||
+              !FilterStore.showPhonesWithoutPrices)
+          ) {
+            if (phone.models[t].types.length === 1) {
+              phone.models.splice(t, 1);
+              t--;
+              break;
+            } else {
+              phone.models[t].types.splice(c, 1);
+              c--;
+            }
+          } // fiveg
+          else if (FilterStore.fiveg && !phone.models[t].types[c].fiveg) {
+            if (phone.models[t].types.length === 1) {
+              phone.models.splice(t, 1);
+              t--;
+              break;
+            } else {
+              phone.models[t].types.splice(c, 1);
+              c--;
+            }
+          }
+        }
+      }
+
+      if (phone.models.length < 1) {
+        continue;
+      }
+
       phone.totalscore = this.calculateScore(phone, FilterStore.decayFactor);
       listOfFilteredObjects.push(phone);
     }

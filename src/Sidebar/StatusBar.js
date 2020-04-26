@@ -56,7 +56,8 @@ export const StatusBar = observer(() => {
       <button
         title="Show Favorited smartphones."
         disabled={
-          Object.keys(FilterStore.selectedFavorites).length < 1
+          Object.keys(FilterStore.selectedFavorites).length < 1 &&
+          !FilterStore.onlyShowFavedPhones
             ? "disabled"
             : ""
         }

@@ -19,7 +19,7 @@ const resetCopy = {
   release_minimum: getMinDate(),
   release_maximum: new Date().toISOString().slice(0, 7),
   price_minimum_1: 0,
-  price_maximum_1: 1500,
+  price_maximum_1: 2000,
   size_minimum_1: 4.6,
   size_maximum_1: 7,
   size_minimum_2: 135,
@@ -43,7 +43,7 @@ const resetCopy = {
   selectedFavorites: {},
   onlyShowFavedPhones: false,
   showBacksideDefault: false,
-  showPhonesWithoutPrices: true,
+  showPhonesWithoutPrices: false,
 };
 
 class FilterStore {
@@ -81,7 +81,7 @@ class FilterStore {
   @observable
   price_minimum_1 = 0;
   @observable
-  price_maximum_1 = 1500;
+  price_maximum_1 = 2000;
 
   @observable
   size_minimum_1 = 4.6;
@@ -136,7 +136,7 @@ class FilterStore {
   @observable
   showBacksideDefault = false;
   @observable
-  showPhonesWithoutPrices = true;
+  showPhonesWithoutPrices = false;
 
   getSidebarHiddenInitialState = () => {
     const viewportWidth = window.innerWidth;

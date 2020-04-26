@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { observer } from "mobx-react-lite";
 import amazonIcon from "./images/Amazon-Favicon-64x64.png";
 import { monthDiff, getAttributeFromSmartphone } from "./helperFunctions";
@@ -10,6 +10,10 @@ const Smartphone = observer(
     const { price, link } = smartphone.models[selectedModel].types[
       selectedType
     ];
+    useEffect(() => {
+      setSelectedModel(0);
+      setSelectedType(0);
+    }, [smartphone.models, filterStore.showPhonesWithoutPrices]);
     let height = (smartphone.length / 165) * 100 + "%";
     return (
       <div className="smartphone" style={style}>
@@ -84,6 +88,9 @@ const Smartphone = observer(
                   smartphone.brand + " " + smartphone.name
                 );
                 filterStore.updateURL();
+                if (Object.keys(filterStore.selectedFavorites).length < 1) {
+                  filterStore.onlyShowFavedPhones = false;
+                }
               }}
             >
               <path
@@ -95,6 +102,7 @@ const Smartphone = observer(
           </div>
           <select
             className="smartphone-price-details"
+            value={`${selectedModel}:${selectedType}`}
             onChange={(e) => {
               setSelectedModel(e.target.value.split(":")[0]);
               setSelectedType(e.target.value.split(":")[1]);
