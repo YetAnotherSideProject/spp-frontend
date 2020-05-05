@@ -52,11 +52,7 @@ export const ActiveFilters = observer(() => {
               filterStore[key] = resetCopy[key];
             }}
           >
-            <svg
-              viewBox="0 0 24 24"
-              height="20px"
-              fill="var(--foreground-color)"
-            >
+            <svg viewBox="0 0 24 24" height="20px" fill="var(--just-white)">
               <path d="M 10 2 L 9 3 L 5 3 L 4 3 L 4 5 L 5 5 L 5 20 C 5 21.093063 5.9069372 22 7 22 L 17 22 C 18.093063 22 19 21.093063 19 20 L 19 5 L 20 5 L 20 3 L 19 3 L 18 3 L 15 3 L 14 2 L 10 2 z M 7 5 L 17 5 L 17 20 L 7 20 L 7 5 z M 9 7 L 9 18 L 11 18 L 11 7 L 9 7 z M 13 7 L 13 18 L 15 18 L 15 7 L 13 7 z" />
             </svg>
           </button>

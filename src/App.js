@@ -12,6 +12,24 @@ import FilterStore from "./FilterStore.js";
 
 import { observer } from "mobx-react-lite";
 import SmartphoneStore from "./SmartphoneStore";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      light: "#757ce8",
+      main: "#5850ec",
+      dark: "#002884",
+      contrastText: "#fff",
+    },
+    secondary: {
+      light: "#ff7961",
+      main: "#f44336",
+      dark: "#ba000d",
+      contrastText: "#000",
+    },
+  },
+});
 
 const ContentCharts = React.lazy(() => import("./ContentCharts"));
 
@@ -80,25 +98,27 @@ const App = observer(() => {
   });
 
   return (
-    <div
-      className={
-        "react-head " + (FilterStore.lightmode ? "lightmode" : "darkmode")
-      }
-    >
-      <Header />
-      <div style={{ display: "flex", overflow: "auto" }}>
-        {currentURL === "/about" ? (
-          <About />
-        ) : (
-          <React.Fragment>
-            <SidebarContainer />
-            <Suspense fallback={<div>Loading...</div>}>
-              {getContentWithURL(currentURL)}
-            </Suspense>
-          </React.Fragment>
-        )}
+    <ThemeProvider theme={theme}>
+      <div
+        className={
+          "react-head " + (FilterStore.lightmode ? "lightmode" : "darkmode")
+        }
+      >
+        <Header />
+        <div style={{ display: "flex", overflow: "auto" }}>
+          {currentURL === "/about" ? (
+            <About />
+          ) : (
+            <React.Fragment>
+              <SidebarContainer />
+              <Suspense fallback={<div>Loading...</div>}>
+                {getContentWithURL(currentURL)}
+              </Suspense>
+            </React.Fragment>
+          )}
+        </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 });
 

@@ -13,6 +13,7 @@ export const TemplateDropDown = ({ summary, detailCategories }) => {
       onMouseLeave={(e) => {
         detailsRef.current.removeAttribute("open");
       }}
+      style={{ position: "relative" }}
     >
       <summary
         className="filter__summary"

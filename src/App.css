@@ -2,36 +2,35 @@
   --show-sidebar-button: #1b875b;
   --highlight-color: #4caf50;
   --bad-color: #d22a2a;
-  --just-black: #263238;
+  --just-black: #000;
   --just-white: #fff;
   --just-yellow: #f5a80b;
   --just-yellow-light: #f5a80b85;
 }
 
 .lightmode {
-  --first-color: #2f5a9a;
-  --text-color: #4f5259;
+  --text-color: #6b7280;
   --text-color-dark: #2c2d2e;
-  --svg-hover-color: var(--text-color-dark);
   --border-color: #e0e0e0;
   --background-color: #fff;
   --foreground-color: #fff;
   --scrollbar-track: var(--border-color);
+  --svg-color: var(--text-color);
+  --svg-hover-color: var(--text-color-dark);
 }
 
 .darkmode {
-  --first-color: #d6d8de;
-  --text-color: #a0a0a0;
-  --text-color-dark: #e7e7e7;
-  --svg-hover-color: var(--text-color);
-  --border-color: #a0a0a0;
-  --background-color: #263238;
+  --text-color: #e5e7eb;
+  --text-color-dark: #e5e7eb;
+  --border-color: #5f6368;
+  --background-color: #202124;
   --foreground-color: var(--background-color);
-  --scrollbar-track: var(--first-color);
+  --svg-color: var(--just-white);
+  --svg-hover-color: var(--text-color-dark);
 }
 
 .lightmode .sidebar {
-  --text-color: var(--first-color);
+  --text-color: var(--just-black);
 }
 
 * {
@@ -111,7 +110,7 @@ body,
   position: absolute;
   transform: translateX(0);
   z-index: 50;
-  height: calc(100vh - 71px);
+  height: calc(100vh - 41px);
   width: 100%;
   max-width: 600px;
   background-color: var(--background-color);
@@ -141,7 +140,7 @@ body,
 .sidebar-status-buttons {
   position: relative;
   display: flex;
-  fill: var(--first-color);
+  fill: var(--svg-color);
   height: 25px;
   padding: 2px;
   border: none;
@@ -153,9 +152,10 @@ body,
 }
 
 .logo-text {
-  font-size: 18px;
+  font-weight: bold;
+  font-size: 16px;
   text-decoration: none;
-  color: var(--first-color);
+  color: var(--text-color-dark);
 }
 
 .sidebar-button {
@@ -312,7 +312,7 @@ body,
 .smartphones,
 .smartphones-releases,
 .smartphones-charts {
-  height: calc(100vh - 70px);
+  height: calc(100vh - 41px);
   width: 100%;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
@@ -361,7 +361,7 @@ body,
   border-top: 1px solid var(--border-color);
   font-weight: 600;
   font-size: 14px;
-  color: var(--first-color);
+  color: var(--text-color-dark);
   font-size: 16px;
   padding-top: 4px;
 }
@@ -378,20 +378,17 @@ body,
 .logo {
   box-sizing: border-box;
   padding: 4px 8px;
-  font-weight: bold;
   position: relative;
   z-index: 0;
   text-align: left;
-  background-color: var(--background-color);
   align-items: flex-end;
 }
 
 .filter__summary {
-  color: var(--background-color);
+  color: var(--text-color);
   outline: none;
   user-select: none;
   cursor: pointer;
-  padding: 4px 8px;
 }
 
 .filter-drop-down-padder {
@@ -411,6 +408,7 @@ body,
   border-radius: 8px;
   box-shadow: 0 3px 12px rgba(27, 31, 35, 0.35), 0 0 1px rgba(27, 31, 35, 0.4);
   overflow: hidden;
+  min-width: 400px;
 }
 
 .filter-drop-down__header {
@@ -419,7 +417,7 @@ body,
   letter-spacing: 2px;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--first-color);
+  color: var(--text-color-dark);
 }
 
 .filter-drop-down__element {
@@ -436,28 +434,27 @@ body,
 .filter-drop-down__link {
   display: flex;
   text-decoration: none;
-  color: var(--first-color);
+  color: var(--text-color);
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .filter-drop-down__span {
+  flex: 1;
   margin-left: 12px;
 }
 
 .header {
-  background-color: var(--first-color);
-  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
-    0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid var(--border-color);
   z-index: 100;
 }
 
 .main-menu-link {
-  padding: 4px 8px;
+  font-size: 14px;
+  padding: 4px 16px;
   text-decoration: none;
-  color: var(--background-color);
+  color: var(--text-color);
   cursor: pointer;
-  padding-left: 20px;
 }
 
 .main-menu {
@@ -528,20 +525,20 @@ radio {
 
 .filterBox p,
 .filterBoxLabel {
-  text-align: left;
-  letter-spacing: 0;
   color: var(--text-color);
-  font-weight: 600;
-  line-height: 1.2;
   align-self: center;
   flex: 1 1 50px;
+}
+
+.filterBoxLabel {
+  margin-bottom: 4px;
 }
 
 .filterBox-Header {
   cursor: pointer;
   display: flex;
   justify-content: space-between;
-  color: var(--first-color);
+  color: var(--text-color-dark);
   font-weight: bold;
   padding: 10px;
   border-top: 1px solid var(--border-color);
@@ -553,7 +550,6 @@ radio {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  color: var(--first-color);
 }
 
 .filterBox-Header:hover {
@@ -621,7 +617,7 @@ textarea {
 .sorting_order {
   transition: transform 0.4s ease;
   align-self: center;
-  fill: var(--first-color);
+  fill: var(--svg-color);
   cursor: pointer;
   margin-left: -12px;
 }
@@ -642,10 +638,6 @@ textarea {
   margin-top: 5px;
 }
 
-.rc-slider-rail {
-  background-color: var(--border-color) !important;
-}
-
 .storageSlider {
   padding-right: 20px;
 }
@@ -662,7 +654,7 @@ textarea {
   color: var(--text-color);
   padding: 8px 0.875em;
   border-radius: 8px;
-  border: var(--border-color) 2px solid;
+  border: var(--border-color) 1px solid;
   min-width: 200px;
 }
 
@@ -697,7 +689,7 @@ textarea {
   padding-bottom: 8px;
   vertical-align: top;
   text-align: center;
-  color: var(--first-color);
+  color: var(--text-color-dark);
 }
 
 .smartphone-name {
@@ -756,7 +748,7 @@ textarea {
 }
 
 .highlight-color {
-  color: var(--first-color);
+  color: var(--highlight-color);
   font-weight: bold;
 }
 
@@ -871,7 +863,7 @@ textarea {
 }
 
 .blue-white {
-  color: var(--first-color);
+  color: var(--text-color);
   background-color: transparent;
   border: transparent;
 }
@@ -885,54 +877,8 @@ textarea {
   align-self: center;
 }
 
-.lbl:after {
-  box-sizing: border-box;
-  position: absolute;
-  top: -4px;
-  left: -2px;
-  display: block;
-  width: 20px;
-  height: 20px;
-  content: "";
-  transition: all 0.1s linear;
-  border: 1px solid var(--first-color);
-  border-radius: 100px;
-  background: var(--foreground-color);
-}
-
-.lbl {
-  position: relative;
-  display: block;
-  width: 40px;
-  height: 12px;
-  margin: 5px;
-  cursor: pointer;
-  border: 1px solid var(--first-color);
-  border-radius: 100px;
-}
-
-.cbx:checked ~ label {
-  border: 1px solid var(--first-color);
-  background: var(--first-color);
-}
-
-.cbx:checked ~ label:after {
-  left: 26px;
-  border: 1px solid var(--first-color);
-  background: var(--foreground-color);
-}
-
-.cbx:disabled ~ label {
-  pointer-events: none;
-  background: var(--first-color);
-}
-
 .toggle-hidden {
   display: none;
-}
-
-.cbx:disabled ~ label:after {
-  background: var(--first-color);
 }
 
 .multiCheckboxContainer {
@@ -945,7 +891,7 @@ textarea {
 }
 
 .nightmode-switch {
-  fill: var(--first-color);
+  fill: var(--svg-color);
 }
 
 .no-results-container {
@@ -969,7 +915,7 @@ textarea {
   font-size: 14px;
 }
 .here-remove-filters {
-  color: var(--first-color);
+  color: var(--highlight-color);
   font-weight: 700;
   cursor: pointer;
 }
@@ -980,11 +926,11 @@ textarea {
   padding: 2px 4px;
   margin-right: 8px;
   margin-bottom: 8px;
-  border: 1px solid var(--first-color);
+  border: 1px solid var(--show-sidebar-button);
   border-radius: 8px;
   font-size: 14px;
-  background-color: var(--first-color);
-  color: var(--foreground-color);
+  background-color: var(--show-sidebar-button);
+  color: var(--just-white);
 }
 
 .active-filters-item-button {

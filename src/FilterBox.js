@@ -3,12 +3,13 @@ import { observer } from "mobx-react-lite";
 import FilterStore from "./FilterStore.js";
 
 export const FilterBox = observer(({ header, children }) => {
+  const active = FilterStore.activeFilterBox === header;
   return (
     <React.Fragment>
       <div
         className="filterBox-Header"
         onClick={() => {
-          if (FilterStore.activeFilterBox === header) {
+          if (active) {
             FilterStore.activeFilterBox = "";
           } else {
             FilterStore.activeFilterBox = header;
@@ -18,9 +19,7 @@ export const FilterBox = observer(({ header, children }) => {
         <p>{header}</p>
         <svg
           className={
-            FilterStore.activeFilterBox === header
-              ? "filterBoxArrow"
-              : "filterBoxArrow filterBoxArrow--closed"
+            active ? "filterBoxArrow" : "filterBoxArrow filterBoxArrow--closed"
           }
           xmlns="http://www.w3.org/2000/svg"
           width="22px"
@@ -34,13 +33,7 @@ export const FilterBox = observer(({ header, children }) => {
           />
         </svg>
       </div>
-      <div
-        className={
-          FilterStore.activeFilterBox === header
-            ? "filterBox"
-            : "filterBox filterBox--closed"
-        }
-      >
+      <div className={active ? "filterBox" : "filterBox filterBox--closed"}>
         {children}
       </div>
     </React.Fragment>

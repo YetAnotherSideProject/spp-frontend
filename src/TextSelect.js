@@ -3,7 +3,7 @@ import { observer } from "mobx-react-lite";
 
 import FilterStore from "./FilterStore.js";
 
-export const TextSelect = observer(({ name, options, colorScheme }) => {
+export const TextSelect = observer(({ name, options, colorScheme, style }) => {
   const changeAttribute = (e) => {
     FilterStore.changeAttribute(name, e.target.value);
   };
@@ -14,7 +14,7 @@ export const TextSelect = observer(({ name, options, colorScheme }) => {
       className={"textSelect " + colorScheme}
       value={FilterStore[name]}
       onChange={changeAttribute}
-      style={{ alignSelf: "center", flex: "1" }}
+      style={{ alignSelf: "center", flex: "1", ...style }}
     >
       >
       {options.map((smartphone) => (
