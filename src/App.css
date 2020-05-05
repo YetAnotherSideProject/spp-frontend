@@ -1,4 +1,5 @@
 :root {
+  --primary-color: red;
   --show-sidebar-button: #1b875b;
   --highlight-color: #4caf50;
   --bad-color: #d22a2a;
@@ -20,6 +21,7 @@
 }
 
 .darkmode {
+  --primary-color: #202124;
   --text-color: #e5e7eb;
   --text-color-dark: #e5e7eb;
   --border-color: #5f6368;
@@ -155,7 +157,7 @@ body,
   font-weight: bold;
   font-size: 16px;
   text-decoration: none;
-  color: var(--text-color-dark);
+  color: var(--just-white);
 }
 
 .sidebar-button {
@@ -263,19 +265,6 @@ body,
 
   .smartphone {
     font-size: 16px;
-  }
-
-  ::-webkit-scrollbar {
-    width: 16px;
-    height: 12px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: var(--scrollbar-track);
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: var(--text-color);
   }
 }
 
@@ -385,7 +374,7 @@ body,
 }
 
 .filter__summary {
-  color: var(--text-color);
+  color: var(--just-white);
   outline: none;
   user-select: none;
   cursor: pointer;
@@ -445,15 +434,16 @@ body,
 }
 
 .header {
-  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 3px 12px rgba(27, 31, 35, 0.35), 0 0 1px rgba(27, 31, 35, 0.4);
   z-index: 100;
+  background-color: var(--primary-color);
 }
 
 .main-menu-link {
   font-size: 14px;
   padding: 4px 16px;
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--just-white);
   cursor: pointer;
 }
 
@@ -863,7 +853,7 @@ textarea {
 }
 
 .blue-white {
-  color: var(--text-color);
+  color: var(--just-white);
   background-color: transparent;
   border: transparent;
 }
@@ -891,7 +881,7 @@ textarea {
 }
 
 .nightmode-switch {
-  fill: var(--svg-color);
+  fill: var(--just-white);
 }
 
 .no-results-container {

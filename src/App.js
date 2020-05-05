@@ -14,23 +14,6 @@ import { observer } from "mobx-react-lite";
 import SmartphoneStore from "./SmartphoneStore";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      light: "#757ce8",
-      main: "#5850ec",
-      dark: "#002884",
-      contrastText: "#fff",
-    },
-    secondary: {
-      light: "#ff7961",
-      main: "#f44336",
-      dark: "#ba000d",
-      contrastText: "#000",
-    },
-  },
-});
-
 const ContentCharts = React.lazy(() => import("./ContentCharts"));
 
 const NoResultsInfo = () => (
@@ -87,7 +70,40 @@ const getContentWithURL = (currentURL) => {
   );
 };
 
+const colors = [
+  "#f44336",
+  "#e91e63",
+  "#9c27b0",
+  "#673ab7",
+  "#3f51b5",
+  "#2196f3",
+  "#03a9f4",
+  "#00bcd4",
+  "#009688",
+  "#4caf50",
+  "#8bc34a",
+  "#cddc39",
+  "#ffeb3b",
+  "#ffc107",
+  "#ff9800",
+  "#ff5722",
+];
+
 const App = observer(() => {
+  const [primaryColor, setPrimaryColor] = useState(0);
+  const theme = createMuiTheme({
+    palette: {
+      primary: {
+        main: colors[primaryColor],
+        contrastText: "#fff",
+      },
+    },
+  });
+  document.documentElement.style.setProperty(
+    "--primary-color",
+    colors[primaryColor]
+  );
+
   const [currentURL, setCurrentURL] = useState(window.location.pathname);
   useEffect(() => {
     window.addEventListener(
@@ -95,7 +111,20 @@ const App = observer(() => {
       () => setCurrentURL(window.location.pathname),
       false
     );
-  });
+    window.addEventListener("keydown", (e) => {
+      const { key } = e;
+      if (key === "Escape") {
+        setPrimaryColor((primaryColor) => {
+          if (primaryColor === colors.length - 1) {
+            return 0;
+          } else {
+            return primaryColor + 1;
+          }
+        });
+      }
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
