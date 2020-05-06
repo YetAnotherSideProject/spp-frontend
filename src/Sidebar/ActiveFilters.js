@@ -40,7 +40,14 @@ export const ActiveFilters = observer(() => {
     }
   }
   return (
-    <div style={{ display: "flex", flexWrap: "wrap", padding: 10 }}>
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        padding: 10,
+        paddingBottom: 96,
+      }}
+    >
       {activeFilters.map((key) => (
         <span className="active-filters-item">
           <span>
