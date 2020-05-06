@@ -89,8 +89,16 @@ const colors = [
   "#ff5722",
 ];
 
+const getRandomInt = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
 const App = observer(() => {
-  const [primaryColor, setPrimaryColor] = useState(0);
+  const [primaryColor, setPrimaryColor] = useState(
+    getRandomInt(0, colors.length - 1)
+  );
   const theme = createMuiTheme({
     palette: {
       primary: {

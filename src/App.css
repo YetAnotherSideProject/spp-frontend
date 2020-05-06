@@ -35,6 +35,10 @@
   --text-color: var(--just-black);
 }
 
+.darkmode .header {
+  --primary-color: #424448;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -112,7 +116,7 @@ body,
   position: absolute;
   transform: translateX(0);
   z-index: 50;
-  height: calc(100vh - 41px);
+  height: calc(100vh - 48px);
   width: 100%;
   max-width: 600px;
   background-color: var(--background-color);
@@ -301,7 +305,7 @@ body,
 .smartphones,
 .smartphones-releases,
 .smartphones-charts {
-  height: calc(100vh - 41px);
+  height: calc(100vh - 48px);
   width: 100%;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
@@ -366,7 +370,7 @@ body,
 
 .logo {
   box-sizing: border-box;
-  padding: 4px 8px;
+  padding: 8px;
   position: relative;
   z-index: 0;
   text-align: left;
