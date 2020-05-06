@@ -462,6 +462,7 @@ body,
 
 .smartphoneCount {
   margin-right: 4px;
+  min-width: 54px;
 }
 
 .clipboard-notifier {
