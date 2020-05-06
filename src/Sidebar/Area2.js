@@ -5,7 +5,7 @@ import { TextField } from "../TextField";
 
 import Slider from "@material-ui/core/Slider";
 import { ToggleSwitch } from "../ToggleSwitch";
-import FilterStore from "../FilterStore.js";
+import FilterStore, { resetCopy } from "../FilterStore.js";
 
 const changeAttributeSlider = (first, second) => (e, value) => {
   FilterStore.changeAttribute(first, value[0]);
@@ -20,8 +20,8 @@ export const Area2 = observer(() => {
         <div className="sliderContainer" style={{ marginBottom: 0 }}>
           <div>
             <Slider
-              min={0}
-              max={1200}
+              min={resetCopy.price_minimum_1}
+              max={resetCopy.price_maximum_1}
               step={50}
               value={[
                 parseInt(FilterStore.price_minimum_1, 10)

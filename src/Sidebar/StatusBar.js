@@ -63,9 +63,7 @@ export const StatusBar = observer(() => {
         }
         className={
           "sidebar-fav-button" +
-          (Object.keys(FilterStore.selectedFavorites).length
-            ? " sidebar-fav-button--filled"
-            : "")
+          (FilterStore.onlyShowFavedPhones ? " sidebar-fav-button--filled" : "")
         }
         onClick={() => {
           FilterStore.toggleAttribute("onlyShowFavedPhones");
