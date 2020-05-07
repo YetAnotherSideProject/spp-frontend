@@ -19,7 +19,6 @@ export const Smartphone = observer(
       <div
         className="smartphone"
         onClick={() => {
-          console.log("opModal");
           filterStore.modalSmartphone = smartphone;
         }}
         style={style}

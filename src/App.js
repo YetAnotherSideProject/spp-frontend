@@ -159,7 +159,7 @@ const App = observer(() => {
               maxImgHeight={maxImgHeight}
               filterStore={FilterStore}
             ></SmartphoneDetails>
-            <div class="modal-overlay"> </div>
+            <div className="modal-overlay"> </div>
           </div>
         )}
       </div>

@@ -8,7 +8,7 @@ export const SmartphoneDetails = observer(
   ({ smartphone, maxImgHeight, style, filterStore }) => {
     const ref = useRef();
     useOnClickOutside(ref, () => {
-      filterStore.modalSmartphone = null;
+      setTimeout(() => (filterStore.modalSmartphone = null), 100);
     });
     const [selectedModel, setSelectedModel] = useState(0);
     const [selectedType, setSelectedType] = useState(0);
