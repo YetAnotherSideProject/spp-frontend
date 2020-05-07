@@ -51,6 +51,7 @@ export const resetCopy = {
   onlyShowFavedPhones: false,
   showBacksideDefault: false,
   showPhonesWithoutPrices: false,
+  modalSmartphone: null,
 };
 
 class FilterStore {
@@ -142,6 +143,9 @@ class FilterStore {
   @observable
   showPhonesWithoutPrices = false;
 
+  @observable
+  modalSmartphone = null;
+
   @action
   toggleAttribute = (name) => {
     this[name] = !this[name];
@@ -229,6 +233,7 @@ class FilterStore {
         case "loadURL":
         case "updateURLtoRepresentFilter":
         case "lightmode":
+        case "modalSmartphone":
           break;
         case "selectedBrands":
           if (this[key] && resetCopy && this[key].length > 0) {

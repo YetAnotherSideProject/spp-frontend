@@ -11,7 +11,7 @@ export const MultiCheckBox = observer(({ name, options }) => {
   const toggleSelectAll = () => {
     // pessimistic toggle
     if (FilterStore[name].length > 0) {
-      FilterStore[name] = [];
+        FilterStore[name] = [];
     } else {
       FilterStore[name] = options;
     }

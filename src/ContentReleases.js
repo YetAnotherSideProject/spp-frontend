@@ -3,7 +3,7 @@ import { observer } from "mobx-react-lite";
 
 import SmartphoneStore from "./SmartphoneStore.js";
 import FilterStore from "./FilterStore.js";
-import Smartphone from "./Smartphone.js";
+import { Smartphone } from "./Smartphone.js";
 
 const createArrayOfMonths = () => {
   const monthArray = [];

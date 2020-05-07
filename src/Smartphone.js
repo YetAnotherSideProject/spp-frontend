@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { observer } from "mobx-react-lite";
 import amazonIcon from "./images/Amazon-Favicon-64x64.png";
-import { monthDiff, getAttributeFromSmartphone } from "./helperFunctions";
+import { getAttributeFromSmartphone } from "./helperFunctions";
 
-const Smartphone = observer(
+export const Smartphone = observer(
   ({ smartphone, maxImgHeight, style, filterStore }) => {
     const [selectedModel, setSelectedModel] = useState(0);
     const [selectedType, setSelectedType] = useState(0);
@@ -16,7 +16,14 @@ const Smartphone = observer(
     }, [smartphone.models, filterStore.showPhonesWithoutPrices]);
     let height = (smartphone.length / 170) * 100 + "%";
     return (
-      <div className="smartphone" style={style}>
+      <div
+        className="smartphone"
+        onClick={() => {
+          console.log("opModal");
+          filterStore.modalSmartphone = smartphone;
+        }}
+        style={style}
+      >
         <div className="img-container-container">
           <div className="smartphone-filtercriteria">
             {getAttributeFromSmartphone(smartphone, filterStore.filterType)}
@@ -148,7 +155,6 @@ const Smartphone = observer(
             <span>{smartphone.batterysize}mAh</span>
             <span>{smartphone.refreshRate + "Hz Refresh rate"}</span>
           </div>
-          <div className="flexBetween" />
 
           <details className="smartphone-totalscore">
             <summary style={{ padding: 2 }}>
@@ -162,39 +168,6 @@ const Smartphone = observer(
                 {smartphone.totalscore} Points
               </span>
             </summary>
-
-            <div className="flexBetween">
-              <p className="">Design</p>
-              <p>{smartphone.design}</p>
-            </div>
-            <div className="flexBetween">
-              <p className="">Processor</p>
-              <p>{smartphone.cpu}</p>
-            </div>
-            <div className="flexBetween">
-              <p className="">Software</p>
-              <p>{smartphone.updates}</p>
-            </div>
-            <div className="flexBetween">
-              <p className="">Camera</p>
-              <p>{smartphone.camera}</p>
-            </div>
-            <div className="flexBetween">
-              <p className="">Battery</p>
-              <p>{smartphone.battery}</p>
-            </div>
-            <hr className="horizontalRule " />
-            <div className="flexBetween">
-              <p className="">Decay</p>
-              <p className="smartphone-decay ">
-                -
-                {Math.round(
-                  monthDiff(new Date(smartphone.released), new Date()) *
-                    filterStore.decayFactor *
-                    10
-                ) / 10}
-              </p>
-            </div>
           </details>
           <div className="flexBetween">
             <span className="smartphone-price">
@@ -230,5 +203,3 @@ const Smartphone = observer(
     );
   }
 );
-
-export default Smartphone;

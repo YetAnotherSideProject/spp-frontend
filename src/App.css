@@ -192,6 +192,10 @@ body,
   perspective: 1000px;
 }
 
+.modal-img-container-container {
+  flex: 0.5;
+}
+
 .img-container {
   box-sizing: border-box;
   padding: 0 8px 4px;
@@ -232,6 +236,16 @@ body,
   align-items: center;
 }
 
+.smartphoneModal {
+  flex: 1;
+  font-size: 14px;
+  margin-left: 8px;
+  margin-bottom: 32px;
+  margin-right: 8px;
+  display: flex;
+  padding: 24px 32px;
+}
+
 @media only screen and (min-width: 600px) {
   .sidebar {
     position: relative;
@@ -269,6 +283,10 @@ body,
 
   .smartphone {
     font-size: 16px;
+  }
+
+  .smartphoneModal-details {
+    font-size: 1em !important;
   }
 }
 
@@ -653,6 +671,18 @@ textarea {
   min-width: 200px;
 }
 
+.smartphoneModal-details {
+  font-size: 0.8em;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 0.1px;
+  background-color: var(--foreground-color);
+  color: var(--text-color);
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
 .smartphone-price-details {
   border-radius: 4px;
   border: 1px solid var(--border-color);
@@ -937,4 +967,39 @@ textarea {
 
 .active-filters-item-button:hover > svg {
   fill: var(--just-yellow);
+}
+
+.modal-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 32px;
+  box-sizing: border-box;
+}
+
+.modal-overlay {
+  background: rgba(9, 30, 66, 0.54);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modal {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 10px 0px;
+  background-color: var(--background-color);
+  border-radius: 3px;
+  margin-left: auto;
+  margin-right: auto;
 }

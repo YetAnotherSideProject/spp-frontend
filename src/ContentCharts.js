@@ -4,7 +4,7 @@ import { ResponsiveScatterPlot } from "@nivo/scatterplot";
 
 import SmartphoneStore from "./SmartphoneStore.js";
 import FilterStore from "./FilterStore.js";
-import Smartphone from "./Smartphone.js";
+import { Smartphone } from "./Smartphone.js";
 
 const theme = {
   axis: {

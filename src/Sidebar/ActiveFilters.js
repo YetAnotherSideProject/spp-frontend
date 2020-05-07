@@ -17,6 +17,7 @@ export const ActiveFilters = observer(() => {
       case "updateURLtoRepresentFilter":
       case "lightmode":
       case "selectedFavorites":
+      case "modalSmartphone":
         break;
       case "selectedBrands":
         if (

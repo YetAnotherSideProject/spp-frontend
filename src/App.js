@@ -9,6 +9,7 @@ import { ContentReleases } from "./ContentReleases.js";
 import { About } from "./About.js";
 
 import FilterStore from "./FilterStore.js";
+import { SmartphoneDetails } from "./SmartphoneDetails.js";
 
 import { observer } from "mobx-react-lite";
 import SmartphoneStore from "./SmartphoneStore";
@@ -81,10 +82,6 @@ const colors = [
   "#00bcd4",
   "#009688",
   "#4caf50",
-  "#8bc34a",
-  "#cddc39",
-  "#ffeb3b",
-  "#ffc107",
   "#ff9800",
   "#ff5722",
 ];
@@ -134,6 +131,7 @@ const App = observer(() => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const maxImgHeight = window.innerWidth < 600 ? 250 : 450;
   return (
     <ThemeProvider theme={theme}>
       <div
@@ -154,6 +152,16 @@ const App = observer(() => {
             </React.Fragment>
           )}
         </div>
+        {FilterStore.modalSmartphone && (
+          <div className="modal-container">
+            <SmartphoneDetails
+              smartphone={FilterStore.modalSmartphone}
+              maxImgHeight={maxImgHeight}
+              filterStore={FilterStore}
+            ></SmartphoneDetails>
+            <div class="modal-overlay"> </div>
+          </div>
+        )}
       </div>
     </ThemeProvider>
   );
