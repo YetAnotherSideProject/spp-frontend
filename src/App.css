@@ -14,7 +14,7 @@
   --text-color-dark: #2c2d2e;
   --border-color: #e0e0e0;
   --background-color: #fff;
-  --foreground-color: #fff;
+  --background-color-hover: #f9f9f9;
   --scrollbar-track: var(--border-color);
   --svg-color: var(--text-color);
   --svg-hover-color: var(--text-color-dark);
@@ -26,7 +26,7 @@
   --text-color-dark: #e5e7eb;
   --border-color: #5f6368;
   --background-color: #202124;
-  --foreground-color: var(--background-color);
+  --background-color-hover: #303031;
   --svg-color: var(--just-white);
   --svg-hover-color: var(--text-color-dark);
 }
@@ -663,12 +663,17 @@ textarea {
   font-size: 0.8em;
   letter-spacing: 0.1px;
   line-height: 1.3;
-  background-color: var(--foreground-color);
+  background-color: var(--background-color);
   color: var(--text-color);
   padding: 8px 0.875em;
   border-radius: 8px;
   border: var(--border-color) 1px solid;
   min-width: 200px;
+  cursor: pointer;
+}
+
+.smartphone-details:hover {
+  background-color: var(--background-color-hover);
 }
 
 .smartphoneModal-details {
@@ -677,7 +682,7 @@ textarea {
   display: flex;
   flex-direction: column;
   letter-spacing: 0.1px;
-  background-color: var(--foreground-color);
+  background-color: var(--background-color);
   color: var(--text-color);
   padding: 8px 16px;
   border-radius: 8px;
@@ -727,6 +732,7 @@ textarea {
 }
 
 .smartphone-fav-star {
+  padding: 4px;
   fill: var(--border-color);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }

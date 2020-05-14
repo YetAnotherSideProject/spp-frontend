@@ -16,13 +16,7 @@ export const Smartphone = observer(
     }, [smartphone.models, filterStore.showPhonesWithoutPrices]);
     let height = (smartphone.length / 170) * 100 + "%";
     return (
-      <div
-        className="smartphone"
-        onClick={() => {
-          filterStore.modalSmartphone = smartphone;
-        }}
-        style={style}
-      >
+      <div className="smartphone" style={style}>
         <div className="img-container-container">
           <div className="smartphone-filtercriteria">
             {getAttributeFromSmartphone(smartphone, filterStore.filterType)}
@@ -72,8 +66,13 @@ export const Smartphone = observer(
             />
           </div>
         </div>
-        <div className="smartphone-details">
-          <div className="flexBetween" style={{ marginBottom: 8 }}>
+        <div
+          className="smartphone-details"
+          onClick={() => {
+            filterStore.modalSmartphone = smartphone;
+          }}
+        >
+          <div className="flexBetween" style={{ marginBottom: 4 }}>
             <span className="smartphone-name " title={smartphone.name}>
               {smartphone.brand + " " + smartphone.name}
             </span>
@@ -88,7 +87,8 @@ export const Smartphone = observer(
                   ? "smartphone-fav-star--clicked"
                   : "")
               }
-              onClick={() => {
+              onClick={(e) => {
+                e.stopPropagation();
                 filterStore.toggleObjectAttribute(
                   "selectedFavorites",
                   smartphone.brand + " " + smartphone.name
@@ -113,6 +113,7 @@ export const Smartphone = observer(
               setSelectedModel(e.target.value.split(":")[0]);
               setSelectedType(e.target.value.split(":")[1]);
             }}
+            onClick={(e) => e.stopPropagation()}
           >
             {smartphone.models.map((model, modelIndex) => {
               return (
@@ -142,18 +143,6 @@ export const Smartphone = observer(
               );
             })}
           </select>
-          <div className="flexBetween">
-            <span className="smartphone-release ">{smartphone.released}</span>
-            <span className="smartphone-width-length ">
-              {smartphone.width + "*" + smartphone.length + " mm"}
-            </span>
-            <span>{smartphone.display + '"'}</span>
-          </div>
-
-          <div className="flexBetween">
-            <span>{smartphone.batterysize}mAh</span>
-            <span>{smartphone.refreshRate + "Hz Refresh rate"}</span>
-          </div>
 
           <details className="smartphone-totalscore">
             <summary style={{ padding: 2 }}>
@@ -173,7 +162,10 @@ export const Smartphone = observer(
               {price !== -1 ? price : "N/A"}€
             </span>
             {link && (
-              <div className="a-button a-button-primary">
+              <div
+                className="a-button a-button-primary"
+                onClick={(e) => e.stopPropagation()}
+              >
                 <a
                   className="a-link"
                   target="_blank"
