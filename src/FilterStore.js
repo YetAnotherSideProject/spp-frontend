@@ -222,7 +222,13 @@ class FilterStore {
         this[key[0]] = object;
         continue;
       }
-      this[key[0]] = key[1];
+
+      if (isNaN(key[1])) {
+        this[key[0]] = key[1];
+      } else {
+        // convert to number if valid number
+        this[key[0]] = +key[1];
+      }
     }
   };
 
