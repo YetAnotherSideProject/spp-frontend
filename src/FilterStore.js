@@ -146,6 +146,14 @@ class FilterStore {
   @observable
   modalSmartphone = null;
 
+  constructor() {
+    this.loadURL();
+
+    autorun(() => {
+      this.updateURL();
+    });
+  }
+
   @action
   toggleAttribute = (name) => {
     this[name] = !this[name];
@@ -185,7 +193,6 @@ class FilterStore {
         case "country":
         case "sidebarHidden":
         case "activeFilterBox":
-        case "updateURLtoRepresentFilter": //Define methods which shouldn't be overriden for mobx reasons
         case "updateURL":
         case "lightmode":
           break;
@@ -231,7 +238,6 @@ class FilterStore {
         case "sidebarHidden":
         case "activeFilterBox":
         case "loadURL":
-        case "updateURLtoRepresentFilter":
         case "lightmode":
         case "modalSmartphone":
           break;
@@ -270,13 +276,6 @@ class FilterStore {
       window.history.pushState({ path: newurl }, "", newurl);
     }
   };
-
-  updateURLtoRepresentFilter = autorun(() => {
-    if (resetCopy === undefined) {
-      this.loadURL();
-    }
-    this.updateURL();
-  });
 }
 
 const filterStore = new FilterStore();
