@@ -103,7 +103,7 @@ export const Area1 = observer(() => {
       </div>
       <label className="filterBoxLabel">
         Release
-        <div className="sliderContainer">
+        <div>
           <div>
             <Slider
               min={0}

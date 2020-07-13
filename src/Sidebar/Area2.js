@@ -17,7 +17,7 @@ export const Area2 = observer(() => {
     <FilterBox header="Budget and Size">
       <label className="filterBoxLabel">
         Price
-        <div className="sliderContainer" style={{ marginBottom: 0 }}>
+        <div style={{ marginBottom: 0 }}>
           <div>
             <Slider
               min={resetCopy.price_minimum_1}
@@ -53,7 +53,7 @@ export const Area2 = observer(() => {
       </div>
       <label className="filterBoxLabel">
         Display
-        <div className="sliderContainer">
+        <div>
           <div>
             <Slider
               min={4.6}
@@ -85,7 +85,7 @@ export const Area2 = observer(() => {
       </label>
       <label className="filterBoxLabel">
         Length
-        <div className="sliderContainer">
+        <div>
           <div>
             <Slider
               min={135}
@@ -117,7 +117,7 @@ export const Area2 = observer(() => {
       </label>
       <label className="filterBoxLabel">
         Width
-        <div className="sliderContainer">
+        <div>
           <div>
             <Slider
               min={65}

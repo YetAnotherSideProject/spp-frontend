@@ -186,6 +186,7 @@ body,
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
     0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
   animation: pulse 2s infinite;
+  outline: none;
 }
 
 .img-container-container {
@@ -288,6 +289,10 @@ body,
   .smartphoneModal-details {
     font-size: 1em !important;
   }
+
+  .filterBox-Header:hover {
+    background: rgba(184, 192, 203, 0.3);
+  }
 }
 
 .about {
@@ -337,7 +342,8 @@ body,
   overflow: hidden;
   flex-wrap: wrap;
   justify-content: center;
-  min-width: 1000px;
+  min-width: 800px;
+  padding: 0 32px;
 }
 
 .chart-tooltip {
@@ -419,7 +425,6 @@ body,
   border-radius: 8px;
   box-shadow: 0 3px 12px rgba(27, 31, 35, 0.35), 0 0 1px rgba(27, 31, 35, 0.4);
   overflow: hidden;
-  min-width: 400px;
 }
 
 .filter-drop-down__header {
@@ -541,6 +546,7 @@ radio {
   color: var(--text-color);
   align-self: center;
   flex: 1 1 50px;
+  font-weight: 600;
 }
 
 .filterBoxLabel {
@@ -563,10 +569,6 @@ radio {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-}
-
-.filterBox-Header:hover {
-  background: rgba(184, 192, 203, 0.3);
 }
 
 .filterBox-Header:first-child {
@@ -598,6 +600,7 @@ radio {
   flex-wrap: nowrap;
   align-items: center;
   margin-top: -8px;
+  margin-bottom: 8px;
 }
 
 .filler {
@@ -637,10 +640,6 @@ textarea {
 
 .sorting_order:hover {
   fill: var(--svg-hover-color);
-}
-
-.sliderContainer {
-  margin-bottom: 8px;
 }
 
 .rc-slider {
@@ -883,7 +882,7 @@ textarea {
 
 .textSelect {
   color: var(--text-color);
-  border: 1px solid var(--text-color);
+  border: 1px solid #e0e0e0;
   border-radius: 2px;
 }
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect, Suspense, lazy } from "react";
 
 import "./App.css";
 
@@ -15,7 +15,7 @@ import { observer } from "mobx-react-lite";
 import SmartphoneStore from "./SmartphoneStore";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
-const ContentCharts = React.lazy(() => import("./ContentCharts"));
+const ContentCharts = lazy(() => import("./ContentCharts"));
 
 const NoResultsInfo = () => (
   <div className="no-results-container">
@@ -79,10 +79,8 @@ const colors = [
   "#3f51b5",
   "#2196f3",
   "#03a9f4",
-  "#00bcd4",
   "#009688",
   "#4caf50",
-  "#ff9800",
   "#ff5722",
 ];
 

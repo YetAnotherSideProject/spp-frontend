@@ -95,3 +95,5 @@ const getData = (filteredObjects) => {
   });
   return correctDataStructure;
 };
+
+export default ContentCharts;
