@@ -528,7 +528,6 @@ radio {
 }
 
 .filterBox {
-  max-height: 400px;
   align-items: center;
   overflow: hidden;
   padding-left: 20px;
@@ -547,10 +546,6 @@ radio {
   align-self: center;
   flex: 1 1 50px;
   font-weight: 600;
-}
-
-.filterBoxLabel {
-  margin-bottom: 4px;
 }
 
 .filterBox-Header {
@@ -888,8 +883,8 @@ textarea {
 
 .filterBox select {
   width: 100%;
-  margin-top: 2.5px;
-  margin-bottom: 2.5px;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 
 .blue-white {
