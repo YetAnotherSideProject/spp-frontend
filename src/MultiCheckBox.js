@@ -11,7 +11,7 @@ export const MultiCheckBox = observer(({ name, options }) => {
   const toggleSelectAll = () => {
     // pessimistic toggle
     if (FilterStore[name].length > 0) {
-        FilterStore[name] = [];
+      FilterStore[name] = [];
     } else {
       FilterStore[name] = options;
     }
@@ -20,13 +20,15 @@ export const MultiCheckBox = observer(({ name, options }) => {
   return (
     <React.Fragment>
       <div className="flex" style={{ marginBottom: "8px" }}>
-        <label className="filterBoxLabel">
+        <label
+          className="filterBoxLabel"
+          style={{ display: "flex", flexAlign: "center" }}
+        >
           <input
             type="checkbox"
             onChange={() => toggleSelectAll()}
             checked={FilterStore[name].length === options.length}
             style={{
-              width: "auto",
               alignSelf: "center",
               marginRight: "8px",
             }}
@@ -37,13 +39,15 @@ export const MultiCheckBox = observer(({ name, options }) => {
       <div className="multiCheckboxContainer">
         {options.map((option) => (
           <div key={option} className="flex">
-            <label className="filterBoxLabel">
+            <label
+              className="filterBoxLabel"
+              style={{ display: "flex", flexAlign: "center" }}
+            >
               <input
                 type="checkbox"
                 onChange={() => changeMultiSelection(option)}
                 checked={FilterStore[name].indexOf(option) !== -1}
                 style={{
-                  width: "auto",
                   alignSelf: "center",
                   marginRight: "8px",
                 }}

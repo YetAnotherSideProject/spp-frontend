@@ -662,7 +662,6 @@ textarea {
   padding: 8px 0.875em;
   border-radius: 8px;
   border: var(--border-color) 1px solid;
-  min-width: 200px;
   cursor: pointer;
 }
 
@@ -906,11 +905,6 @@ textarea {
   display: none;
 }
 
-.multiCheckboxContainer {
-  height: 200px;
-  overflow-y: auto;
-}
-
 .overwrite-material-checkbox {
   padding: 2px 9px !important;
 }
@@ -1002,4 +996,85 @@ textarea {
   border-radius: 3px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* chromium checkbox override */
+:root {
+  --primary-color: #f44336;
+}
+
+input[type="checkbox"] {
+  height: 14px;
+  width: 14px;
+  position: relative;
+  -webkit-appearance: none;
+}
+
+.MuiSwitch-input {
+  position: initial !important;
+  height: initial !important;
+  width: initial !important;
+}
+
+input[type="checkbox"]:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  box-sizing: border-box;
+  height: 14px;
+  width: 14px;
+  border-radius: 2px;
+  border: 1px solid #767676;
+  background-color: #fff;
+}
+
+input[type="checkbox"]:hover::before {
+  border: 1px solid #4f4f4f;
+}
+
+input[type="checkbox"]:checked:hover::before {
+  filter: brightness(75%);
+}
+
+input[type="checkbox"]:checked:disabled:hover::before {
+  filter: none;
+}
+
+input[type="checkbox"]:checked:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  box-sizing: border-box;
+  height: 14px;
+  width: 14px;
+  border-radius: 2px;
+  border: 1px solid var(--primary-color);
+  background-color: var(--primary-color);
+}
+
+input[type="checkbox"]:checked:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  left: 2px;
+  box-sizing: border-box;
+  height: 5px;
+  width: 10px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  -webkit-transform: translateY(-1.5px) rotate(-45deg);
+  transform: translateY(-1.5px) rotate(-45deg);
+}
+
+input[type="checkbox"]:disabled::before {
+  border: 1px solid #c9ced1;
+  border-radius: 2px;
+  background-color: #f0f4f8;
+}
+
+input[type="checkbox"]:checked:disabled::before {
+  border: 1px solid #d1d1d1;
+  border-radius: 2px;
+  background-color: #d1d1d1;
 }
