@@ -46,7 +46,6 @@ export const ActiveFilters = observer(() => {
         display: "flex",
         flexWrap: "wrap",
         padding: 10,
-        paddingBottom: 96,
       }}
     >
       {activeFilters.map((key) => (

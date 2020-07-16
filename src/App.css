@@ -53,6 +53,7 @@ body,
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  overflow: hidden;
 }
 
 @font-face {
@@ -116,7 +117,7 @@ body,
   position: absolute;
   transform: translateX(0);
   z-index: 50;
-  height: calc(100vh - 48px);
+  height: calc(100vh - 96px);
   width: 100%;
   max-width: 600px;
   background-color: var(--background-color);
@@ -165,26 +166,23 @@ body,
 }
 
 .sidebar-button {
-  position: absolute;
-  right: 1.5rem;
-  bottom: 1.5rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   cursor: pointer;
   color: var(--just-white);
   background-color: var(--show-sidebar-button);
   border: none;
   height: 48px;
   padding: 0 20px;
-  border-radius: 24px;
+  border-radius: 0;
   font-size: 16px;
   letter-spacing: 1.25px;
   white-space: nowrap;
   text-transform: uppercase;
   font-weight: 500;
+  box-shadow: 0 -3px 12px rgba(27, 31, 35, 0.35), 0 0 1px rgba(27, 31, 35, 0.4);
   z-index: 100;
-  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
-    0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
   animation: pulse 2s infinite;
   outline: none;
 }
@@ -247,8 +245,21 @@ body,
   padding: 24px 32px;
 }
 
+.smartphones,
+.smartphones-releases,
+.smartphones-charts {
+  height: calc(100vh - 96px);
+  width: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  will-change: transform;
+  z-index: 0;
+}
+
 @media only screen and (min-width: 600px) {
   .sidebar {
+    height: calc(100vh - 48px);
     position: relative;
     min-width: 300px;
     max-width: 300px;
@@ -293,6 +304,12 @@ body,
   .filterBox-Header:hover {
     background: rgba(184, 192, 203, 0.3);
   }
+
+  .smartphones,
+  .smartphones-releases,
+  .smartphones-charts {
+    height: calc(100vh - 48px);
+  }
 }
 
 .about {
@@ -323,18 +340,6 @@ body,
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-.smartphones,
-.smartphones-releases,
-.smartphones-charts {
-  height: calc(100vh - 48px);
-  width: 100%;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
-  position: relative;
-  will-change: transform;
-  z-index: 0;
 }
 
 .smartphones-charts {
