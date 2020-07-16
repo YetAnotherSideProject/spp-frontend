@@ -53,7 +53,6 @@ body,
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  overflow: hidden;
 }
 
 @font-face {
@@ -114,10 +113,9 @@ body,
 }
 
 .sidebar {
-  position: absolute;
   transform: translateX(0);
   z-index: 50;
-  height: calc(100vh - 96px);
+  height: 100%;
   width: 100%;
   max-width: 600px;
   background-color: var(--background-color);
@@ -129,6 +127,7 @@ body,
 
 .sidebar.hidden {
   transform: translateX(calc(-1 * 100vw));
+  width: 0;
 }
 
 .sidebar-fav-button {
@@ -166,6 +165,8 @@ body,
 }
 
 .sidebar-button {
+  position: absolute;
+  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -174,6 +175,7 @@ body,
   background-color: var(--show-sidebar-button);
   border: none;
   height: 48px;
+  width: 100%;
   padding: 0 20px;
   border-radius: 0;
   font-size: 16px;
@@ -255,11 +257,11 @@ body,
   position: relative;
   will-change: transform;
   z-index: 0;
+  padding-bottom: 48px;
 }
 
 @media only screen and (min-width: 600px) {
   .sidebar {
-    height: calc(100vh - 48px);
     position: relative;
     min-width: 300px;
     max-width: 300px;
@@ -303,12 +305,6 @@ body,
 
   .filterBox-Header:hover {
     background: rgba(184, 192, 203, 0.3);
-  }
-
-  .smartphones,
-  .smartphones-releases,
-  .smartphones-charts {
-    height: calc(100vh - 48px);
   }
 }
 
@@ -489,6 +485,7 @@ body,
 }
 
 .smartphoneCount {
+  font-weight: 600;
   margin-right: 4px;
   min-width: 54px;
 }
