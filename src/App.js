@@ -138,18 +138,16 @@ const App = observer(() => {
         }
       >
         <Header />
-        <div style={{ flex: 1, display: "flex" }}>
-          {currentURL === "/about" ? (
-            <About />
-          ) : (
-            <React.Fragment>
-              <Sidebar />
-              <Suspense fallback={<div>Loading...</div>}>
-                {getContentWithURL(currentURL)}
-              </Suspense>
-            </React.Fragment>
-          )}
-        </div>
+        {currentURL === "/about" ? (
+          <About />
+        ) : (
+          <React.Fragment>
+            <Sidebar />
+            <Suspense fallback={<div>Loading...</div>}>
+              {getContentWithURL(currentURL)}
+            </Suspense>
+          </React.Fragment>
+        )}
         {FilterStore.modalSmartphone && (
           <div className="modal-container">
             <SmartphoneDetails

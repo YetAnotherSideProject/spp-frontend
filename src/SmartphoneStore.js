@@ -4,8 +4,6 @@ import { monthDiff } from "./helperFunctions";
 
 class SmartphoneStore {
   obj = [];
-  controller = new AbortController();
-  signal = this.controller.signal;
 
   @observable
   hasLoaded = false;
@@ -22,20 +20,9 @@ class SmartphoneStore {
   };
 
   loadJSON = () => {
-    let timeOutCancelFunction = setTimeout(() => {
-      this.controller.abort();
-      fetch("https://smartphone-picker.com/smartphone.json")
-        .then((r) => r.json())
-        .then((data) => {
-          this.init(data);
-        });
-    }, 800);
-    fetch("https://api-java.azurewebsites.net/v1/smartphone", {
-      signal: this.signal,
-    })
+    fetch("https://smartphone-picker.com/smartphone.json")
       .then((r) => r.json())
       .then((data) => {
-        clearTimeout(timeOutCancelFunction);
         this.init(data);
       });
   };
