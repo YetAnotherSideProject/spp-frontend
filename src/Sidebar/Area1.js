@@ -11,8 +11,8 @@ import FilterStore from "../FilterStore.js";
 const changeAttributeDateSlider = (e, value) => {
   FilterStore.changeAttribute(
     "release_minimum",
-    "201" +
-      (7 + Math.floor(value[0] / 12)) +
+    "20" +
+      (17 + Math.floor(value[0] / 12)) +
       "-" +
       ("00" + ((value[0] % 12) + 1)).slice(-2)
   );
