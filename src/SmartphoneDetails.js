@@ -48,6 +48,7 @@ export const SmartphoneDetails = observer(
               className="qtip-img qtip-img-backside"
               onError={(e) => (e.target.alt = "No image")}
               src={"images/" + smartphone.image + "_back.jpg"}
+              loading="lazy"
               alt=""
             />
             <img
@@ -67,6 +68,7 @@ export const SmartphoneDetails = observer(
                   ? "images/" + smartphone.image + "_blank.png"
                   : "images/" + smartphone.image + ".jpg"
               }
+              loading="lazy"
               alt=""
             />
           </div>

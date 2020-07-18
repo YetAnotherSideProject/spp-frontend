@@ -5,7 +5,7 @@ import registerServiceWorker from "./registerServiceWorker";
 
 import "mobx-react-lite/batchingForReactDom"; // recommended
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("react-root"));
 
 if (module.hot) {
   module.hot.accept();

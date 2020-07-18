@@ -138,7 +138,7 @@ const App = observer(() => {
         }
       >
         <Header />
-        <div style={{ flex: 1, display: "flex", overflow: "scroll" }}>
+        <div style={{ flex: 1, display: "flex" }}>
           {currentURL === "/about" ? (
             <About />
           ) : (
