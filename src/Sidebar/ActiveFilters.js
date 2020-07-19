@@ -3,12 +3,61 @@ import { observer } from "mobx-react-lite";
 
 import filterStore, { resetCopy } from "../FilterStore";
 
+const mappings = {
+  fiveg: "5G",
+  notch: "No notch",
+  headphoneJack: "Headphone Jack",
+  simCards: "2 SIMs",
+  sdSlot: "SD Slot",
+  waterproof: "Waterproof",
+  refreshRate: "Refresh Rate",
+
+  design: "Design",
+  updates: "Updates",
+  camera: "Camera",
+  battery: "Battery",
+  processor: "Processor",
+  selectedBrands: " Brands",
+
+  release_minimum: "Min Release",
+  release_maximum: "Max Release",
+  price_minimum: "Min Price",
+  price_maximum: "Max Price",
+
+  size_minimum_1: "Min Display",
+  size_maximum_1: "Max Display",
+  size_minimum_2: "Min Length",
+  size_maximum_2: "Max Length",
+  size_minimum_3: "Min Width",
+  size_maximum_3: "Max Width",
+
+  emptySmartphones: " Empty phones",
+  showPhonesWithoutPrices: "Phones without prices",
+  searchQuery: "Search Query",
+  filterType: "Sort by",
+  decayFactor: "Decay Factor",
+};
+
+const tryGetMapping = (key) => {
+  if (mappings[key]) {
+    return mappings[key];
+  }
+  return key;
+};
+
+const tryGetValue = (value) => {
+  if (value === "true" || value === true) {
+    return "";
+  }
+  return " = " + value;
+};
+
 export const ActiveFilters = observer(() => {
   let activeFilters = [];
   let key;
   for (key in filterStore) {
     switch (key) {
-      //Define filters which aren't expected to be included in the url
+      //Define filters which aren't expected to be included in the active filters
       case "country":
       case "updateURL":
       case "sidebarHidden":
@@ -51,7 +100,8 @@ export const ActiveFilters = observer(() => {
       {activeFilters.map((key) => (
         <span className="active-filters-item">
           <span>
-            {key} = {"" + filterStore[key]}
+            {tryGetMapping(key)}
+            {tryGetValue(filterStore[key])}
           </span>
           <button
             className="active-filters-item-button"

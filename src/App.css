@@ -260,8 +260,8 @@ body {
 
 .smartphones,
 .smartphones-releases,
-.smartphones-charts {
-  width: 100%;
+.smartphones-charts,
+.no-results-container {
   position: relative;
   will-change: transform;
   z-index: 0;
@@ -304,7 +304,8 @@ body {
 
   .smartphones,
   .smartphones-releases,
-  .smartphones-charts {
+  .smartphones-charts,
+  .no-results-container {
     margin-left: 300px;
     padding-bottom: 0;
   }
@@ -932,8 +933,7 @@ textarea {
 }
 
 .no-results-container {
-  padding-top: 20%;
-  width: 100%;
+  margin-top: 20%;
   text-align: center;
 }
 
@@ -960,7 +960,7 @@ textarea {
 .active-filters-item {
   display: flex;
   align-items: center;
-  padding: 2px 4px;
+  padding: 2px 4px 2px 8px;
   margin-right: 8px;
   margin-bottom: 8px;
   border: 1px solid var(--show-sidebar-button);

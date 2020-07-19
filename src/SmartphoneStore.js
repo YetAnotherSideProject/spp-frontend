@@ -163,8 +163,8 @@ class SmartphoneStore {
         for (let c = 0; c < phone.models[t].types.length; c++) {
           //price
           if (
-            (FilterStore.price_minimum_1 > phone.models[t].types[c].price ||
-              FilterStore.price_maximum_1 < phone.models[t].types[c].price) &&
+            (FilterStore.price_minimum > phone.models[t].types[c].price ||
+              FilterStore.price_maximum < phone.models[t].types[c].price) &&
             ((FilterStore.showPhonesWithoutPrices &&
               phone.models[t].types[c].price !== -1) ||
               !FilterStore.showPhonesWithoutPrices)

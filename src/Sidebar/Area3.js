@@ -62,7 +62,7 @@ export const Area3 = observer(() => {
         <ToggleSwitch name="headphoneJack" />
       </div>
       <div className="flex">
-        <p>2 SIMS</p>
+        <p>2 SIMs</p>
         <ToggleSwitch name="simCards" />
       </div>
       <div className="flex">
