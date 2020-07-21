@@ -6,7 +6,7 @@ import firebase from "firebase/app";
 // Used firebase products
 import "firebase/firestore";
 
-import "./firebase";
+import { firebaseConfig } from "./firebase";
 
 class SmartphoneStore {
   obj = [];
