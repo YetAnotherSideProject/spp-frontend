@@ -63,7 +63,7 @@ export const Area1 = observer(() => {
         </div>
       </label>
       <label className="filterBoxLabel">
-        Sort table by
+        Sort by
         <div className="flex">
           <TextSelect
             name="filterType"

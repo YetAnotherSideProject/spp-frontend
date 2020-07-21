@@ -20,29 +20,26 @@ export const Area2 = observer(() => {
         <div style={{ marginBottom: 0 }}>
           <div>
             <Slider
-              min={resetCopy.price_minimum_1}
-              max={resetCopy.price_maximum_1}
+              min={resetCopy.price_minimum}
+              max={resetCopy.price_maximum}
               step={50}
               value={[
-                parseInt(FilterStore.price_minimum_1, 10)
-                  ? parseInt(FilterStore.price_minimum_1, 10)
+                parseInt(FilterStore.price_minimum, 10)
+                  ? parseInt(FilterStore.price_minimum, 10)
                   : 0,
-                parseInt(FilterStore.price_maximum_1, 10)
-                  ? parseInt(FilterStore.price_maximum_1, 10)
+                parseInt(FilterStore.price_maximum, 10)
+                  ? parseInt(FilterStore.price_maximum, 10)
                   : 0,
               ]}
               pushable={50}
-              onChange={changeAttributeSlider(
-                "price_minimum_1",
-                "price_maximum_1"
-              )}
+              onChange={changeAttributeSlider("price_minimum", "price_maximum")}
             />
           </div>
           <div className="sliderSubBar">
-            <TextField name="price_minimum_1" />
+            <TextField name="price_minimum" />
             <span className="prefix">€</span>
             <div className="filler" />
-            <TextField name="price_maximum_1" />
+            <TextField name="price_maximum" />
             <span className="prefix">€</span>
           </div>
         </div>
