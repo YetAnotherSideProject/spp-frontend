@@ -5,8 +5,7 @@ import { monthDiff } from "./helperFunctions";
 import firebase from "firebase/app";
 // Used firebase products
 import "firebase/firestore";
-
-import { firebaseConfig } from "./firebase";
+import "./firebase";
 
 class SmartphoneStore {
   obj = [];
@@ -26,8 +25,6 @@ class SmartphoneStore {
   };
 
   loadJSON = () => {
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
     firebase.firestore().collection("smartphones").get()
       .then((querySnap) => {
         let phones = [];
