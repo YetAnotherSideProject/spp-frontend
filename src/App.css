@@ -10,29 +10,23 @@
 }
 
 .lightmode {
-  --text-color: #6b7280;
-  --text-color-dark: #2c2d2e;
+  --text-color: #4f4e56;
   --border-color: #e0e0e0;
   --background-color: #fff;
   --background-color-hover: #f9f9f9;
   --scrollbar-track: var(--border-color);
   --svg-color: var(--text-color);
-  --svg-hover-color: var(--text-color-dark);
+  --svg-hover-color: var(--just-black);
 }
 
 .darkmode {
   --primary-color: #202124;
   --text-color: #e5e7eb;
-  --text-color-dark: #e5e7eb;
   --border-color: #5f6368;
   --background-color: #202124;
   --background-color-hover: #303031;
   --svg-color: var(--just-white);
-  --svg-hover-color: var(--text-color-dark);
-}
-
-.lightmode .sidebar {
-  --text-color: var(--just-black);
+  --svg-hover-color: var(--border-color);
 }
 
 .darkmode .header {
@@ -118,7 +112,6 @@ body {
   display: flex;
   height: 100%;
   flex-flow: column;
-  background-color: var(--background-color);
 }
 
 .sidebar {
@@ -266,61 +259,7 @@ body {
   will-change: transform;
   z-index: 0;
   padding: 48px 0;
-}
-
-@media only screen and (min-width: 600px) {
-  .sidebar {
-    min-width: 300px;
-    max-width: 300px;
-  }
-
-  .sidebar-button {
-    display: none;
-  }
-
-  .logo-text {
-    font-size: 23px;
-  }
-
-  .status-button-share:focus + .clipboard-notifier {
-    display: block;
-    position: absolute;
-  }
-
-  /* only apply hover on non-mobile*/
-  .smartphone-fav-star:hover {
-    fill: var(--just-yellow-light);
-  }
-
-  /*only allow desktop devices to flip with hover*/
-  .img-container-container:hover .img-container {
-    transform: rotateY(180deg);
-  }
-
-  /*with backsideDefault activated the hover flip flips to the front*/
-  .img-container-container:hover .img-container--backsideDefault {
-    transform: rotateY(0deg);
-  }
-
-  .smartphones,
-  .smartphones-releases,
-  .smartphones-charts,
-  .no-results-container {
-    margin-left: 300px;
-    padding-bottom: 0;
-  }
-
-  .smartphone {
-    font-size: 16px;
-  }
-
-  .smartphoneModal-details {
-    font-size: 1em !important;
-  }
-
-  .filterBox-Header:hover {
-    background: rgba(184, 192, 203, 0.3);
-  }
+  background-color: var(--background-color);
 }
 
 .about {
@@ -394,7 +333,7 @@ body {
   border-top: 1px solid var(--border-color);
   font-weight: 600;
   font-size: 14px;
-  color: var(--text-color-dark);
+  color: var(--text-color);
   font-size: 16px;
   padding-top: 4px;
 }
@@ -424,18 +363,11 @@ body {
   cursor: pointer;
 }
 
-.filter-drop-down-padder {
-  position: absolute;
-  top: 30px;
-  height: 6px;
-  width: 230px;
-}
-
 .filter-drop-down {
   display: flex;
   background-color: var(--background-color);
   position: absolute;
-  top: 36px;
+  top: 22px;
   left: 8px;
   margin-right: 8px;
   border-radius: 8px;
@@ -449,7 +381,7 @@ body {
   letter-spacing: 2px;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--text-color-dark);
+  color: var(--text-color);
 }
 
 .filter-drop-down__element {
@@ -571,7 +503,7 @@ radio {
   cursor: pointer;
   display: flex;
   justify-content: space-between;
-  color: var(--text-color-dark);
+  color: var(--text-color);
   font-weight: bold;
   padding: 10px;
   border-top: 1px solid var(--border-color);
@@ -731,13 +663,13 @@ textarea {
   padding-bottom: 8px;
   vertical-align: top;
   text-align: center;
-  color: var(--text-color-dark);
+  color: var(--text-color);
 }
 
 .smartphone-name {
   font-size: 1.3em;
   font-weight: 600;
-  color: var(--text-color-dark);
+  color: var(--text-color);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1086,4 +1018,67 @@ input[type="checkbox"]:checked:disabled::before {
   border: 1px solid #d1d1d1;
   border-radius: 2px;
   background-color: #d1d1d1;
+}
+
+.multiCheckboxContainer {
+  margin-bottom: 8px;
+}
+
+@media only screen and (min-width: 600px) {
+  .sidebar {
+    min-width: 300px;
+    max-width: 300px;
+  }
+
+  .sidebar-button {
+    display: none;
+  }
+
+  .logo-text {
+    font-size: 23px;
+  }
+
+  .status-button-share:focus + .clipboard-notifier {
+    display: block;
+    position: absolute;
+  }
+
+  /* only apply hover on non-mobile*/
+  .smartphone-fav-star:hover {
+    fill: var(--just-yellow-light);
+  }
+
+  /*only allow desktop devices to flip with hover*/
+  .img-container-container:hover .img-container {
+    transform: rotateY(180deg);
+  }
+
+  /*with backsideDefault activated the hover flip flips to the front*/
+  .img-container-container:hover .img-container--backsideDefault {
+    transform: rotateY(0deg);
+  }
+
+  .smartphones,
+  .smartphones-releases,
+  .smartphones-charts,
+  .no-results-container {
+    margin-left: 300px;
+    padding-bottom: 0;
+  }
+
+  .smartphone {
+    font-size: 16px;
+  }
+
+  .smartphoneModal-details {
+    font-size: 1em !important;
+  }
+
+  .filterBox-Header:hover {
+    background: rgba(184, 192, 203, 0.3);
+  }
+
+  .filter-drop-down {
+    top: 32px;
+  }
 }

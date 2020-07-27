@@ -27,7 +27,6 @@ export const TemplateDropDown = ({ summary, detailCategories }) => {
       >
         {summary}
       </summary>
-      <div className="filter-drop-down-padder"></div>
       <div className="filter-drop-down">
         {Object.keys(detailCategories).map((key) => (
           <div key={key}>
