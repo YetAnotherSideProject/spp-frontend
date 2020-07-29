@@ -25,12 +25,15 @@ class SmartphoneStore {
   };
 
   loadJSON = () => {
-    firebase.firestore().collection("smartphones").get()
+    firebase
+      .firestore()
+      .collection("smartphones")
+      .get()
       .then((querySnap) => {
         let phones = [];
         querySnap.forEach((phoneDoc) => {
           phones.push(phoneDoc.data());
-        })
+        });
         this.init(phones);
       });
   };
@@ -218,7 +221,7 @@ class SmartphoneStore {
           smartphone.camera +
           smartphone.battery -
           monthDiff(new Date(smartphone.released), new Date()) * decay) *
-        10
+          10
       ) / 10
     );
   };
@@ -279,8 +282,8 @@ class SmartphoneStore {
         ? 1
         : -1
       : a[attribute] > b[attribute]
-        ? 1
-        : -1;
+      ? 1
+      : -1;
   }
 
   compareFunctionNormal(a, b, attribute) {

@@ -143,7 +143,7 @@ export const SmartphoneDetails = observer(
               );
             })}
           </select>
-          <div className="flexBetween">
+          <div className="flexBetween" style={{ marginBottom: 4 }}>
             <span className="smartphone-release ">{smartphone.released}</span>
             <span className="smartphone-width-length ">
               {smartphone.width + "*" + smartphone.length + " mm"}

@@ -243,12 +243,11 @@ body {
 
 .smartphoneModal {
   flex: 1;
-  font-size: 14px;
   margin-left: 8px;
   margin-bottom: 32px;
   margin-right: 8px;
   display: flex;
-  padding: 24px 32px;
+  padding: 24px 16px;
 }
 
 .smartphones,
@@ -614,6 +613,7 @@ textarea {
   border-radius: 8px;
   border: var(--border-color) 1px solid;
   cursor: pointer;
+  width: 85%;
 }
 
 .smartphone-details:hover {
@@ -628,7 +628,8 @@ textarea {
   letter-spacing: 0.1px;
   background-color: var(--background-color);
   color: var(--text-color);
-  padding: 8px 16px;
+  padding: 8px 0;
+  padding-left: 8px;
   border-radius: 8px;
 }
 
@@ -731,7 +732,7 @@ textarea {
   position: absolute;
   vertical-align: middle;
   backface-visibility: hidden;
-  will-change: opacity; /*workaround for https://bugs.chromium.org/p/chromium/issues/detail?id=1006692*/
+  opacity: 0.9999; /*workaround for https://bugs.chromium.org/p/chromium/issues/detail?id=1006692*/
 }
 
 .qtip-img-backside {

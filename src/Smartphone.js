@@ -49,9 +49,7 @@ export const Smartphone = observer(
             <img
               style={
                 filterStore.scaleInput
-                  ? {
-                      height: height,
-                    }
+                  ? { height }
                   : {
                       height: (165 / 165) * 100 + "%",
                     }
