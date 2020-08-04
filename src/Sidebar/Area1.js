@@ -59,7 +59,7 @@ export const Area1 = observer(() => {
       <label className="filterBoxLabel">
         Search phones
         <div className={"searchQuery"}>
-          <TextField name="searchQuery" big={true} />
+          <TextField name="searchQuery" />
         </div>
       </label>
       <label className="filterBoxLabel">

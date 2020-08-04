@@ -231,7 +231,6 @@ body {
 }
 
 .smartphone {
-  flex: 1;
   font-size: 14px;
   margin-left: 8px;
   margin-bottom: 32px;
@@ -454,7 +453,7 @@ body {
 }
 .searchQuery input {
   width: 100%;
-  border: 1px solid var(--text-color);
+  text-align: left;
 }
 
 .rating {
@@ -564,7 +563,7 @@ select,
 button,
 textarea {
   border-radius: 3px;
-  font-size: 14px;
+  font-size: 16px;
   padding: 2px;
   color: var(--text-color);
   background-color: transparent;
@@ -613,7 +612,7 @@ textarea {
   border-radius: 8px;
   border: var(--border-color) 1px solid;
   cursor: pointer;
-  width: 85%;
+  width: 91%;
 }
 
 .smartphone-details:hover {
@@ -669,6 +668,7 @@ textarea {
 
 .smartphone-name {
   font-size: 1.3em;
+  padding: 2px 0;
   font-weight: 600;
   color: var(--text-color);
   white-space: nowrap;
@@ -813,7 +813,7 @@ textarea {
 }
 
 .smallInput {
-  width: 38px;
+  width: 48px;
   text-align: right;
   border: 1px solid #e0e0e0;
   margin: 0;
@@ -821,7 +821,7 @@ textarea {
 }
 
 .bigInput {
-  width: 60px;
+  width: 70px;
   text-align: right;
   border: none;
 }
