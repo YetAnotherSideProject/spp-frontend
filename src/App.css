@@ -285,9 +285,8 @@ body {
 }
 
 .smartphones {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 .smartphones-charts {
@@ -318,10 +317,6 @@ body {
   width: 16px;
   position: absolute;
   left: 10px;
-}
-
-.smartphones-releases-container {
-  min-height: 32px;
 }
 
 .smartphones-releases-month {
