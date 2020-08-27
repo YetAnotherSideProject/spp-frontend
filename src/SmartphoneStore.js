@@ -1,11 +1,8 @@
 import { observable, computed, action } from "mobx";
 import FilterStore from "./FilterStore.js";
 import { monthDiff } from "./helperFunctions";
-// Firebase App (the core Firebase SDK) is always required
-import firebase from "firebase/app";
-// Used firebase products
-import "firebase/firestore";
 import "./firebase";
+import { Database } from "firebase-firestore-lite";
 
 class SmartphoneStore {
   obj = [];
@@ -24,18 +21,17 @@ class SmartphoneStore {
     this.hasLoaded = true;
   };
 
-  loadJSON = () => {
-    firebase
-      .firestore()
-      .collection("smartphones")
-      .get()
-      .then((querySnap) => {
-        let phones = [];
-        querySnap.forEach((phoneDoc) => {
-          phones.push(phoneDoc.data());
-        });
-        this.init(phones);
-      });
+  loadJSON = async () => {
+    // All you need is the projectId. It can be found on the firebase console and in the firebase config.
+    const db = new Database({ projectId: "smartphone-picker" });
+
+    const phoneCollection = (
+      await db.ref("smartphones").list({
+        pageSize: 1000,
+      })
+    ).documents;
+    console.log(phoneCollection);
+    this.init(phoneCollection);
   };
 
   @computed

@@ -15,7 +15,9 @@ import { observer } from "mobx-react-lite";
 import SmartphoneStore from "./SmartphoneStore";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
-const ContentCharts = lazy(() => import("./ContentCharts"));
+const ContentCharts = lazy(() =>
+  import(/* webpackChunkName: 'ContentCharts' */ "./ContentCharts")
+);
 
 const NoResultsInfo = () => (
   <div className="no-results-container">
