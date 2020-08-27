@@ -15,12 +15,13 @@
     "react": "^16.13.1",
     "react-app-rewired": "^2.1.6",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "source-map-explorer": "^2.5.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "buildDeploy": "react-app-rewired build && deploy.bat",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },

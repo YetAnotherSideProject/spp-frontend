@@ -1,7 +1,6 @@
 import { observable, computed, action } from "mobx";
 import FilterStore from "./FilterStore.js";
 import { monthDiff } from "./helperFunctions";
-import "./firebase";
 import { Database } from "firebase-firestore-lite";
 
 class SmartphoneStore {
@@ -30,7 +29,6 @@ class SmartphoneStore {
         pageSize: 1000,
       })
     ).documents;
-    console.log(phoneCollection);
     this.init(phoneCollection);
   };
 
