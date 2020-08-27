@@ -1,6 +1,6 @@
 //Firebase project config
 //Firebase config is no critical data, because data is secured serverside via security rules and apiKey limitations
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyDdlhRAG7unoKU0F1pyEsFmsysk1mjmHiA",
   authDomain: "smartphone-picker.firebaseapp.com",
   databaseURL: "https://smartphone-picker.firebaseio.com",
