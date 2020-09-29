@@ -232,9 +232,6 @@ body {
 
 .smartphone {
   font-size: 14px;
-  margin-left: 8px;
-  margin-bottom: 32px;
-  margin-right: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -256,7 +253,7 @@ body {
   position: relative;
   will-change: transform;
   z-index: 0;
-  padding: 48px 0;
+  padding: 48px 16px;
   background-color: var(--background-color);
 }
 
@@ -286,6 +283,8 @@ body {
 
 .smartphones {
   display: grid;
+  padding: 16px;
+  grid-gap: 16px;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
@@ -332,8 +331,11 @@ body {
 }
 
 .smartphones-in-month {
-  flex-wrap: wrap;
   padding-left: 8px;
+  padding-bottom: 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 16px;
 }
 
 .smartphones-in-month > .smartphone {

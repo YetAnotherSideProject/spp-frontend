@@ -27,7 +27,7 @@ export const ContentReleases = observer(() => {
           <div className="smartphones-releases-month">
             {month.getMonth() + 1 + "-" + month.getFullYear()}
           </div>
-          <div className="smartphones-in-month flex">
+          <div className="smartphones-in-month">
             {SmartphoneStore.listOfFilteredAndScoredObjects
               .filter(
                 (smartphone) =>
