@@ -285,7 +285,7 @@ body {
   display: grid;
   padding: 16px;
   grid-gap: 16px;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 
 .smartphones-charts {
@@ -624,7 +624,6 @@ textarea {
   letter-spacing: 0.1px;
   background-color: var(--background-color);
   color: var(--text-color);
-  padding: 8px 0;
   padding-left: 8px;
   border-radius: 8px;
 }
@@ -1062,6 +1061,10 @@ input[type="checkbox"]:checked:disabled::before {
   .no-results-container {
     margin-left: 300px;
     padding-bottom: 0;
+  }
+
+  .smartphones {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 
   .smartphone {
