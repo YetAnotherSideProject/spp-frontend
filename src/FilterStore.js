@@ -1,4 +1,4 @@
-import { observable, action, autorun, makeObservable } from "mobx";
+import { autorun, makeAutoObservable } from "mobx";
 
 const getMinDate = () => {
   const date = new Date();
@@ -108,53 +108,7 @@ class FilterStore {
   modalSmartphone = null;
 
   constructor() {
-    makeObservable(this, {
-      lightmode: observable,
-      sidebarHidden: observable,
-      country: observable,
-      activeFilterBox: observable,
-      searchQuery: observable,
-      filterType: observable,
-      decayFactor: observable,
-      isDescending: observable,
-      scaleInput: observable,
-      emptySmartphones: observable,
-      release_minimum: observable,
-      release_maximum: observable,
-      price_minimum: observable,
-      price_maximum: observable,
-      size_minimum_1: observable,
-      size_maximum_1: observable,
-      size_minimum_2: observable,
-      size_maximum_2: observable,
-      size_minimum_3: observable,
-      size_maximum_3: observable,
-      design: observable,
-      cpu: observable,
-      updates: observable,
-      camera: observable,
-      battery: observable,
-      storage: observable,
-      headphoneJack: observable,
-      simCards: observable,
-      sdSlot: observable,
-      notch: observable,
-      fiveg: observable,
-      waterproof: observable,
-      refreshRate: observable,
-      selectedBrands: observable,
-      selectedFavorites: observable,
-      onlyShowFavedPhones: observable,
-      showBacksideDefault: observable,
-      showPhonesWithoutPrices: observable,
-      modalSmartphone: observable,
-      toggleAttribute: action,
-      changeAttribute: action,
-      toggleArrayAttribute: action,
-      toggleObjectAttribute: action,
-      resetFilters: action,
-      loadURL: action
-    });
+    makeAutoObservable(this);
 
     this.loadURL();
 

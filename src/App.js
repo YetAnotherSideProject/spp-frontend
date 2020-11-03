@@ -1,11 +1,10 @@
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect } from "react";
 
 import "./App.css";
 
 import { Header } from "./Header.js";
 import { Sidebar } from "./Sidebar/Sidebar.js";
-import { Content } from "./Content.js";
-import { ContentReleases } from "./ContentReleases.js";
+import { Main } from "./Main.js";
 import { About } from "./About.js";
 
 import FilterStore from "./FilterStore.js";
@@ -14,57 +13,6 @@ import { SmartphoneDetails } from "./SmartphoneDetails.js";
 import { observer } from "mobx-react-lite";
 import SmartphoneStore from "./SmartphoneStore";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-
-const NoResultsInfo = () => (
-  <div className="no-results-container">
-    <div className="no-results__header">No results</div>
-    <div className="no-results__description">
-      The filter criteria were probably too strict.
-      <br />
-      Remove some filters or click{" "}
-      <span
-        className="here-remove-filters"
-        onClick={() =>
-          document.getElementById("js_resetAllFiltersButton").click()
-        }
-      >
-        here
-      </span>{" "}
-      to remove all filters.
-    </div>
-  </div>
-);
-
-const LoadingInfo = () => (
-  <div className="no-results-container">
-    <div className="loading-info__header">Loading phones...</div>
-  </div>
-);
-
-const getContentWithURL = (currentURL) => {
-  let content = <Content />;
-  switch (currentURL) {
-    case "/about":
-      return;
-    case "/releases":
-      content = <ContentReleases />;
-      break;
-    default:
-      break;
-  }
-
-  if (SmartphoneStore.listOfFilteredAndScoredObjects.length < 1) {
-    content = <NoResultsInfo />;
-  }
-  if (SmartphoneStore.hasLoaded === false) {
-    content = <LoadingInfo />;
-  }
-  return !FilterStore.sidebarHidden && window.innerWidth < 600 ? (
-    <div />
-  ) : (
-    content
-  );
-};
 
 const colors = [
   "#f44336",
@@ -84,6 +32,14 @@ const getRandomInt = (min, max) => {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
+
+export const SmartphoneIndicator = observer(() => (
+  <span className="smartphoneCount">
+    {SmartphoneStore.listOfFilteredAndScoredObjects.length +
+      "/" +
+      SmartphoneStore.obj.length}
+  </span>
+));
 
 const App = observer(() => {
   const [primaryColor, setPrimaryColor] = useState(
@@ -138,9 +94,7 @@ const App = observer(() => {
         ) : (
           <React.Fragment>
             <Sidebar />
-            <Suspense fallback={<div>Loading...</div>}>
-              {getContentWithURL(currentURL)}
-            </Suspense>
+            <Main currentURL={currentURL} />
           </React.Fragment>
         )}
         {FilterStore.modalSmartphone && (
@@ -173,11 +127,7 @@ const App = observer(() => {
             </svg>
             <span>{FilterStore.sidebarHidden ? "Filter" : "Show"} Phones</span>
           </div>
-          <span className="smartphoneCount">
-            {SmartphoneStore.listOfFilteredAndScoredObjects.length +
-              "/" +
-              SmartphoneStore.obj.length}
-          </span>
+          <SmartphoneIndicator />
         </button>
       </div>
     </ThemeProvider>
