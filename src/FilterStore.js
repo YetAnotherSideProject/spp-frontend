@@ -1,4 +1,4 @@
-import { observable, action, autorun } from "mobx";
+import { observable, action, autorun, makeObservable } from "mobx";
 
 const getMinDate = () => {
   const date = new Date();
@@ -55,98 +55,107 @@ export const resetCopy = {
 };
 
 class FilterStore {
-  @observable
   lightmode = true;
-  @observable
   sidebarHidden = getSidebarHiddenInitialState();
-  @observable
   country = "de";
 
-  @observable
   activeFilterBox = "Sorting Options";
 
-  @observable
   searchQuery = "";
-  @observable
   filterType = "totalscore";
-  @observable
   decayFactor = 0.2;
-  @observable
   isDescending = true;
-  @observable
   scaleInput = true;
-  @observable
   emptySmartphones = false;
-  @observable
   release_minimum = getMinDate();
 
-  @observable
   release_maximum = new Date().toISOString().slice(0, 7);
 
-  @observable
   price_minimum = 0;
-  @observable
   price_maximum = 2000;
 
-  @observable
   size_minimum_1 = 4.6;
-  @observable
   size_maximum_1 = 7;
 
-  @observable
   size_minimum_2 = 135;
-  @observable
   size_maximum_2 = 170;
 
-  @observable
   size_minimum_3 = 65;
-  @observable
   size_maximum_3 = 80;
 
-  @observable
   design = 1;
-  @observable
   cpu = 1;
-  @observable
   updates = 1;
-  @observable
   camera = 1;
-  @observable
   battery = 1;
 
-  @observable
   storage = 8;
-  @observable
   headphoneJack = false;
-  @observable
   simCards = false;
-  @observable
   sdSlot = false;
-  @observable
   notch = false;
-  @observable
   fiveg = false;
-  @observable
   waterproof = "";
-  @observable
   refreshRate = 60;
 
-  @observable
   selectedBrands = [];
 
-  @observable
   selectedFavorites = {};
-  @observable
   onlyShowFavedPhones = false;
-  @observable
   showBacksideDefault = false;
-  @observable
   showPhonesWithoutPrices = false;
 
-  @observable
   modalSmartphone = null;
 
   constructor() {
+    makeObservable(this, {
+      lightmode: observable,
+      sidebarHidden: observable,
+      country: observable,
+      activeFilterBox: observable,
+      searchQuery: observable,
+      filterType: observable,
+      decayFactor: observable,
+      isDescending: observable,
+      scaleInput: observable,
+      emptySmartphones: observable,
+      release_minimum: observable,
+      release_maximum: observable,
+      price_minimum: observable,
+      price_maximum: observable,
+      size_minimum_1: observable,
+      size_maximum_1: observable,
+      size_minimum_2: observable,
+      size_maximum_2: observable,
+      size_minimum_3: observable,
+      size_maximum_3: observable,
+      design: observable,
+      cpu: observable,
+      updates: observable,
+      camera: observable,
+      battery: observable,
+      storage: observable,
+      headphoneJack: observable,
+      simCards: observable,
+      sdSlot: observable,
+      notch: observable,
+      fiveg: observable,
+      waterproof: observable,
+      refreshRate: observable,
+      selectedBrands: observable,
+      selectedFavorites: observable,
+      onlyShowFavedPhones: observable,
+      showBacksideDefault: observable,
+      showPhonesWithoutPrices: observable,
+      modalSmartphone: observable,
+      toggleAttribute: action,
+      changeAttribute: action,
+      toggleArrayAttribute: action,
+      toggleObjectAttribute: action,
+      resetFilters: action,
+      loadURL: action
+    });
+
     this.loadURL();
 
     autorun(() => {
@@ -154,17 +163,14 @@ class FilterStore {
     });
   }
 
-  @action
   toggleAttribute = (name) => {
     this[name] = !this[name];
   };
 
-  @action
   changeAttribute = (name, newValue) => {
     this[name] = newValue;
   };
 
-  @action
   toggleArrayAttribute = (name, newValue) => {
     var index = this[name].indexOf(newValue);
     if (index === -1) {
@@ -174,7 +180,6 @@ class FilterStore {
     }
   };
 
-  @action
   toggleObjectAttribute = (name, newValue) => {
     if (this[name]) {
       if (this[name][newValue] == null) {
@@ -185,7 +190,6 @@ class FilterStore {
     }
   };
 
-  @action
   resetFilters = () => {
     for (let name in this) {
       switch (name) {
@@ -205,7 +209,6 @@ class FilterStore {
     }
   };
 
-  @action
   loadURL = () => {
     const searchParams = new URLSearchParams(window.location.search);
     // key[0] is the url key and key[1] the value, for example release_minimum=2017-01

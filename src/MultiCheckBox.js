@@ -1,4 +1,5 @@
 import React from "react";
+import { action } from "mobx";
 import { observer } from "mobx-react-lite";
 
 import FilterStore from "./FilterStore.js";
@@ -26,7 +27,7 @@ export const MultiCheckBox = observer(({ name, options }) => {
         >
           <input
             type="checkbox"
-            onChange={() => toggleSelectAll()}
+            onChange={action(() => toggleSelectAll())}
             checked={FilterStore[name].length === options.length}
             style={{
               alignSelf: "center",

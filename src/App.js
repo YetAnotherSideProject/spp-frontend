@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense, lazy } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 
 import "./App.css";
 
@@ -14,10 +14,6 @@ import { SmartphoneDetails } from "./SmartphoneDetails.js";
 import { observer } from "mobx-react-lite";
 import SmartphoneStore from "./SmartphoneStore";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-
-const ContentCharts = lazy(() =>
-  import(/* webpackChunkName: 'ContentCharts' */ "./ContentCharts")
-);
 
 const NoResultsInfo = () => (
   <div className="no-results-container">
@@ -52,9 +48,6 @@ const getContentWithURL = (currentURL) => {
       return;
     case "/releases":
       content = <ContentReleases />;
-      break;
-    case "/charts":
-      content = <ContentCharts />;
       break;
     default:
       break;

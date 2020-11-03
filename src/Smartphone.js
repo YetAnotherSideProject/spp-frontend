@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { action } from "mobx";
 import { observer } from "mobx-react-lite";
 import amazonIcon from "./images/Amazon-Favicon-64x64.png";
 import { getAttributeFromSmartphone } from "./helperFunctions";
@@ -68,9 +69,9 @@ export const Smartphone = observer(
         </div>
         <div
           className="smartphone-details"
-          onClick={() => {
+          onClick={action(() => {
             filterStore.modalSmartphone = smartphone;
-          }}
+          })}
         >
           <div className="flexBetween" style={{ marginBottom: 4 }}>
             <span className="smartphone-name " title={smartphone.name}>
@@ -87,7 +88,7 @@ export const Smartphone = observer(
                   ? "smartphone-fav-star--clicked"
                   : "")
               }
-              onClick={(e) => {
+              onClick={action((e) => {
                 e.stopPropagation();
                 filterStore.toggleObjectAttribute(
                   "selectedFavorites",
@@ -97,7 +98,7 @@ export const Smartphone = observer(
                 if (Object.keys(filterStore.selectedFavorites).length < 1) {
                   filterStore.onlyShowFavedPhones = false;
                 }
-              }}
+              })}
             >
               <path
                 d="M885.344,319.071l-258-3.8l-102.7-264.399c-19.8-48.801-88.899-48.801-108.6,0l-102.7,264.399l-258,3.8

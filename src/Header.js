@@ -1,4 +1,5 @@
 import React from "react";
+import { action } from "mobx";
 import { observer } from "mobx-react-lite";
 
 import { TextSelect } from "./TextSelect";
@@ -58,11 +59,11 @@ export const Header = observer(() => {
               ],
               Presets: [
                 {
-                  clickHandler: () => {
+                  clickHandler: action(() => {
                     FilterStore.resetFilters();
                     FilterStore.filterType = "released";
                     FilterStore.isDescending = true;
-                  },
+                  }),
                   icon: (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -79,14 +80,14 @@ export const Header = observer(() => {
                   desc: "Latest smartphones",
                 },
                 {
-                  clickHandler: () => {
+                  clickHandler: action(() => {
                     FilterStore.resetFilters();
                     FilterStore.design = "3";
                     FilterStore.processor = "3";
                     FilterStore.updates = "4";
                     FilterStore.camera = "3";
                     FilterStore.battery = "3";
-                  },
+                  }),
                   icon: (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -103,10 +104,10 @@ export const Header = observer(() => {
                   desc: "Just good smartphones",
                 },
                 {
-                  clickHandler: () => {
+                  clickHandler: action(() => {
                     FilterStore.resetFilters();
                     FilterStore.size_maximum_2 = 152;
-                  },
+                  }),
                   icon: (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -123,10 +124,10 @@ export const Header = observer(() => {
                   desc: "Small smartphones",
                 },
                 {
-                  clickHandler: () => {
+                  clickHandler: action(() => {
                     FilterStore.resetFilters();
                     FilterStore.size_minimum_2 = 152;
-                  },
+                  }),
                   icon: (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

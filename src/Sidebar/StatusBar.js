@@ -1,4 +1,5 @@
 import React from "react";
+import { action } from "mobx";
 import { observer } from "mobx-react-lite";
 import FilterStore from "../FilterStore.js";
 import SmartphoneStore from "../SmartphoneStore.js";
@@ -65,10 +66,10 @@ export const StatusBar = observer(() => {
           "sidebar-fav-button" +
           (FilterStore.onlyShowFavedPhones ? " sidebar-fav-button--filled" : "")
         }
-        onClick={() => {
+        onClick={action(() => {
           FilterStore.searchQuery = "";
           FilterStore.toggleAttribute("onlyShowFavedPhones");
-        }}
+        })}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

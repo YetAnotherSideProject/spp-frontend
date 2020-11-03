@@ -1,4 +1,4 @@
-import { observable, computed, action } from "mobx";
+import { makeAutoObservable } from "mobx";
 import FilterStore from "./FilterStore.js";
 import { monthDiff } from "./helperFunctions";
 import { Database } from "firebase-firestore-lite";
@@ -6,14 +6,14 @@ import { Database } from "firebase-firestore-lite";
 class SmartphoneStore {
   obj = [];
 
-  @observable
   hasLoaded = false;
 
   constructor() {
+    makeAutoObservable(this);
+
     this.loadJSON();
   }
 
-  @action
   init = (responseText) => {
     this.obj = responseText;
     // Set variable to show it finished loading
@@ -32,7 +32,6 @@ class SmartphoneStore {
     this.init(phoneCollection);
   };
 
-  @computed
   get listOfFilteredObjects() {
     let listOfFilteredObjects = [];
     if (!this.hasLoaded) {
@@ -220,7 +219,6 @@ class SmartphoneStore {
     );
   };
 
-  @computed
   get listOfFilteredAndScoredObjects() {
     let listOfFilteredAndScoredObjects = this.listOfFilteredObjects.slice(0);
 
