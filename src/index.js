@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import registerServiceWorker from "./registerServiceWorker";
 import { configure } from "mobx";
 
 configure({
@@ -15,5 +14,3 @@ ReactDOM.render(<App />, document.getElementById("react-root"));
 if (module.hot) {
   module.hot.accept();
 }
-
-registerServiceWorker();

@@ -7,6 +7,7 @@ import { TextSelect } from "./TextSelect";
 import FilterStore from "./FilterStore.js";
 import { IconSwitch } from "./IconSwitch";
 import { TemplateDropDown } from "./TemplateDropDown";
+import { i18n } from "./LocalizationStore";
 
 export const Header = observer(() => {
   return (
@@ -148,7 +149,7 @@ export const Header = observer(() => {
           />
           <TextSelect
             name="country"
-            options={[["de", "GERMANY"]]}
+            options={[["de", i18n("germany")]]}
             colorScheme="blue-white"
             style={{
               alignSelf: "flex-end",
@@ -156,6 +157,7 @@ export const Header = observer(() => {
               fontSize: 11,
               paddingLeft: 0,
               marginLeft: -2,
+              textTransform: "uppercase",
             }}
           />
           <span style={{ flex: 1 }}></span>
@@ -170,7 +172,7 @@ export const Header = observer(() => {
               );
             }}
           >
-            {FilterStore.showAbout ? "Smartphones" : "About"}
+            {FilterStore.showAbout ? "Smartphones" : i18n("about")}
           </a>
           <IconSwitch
             name="lightmode"
