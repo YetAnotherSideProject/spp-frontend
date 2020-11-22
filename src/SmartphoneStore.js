@@ -222,7 +222,7 @@ class SmartphoneStore {
   get listOfFilteredAndScoredObjects() {
     let listOfFilteredAndScoredObjects = this.listOfFilteredObjects.slice(0);
 
-    switch (FilterStore.filterType) {
+    switch (FilterStore.sortBy) {
       case "price":
         return listOfFilteredAndScoredObjects.sort((a, b) => {
           return this.compareFunctionLowest(a, b, "price");

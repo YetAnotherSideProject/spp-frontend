@@ -2,6 +2,7 @@ import React from "react";
 import { action } from "mobx";
 import { observer } from "mobx-react-lite";
 import FilterStore from "./FilterStore.js";
+import { i18n } from "./LocalizationStore";
 
 export const FilterBox = observer(({ header, children }) => {
   const active = FilterStore.activeFilterBox === header;
@@ -17,7 +18,7 @@ export const FilterBox = observer(({ header, children }) => {
           }
         })}
       >
-        <p>{header}</p>
+        <p>{i18n(header)}</p>
         <svg
           className={
             active ? "filterBoxArrow" : "filterBoxArrow filterBoxArrow--closed"

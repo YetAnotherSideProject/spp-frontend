@@ -62,7 +62,7 @@ export const Header = observer(() => {
                 {
                   clickHandler: action(() => {
                     FilterStore.resetFilters();
-                    FilterStore.filterType = "released";
+                    FilterStore.sortBy = "released";
                     FilterStore.isDescending = true;
                   }),
                   icon: (
@@ -172,7 +172,7 @@ export const Header = observer(() => {
               );
             }}
           >
-            {FilterStore.showAbout ? "Smartphones" : i18n("about")}
+            {i18n("about")}
           </a>
           <IconSwitch
             name="lightmode"

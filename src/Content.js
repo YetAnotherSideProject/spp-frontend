@@ -11,7 +11,7 @@ export const Content = observer(() => {
     <main id="smartphones" className="smartphones">
       {SmartphoneStore.listOfFilteredAndScoredObjects.map((phone) => (
         <Smartphone
-          key={phone.id}
+          key={phone.brand + phone.name}
           smartphone={phone}
           maxImgHeight={maxImgHeight}
           filterStore={FilterStore}

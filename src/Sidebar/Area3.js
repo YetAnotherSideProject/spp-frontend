@@ -6,6 +6,7 @@ import { TextSelect } from "../TextSelect";
 
 import Slider from "@material-ui/core/Slider";
 import FilterStore from "../FilterStore.js";
+import { i18n } from "../LocalizationStore";
 
 const storageMarks = [
   {
@@ -44,8 +45,8 @@ const storageMarks = [
 
 export const Area3 = observer(() => {
   return (
-    <FilterBox header="Personal Preferences">
-      <p>Storage</p>
+    <FilterBox header="personalPreferences">
+      <p>{i18n("storage")}</p>
       <div className="storageSlider">
         <Slider
           marks={storageMarks}
@@ -58,39 +59,39 @@ export const Area3 = observer(() => {
         />
       </div>
       <div className="flex">
-        <p>Headphone-Jack</p>
+        <p>{i18n("headphoneJack")}</p>
         <ToggleSwitch name="headphoneJack" />
       </div>
       <div className="flex">
-        <p>2 SIMs</p>
+        <p>{i18n("simCards")}</p>
         <ToggleSwitch name="simCards" />
       </div>
       <div className="flex">
-        <p>SD Slot</p>
+        <p>{i18n("sdSlot")}</p>
         <ToggleSwitch name="sdSlot" />
       </div>
       <div className="flex">
-        <p>No notch</p>
+        <p>{i18n("notch")}</p>
         <ToggleSwitch name="notch" />
       </div>
       <div className="flex">
-        <p>5G</p>
+        <p>{i18n("fiveg")}</p>
         <ToggleSwitch name="fiveg" />
       </div>
       <div className="flex">
-        <label className="filterBoxLabel">Waterproof</label>
+        <label className="filterBoxLabel">{i18n("waterproof")}</label>
         <TextSelect
           name="waterproof"
           options={[
             ["", ""],
-            ["4", "IP X4 Splashing water"],
-            ["7", "IP X7 Immersion up to 1m"],
-            ["8", "IP X8 Immersion beyond 1m"],
+            ["4", i18n("ipx4")],
+            ["7", i18n("ipx7")],
+            ["8", i18n("ipx8")],
           ]}
         />
       </div>
       <div className="flex">
-        <label className="filterBoxLabel">Refresh rate</label>
+        <label className="filterBoxLabel">{i18n("refreshRate")}</label>
         <TextSelect
           name="refreshRate"
           options={[

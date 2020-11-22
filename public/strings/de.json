@@ -4,12 +4,60 @@
 
   "sortingOptions": "Sortieroptionen",
   "searchPhones": "Smartphones suchen",
-  "sortBy": "Sortieren nach",
   "price": "Preis",
   "totalScore": "Gesamtpunktzahl",
   "totalSize": "Gesamtgröße",
   "displaySize": "Bildschirmgröße",
   "releaseDate": "Veröffentlichungsdatum",
   "scalePhones": "Smartphones skalieren",
-  "emptyDisplays": "Leere Bildschirme"
+
+  "budgetAndSize": "Preis und Größe",
+  "display": "Bildschirm",
+  "length": "Länge",
+  "width": "Breite",
+
+  "personalPreferences": "Persönliche Vorlieben",
+  "storage": "Speicher",
+  "ipx4": "IP X4 Spritzwasser",
+  "ipx7": "IP X7 Eintauchen bis zu 1m",
+  "ipx8": "IP X8 Eintauchen über 1m hinaus",
+
+  "ratings": "Bewertungen",
+  "decayFactorDescription": "(Punkteabzug für alte Smartphones)",
+  "shopNow": "Jetzt kaufen",
+  "points": "Punkte",
+  "selectAll": "Alle auswählen",
+
+  "fiveg": "5G",
+  "notch": "Keine Notch",
+  "headphoneJack": "Kopfhöreranschluss",
+  "simCards": "2 SIMs",
+  "sdSlot": "SD-Steckplatz",
+  "waterproof": "Wasserdicht",
+  "refreshRate": "Aktualisierungsrate",
+
+  "design": "Design",
+  "updates": "Updates",
+  "camera": "Kamera",
+  "battery": "Batterie",
+  "processor": "Prozessor",
+  "selectedBrands": "Hersteller",
+
+  "release_minimum": "Min Erscheinung",
+  "release_maximum": "Max Erscheinung",
+  "price_minimum": "Min Preis",
+  "price_maximum": "Max Preis",
+
+  "size_minimum_1": "Min Bildschirm",
+  "size_maximum_1": "Max Bildschirm",
+  "size_minimum_2": "Min Länge",
+  "size_maximum_2": "Max Länge",
+  "size_minimum_3": "Min Breite",
+  "size_maximum_3": "Max Breite",
+
+  "emptySmartphones": "Bildschirm ausblenden",
+  "showPhonesWithoutPrices": "Zeige Smartphones ohne Preis",
+  "searchQuery": "Such Filter",
+  "sortBy": "Sortieren nach",
+  "decayFactor": "Verfall"
 }

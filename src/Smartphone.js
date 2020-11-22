@@ -3,6 +3,7 @@ import { action } from "mobx";
 import { observer } from "mobx-react-lite";
 import amazonIcon from "./images/Amazon-Favicon-64x64.png";
 import { getAttributeFromSmartphone } from "./helperFunctions";
+import { i18n } from "./LocalizationStore";
 
 export const Smartphone = observer(
   ({ smartphone, maxImgHeight, style, filterStore }) => {
@@ -20,7 +21,7 @@ export const Smartphone = observer(
       <div className="smartphone" style={style}>
         <div className="img-container-container">
           <div className="smartphone-filtercriteria">
-            {getAttributeFromSmartphone(smartphone, filterStore.filterType)}
+            {getAttributeFromSmartphone(smartphone, filterStore.sortBy)}
           </div>
           <div
             className={
@@ -154,7 +155,7 @@ export const Smartphone = observer(
                     : { color: "var(--bad-color)" }
                 }
               >
-                {smartphone.totalscore} Points
+                {smartphone.totalscore} {i18n("points")}
               </span>
             </summary>
           </details>
@@ -184,7 +185,7 @@ export const Smartphone = observer(
                       type="submit"
                       value="Add to cart"
                     />
-                    <span className="a-button-text">Shop Now</span>
+                    <span className="a-button-text">{i18n("shopNow")}</span>
                   </span>
                 </a>
               </div>

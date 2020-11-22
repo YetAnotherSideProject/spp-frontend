@@ -4,12 +4,60 @@
 
   "sortingOptions": "Sorting Options",
   "searchPhones": "Search phones",
-  "sortBy": "Sort by",
   "price": "Price",
   "totalScore": "Total Score",
   "totalSize": "Total Size",
   "displaySize": "Display Size",
   "releaseDate": "Release Date",
   "scalePhones": "Scale Phones",
-  "emptyDisplays": " Empty displays"
+
+  "budgetAndSize": "Budget and Size",
+  "display": "Display",
+  "length": "Length",
+  "width": "Width",
+
+  "personalPreferences": "Personal Preferences",
+  "storage": "Storage",
+  "ipx4": "IP X4 Splashing water",
+  "ipx7": "IP X7 Immersion up to 1m",
+  "ipx8": "IP X8 Immersion beyond 1m",
+
+  "ratings": "Ratings",
+  "decayFactorDescription": "(Subtract points for old phones)",
+  "shopNow": "Shop Now",
+  "points": "Points",
+  "selectAll": "Select all",
+
+  "fiveg": "5G",
+  "notch": "No notch",
+  "headphoneJack": "Headphone Jack",
+  "simCards": "2 SIMs",
+  "sdSlot": "SD Slot",
+  "waterproof": "Waterproof",
+  "refreshRate": "Refresh Rate",
+
+  "design": "Design",
+  "updates": "Updates",
+  "camera": "Camera",
+  "battery": "Battery",
+  "processor": "Processor",
+  "selectedBrands": "Brands",
+
+  "release_minimum": "Min Release",
+  "release_maximum": "Max Release",
+  "price_minimum": "Min Price",
+  "price_maximum": "Max Price",
+
+  "size_minimum_1": "Min Display",
+  "size_maximum_1": "Max Display",
+  "size_minimum_2": "Min Length",
+  "size_maximum_2": "Max Length",
+  "size_minimum_3": "Min Width",
+  "size_maximum_3": "Max Width",
+
+  "emptySmartphones": "Empty phones",
+  "showPhonesWithoutPrices": "Show phones without prices",
+  "searchQuery": "Search Query",
+  "sortBy": "Sort by",
+  "decayFactor": "Decay"
 }

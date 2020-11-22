@@ -7,7 +7,7 @@ import { TextField } from "../TextField";
 
 import Slider from "@material-ui/core/Slider";
 import FilterStore from "../FilterStore.js";
-import {i18n} from "../LocalizationStore";
+import { i18n } from "../LocalizationStore";
 
 const changeAttributeDateSlider = (e, value) => {
   FilterStore.changeAttribute(
@@ -56,9 +56,9 @@ const getMaxDateInMonths = (maxDate) => {
 
 export const Area1 = observer(() => {
   return (
-    <FilterBox header={i18n("sortingOptions")}>
+    <FilterBox header="sortingOptions">
       <label className="filterBoxLabel">
-      {i18n("searchPhones")}
+        {i18n("searchPhones")}
         <div className={"searchQuery"}>
           <TextField name="searchQuery" />
         </div>
@@ -67,7 +67,7 @@ export const Area1 = observer(() => {
         {i18n("sortBy")}
         <div className="flex">
           <TextSelect
-            name="filterType"
+            name="sortBy"
             options={[
               ["price", i18n("price")],
               ["totalscore", i18n("totalScore")],
@@ -95,11 +95,11 @@ export const Area1 = observer(() => {
         </div>
       </label>
       <div className="flex">
-            <p>{i18n("scalePhones")}</p>
+        <p>{i18n("scalePhones")}</p>
         <ToggleSwitch name="scaleInput" />
       </div>
       <div className="flex">
-            <p>{i18n("emptyDisplays")}</p>
+        <p>{i18n("emptySmartphones")}</p>
         <ToggleSwitch name="emptySmartphones" />
       </div>
       <label className="filterBoxLabel">

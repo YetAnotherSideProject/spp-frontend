@@ -34,6 +34,7 @@ class LocalizationStore {
     if (translation) {
       return translation;
     }
+    console.log("Couldn't find string with key: " + key);
     return "MISSING STRING";
   };
 }

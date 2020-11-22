@@ -4,6 +4,7 @@ import { observer } from "mobx-react-lite";
 import amazonIcon from "./images/Amazon-Favicon-64x64.png";
 import { monthDiff, getAttributeFromSmartphone } from "./helperFunctions";
 import { useOnClickOutside } from "./hooks/useOnClickOutside";
+import { i18n } from "./LocalizationStore";
 
 export const SmartphoneDetails = observer(
   ({ smartphone, maxImgHeight, style, filterStore }) => {
@@ -28,7 +29,7 @@ export const SmartphoneDetails = observer(
       <div ref={ref} className="modal smartphoneModal" style={style}>
         <div className="img-container-container modal-img-container-container">
           <div className="smartphone-filtercriteria">
-            {getAttributeFromSmartphone(smartphone, filterStore.filterType)}
+            {getAttributeFromSmartphone(smartphone, filterStore.sortBy)}
           </div>
           <div
             className={
@@ -157,34 +158,34 @@ export const SmartphoneDetails = observer(
 
           <div className="flexBetween">
             <span>{smartphone.batterysize}mAh</span>
-            <span>{smartphone.refreshRate + "Hz Refresh rate"}</span>
+            <span>{smartphone.refreshRate + "Hz " + i18n("refreshRate")}</span>
           </div>
 
           <div style={{ flex: 1 }}></div>
           <div className="smartphone-totalscore">
             <div className="flexBetween">
-              <p className="">Design</p>
+              <p className="">{i18n("design")}</p>
               <p>{smartphone.design}</p>
             </div>
             <div className="flexBetween">
-              <p className="">Processor</p>
+              <p className="">{i18n("processor")}</p>
               <p>{smartphone.cpu}</p>
             </div>
             <div className="flexBetween">
-              <p className="">Software</p>
+              <p className="">{i18n("updates")}</p>
               <p>{smartphone.updates}</p>
             </div>
             <div className="flexBetween">
-              <p className="">Camera</p>
+              <p className="">{i18n("camera")}</p>
               <p>{smartphone.camera}</p>
             </div>
             <div className="flexBetween">
-              <p className="">Battery</p>
+              <p className="">{i18n("battery")}</p>
               <p>{smartphone.battery}</p>
             </div>
             <hr className="horizontalRule " />
             <div className="flexBetween">
-              <p className="">Decay</p>
+              <p className="">{i18n("decayFactor")}</p>
               <p className="smartphone-decay ">
                 -
                 {Math.round(
@@ -201,7 +202,7 @@ export const SmartphoneDetails = observer(
                   : { color: "var(--bad-color)" }
               }
             >
-              {smartphone.totalscore} Points
+              {smartphone.totalscore} {i18n("points")}
             </span>
           </div>
           <div className="flexBetween">
@@ -227,7 +228,7 @@ export const SmartphoneDetails = observer(
                       type="submit"
                       value="Add to cart"
                     />
-                    <span className="a-button-text">Shop Now</span>
+                    <span className="a-button-text">{i18n("shopNow")}</span>
                   </span>
                 </a>
               </div>

@@ -6,6 +6,7 @@ import { TextField } from "../TextField";
 import Slider from "@material-ui/core/Slider";
 import { ToggleSwitch } from "../ToggleSwitch";
 import FilterStore, { resetCopy } from "../FilterStore.js";
+import { i18n } from "../LocalizationStore";
 
 const changeAttributeSlider = (first, second) => (e, value) => {
   FilterStore.changeAttribute(first, value[0]);
@@ -14,9 +15,9 @@ const changeAttributeSlider = (first, second) => (e, value) => {
 
 export const Area2 = observer(() => {
   return (
-    <FilterBox header="Budget and Size">
+    <FilterBox header="budgetAndSize">
       <label className="filterBoxLabel">
-        Price
+        {i18n("price")}
         <div style={{ marginBottom: 0 }}>
           <div>
             <Slider
@@ -45,11 +46,11 @@ export const Area2 = observer(() => {
         </div>
       </label>
       <div className="flex" style={{ marginBottom: 16 }}>
-        <p>Show phones without prices</p>
+        <p>{i18n("showPhonesWithoutPrices")}</p>
         <ToggleSwitch name="showPhonesWithoutPrices" />
       </div>
       <label className="filterBoxLabel">
-        Display
+        {i18n("display")}
         <div>
           <div>
             <Slider
@@ -81,7 +82,7 @@ export const Area2 = observer(() => {
         </div>
       </label>
       <label className="filterBoxLabel">
-        Length
+        {i18n("length")}
         <div>
           <div>
             <Slider
@@ -113,7 +114,7 @@ export const Area2 = observer(() => {
         </div>
       </label>
       <label className="filterBoxLabel">
-        Width
+        {i18n("width")}
         <div>
           <div>
             <Slider

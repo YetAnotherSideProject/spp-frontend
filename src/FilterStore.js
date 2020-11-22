@@ -18,7 +18,7 @@ export const resetCopy = {
   sidebarHidden: false,
   country: "de",
   searchQuery: "",
-  filterType: "totalscore",
+  sortBy: "totalscore",
   decayFactor: 0.2,
   isDescending: true,
   scaleInput: true,
@@ -62,7 +62,7 @@ class FilterStore {
   activeFilterBox = "Sorting Options";
 
   searchQuery = "";
-  filterType = "totalscore";
+  sortBy = "totalscore";
   decayFactor = 0.2;
   isDescending = true;
   scaleInput = true;

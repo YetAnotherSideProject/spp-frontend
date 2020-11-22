@@ -3,6 +3,7 @@ import { action } from "mobx";
 import { observer } from "mobx-react-lite";
 
 import FilterStore from "./FilterStore.js";
+import { i18n } from "./LocalizationStore";
 
 export const MultiCheckBox = observer(({ name, options }) => {
   const changeMultiSelection = (option) => {
@@ -34,7 +35,7 @@ export const MultiCheckBox = observer(({ name, options }) => {
               marginRight: "8px",
             }}
           />
-          Select All
+          {i18n("selectAll")}
         </label>
       </div>
       <div className="multiCheckboxContainer">

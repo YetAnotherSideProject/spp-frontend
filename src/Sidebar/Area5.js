@@ -7,7 +7,7 @@ import SmartphoneStore from "../SmartphoneStore.js";
 
 export const Area5 = observer(() => {
   return (
-    <FilterBox header="Brands" startClosed={true}>
+    <FilterBox header="selectedBrands">
       <MultiCheckBox
         name="selectedBrands"
         options={SmartphoneStore.getUniqueBrands()}

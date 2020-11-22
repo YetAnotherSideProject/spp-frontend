@@ -261,9 +261,8 @@ body {
   z-index: 1;
   background-color: var(--background-color);
   overflow: auto;
-  padding: 10px;
-  padding-left: 10%;
-  padding-right: 10%;
+  margin-top: 48px;
+  padding: 8px 10% 8px 10%;
   color: var(--text-color);
 }
 

@@ -1,3 +1,5 @@
+import { i18n } from "./LocalizationStore";
+
 export const monthDiff = (dateFrom, dateTo) => {
   return (
     dateTo.getMonth() -
@@ -16,7 +18,7 @@ export const getAttributeFromSmartphone = (smartphone, attribute) => {
     case "display":
       return smartphone[attribute] + '"';
     case "totalscore":
-      return smartphone[attribute] + " Points";
+      return smartphone[attribute] + " " + i18n("points");
     default:
       return smartphone[attribute];
   }

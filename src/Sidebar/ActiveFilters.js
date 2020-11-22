@@ -3,45 +3,11 @@ import { action } from "mobx";
 import { observer } from "mobx-react-lite";
 
 import filterStore, { resetCopy } from "../FilterStore";
-
-const mappings = {
-  fiveg: "5G",
-  notch: "No notch",
-  headphoneJack: "Headphone Jack",
-  simCards: "2 SIMs",
-  sdSlot: "SD Slot",
-  waterproof: "Waterproof",
-  refreshRate: "Refresh Rate",
-
-  design: "Design",
-  updates: "Updates",
-  camera: "Camera",
-  battery: "Battery",
-  processor: "Processor",
-  selectedBrands: " Brands",
-
-  release_minimum: "Min Release",
-  release_maximum: "Max Release",
-  price_minimum: "Min Price",
-  price_maximum: "Max Price",
-
-  size_minimum_1: "Min Display",
-  size_maximum_1: "Max Display",
-  size_minimum_2: "Min Length",
-  size_maximum_2: "Max Length",
-  size_minimum_3: "Min Width",
-  size_maximum_3: "Max Width",
-
-  emptySmartphones: " Empty phones",
-  showPhonesWithoutPrices: "Phones without prices",
-  searchQuery: "Search Query",
-  filterType: "Sort by",
-  decayFactor: "Decay Factor",
-};
+import { i18n } from "../LocalizationStore";
 
 const tryGetMapping = (key) => {
-  if (mappings[key]) {
-    return mappings[key];
+  if (i18n(key)) {
+    return i18n(key);
   }
   return key;
 };
@@ -100,7 +66,7 @@ export const ActiveFilters = observer(() => {
       }}
     >
       {activeFilters.map((key) => (
-        <span className="active-filters-item">
+        <span className="active-filters-item" key={key}>
           <span>
             {tryGetMapping(key)}
             {tryGetValue(filterStore[key])}
