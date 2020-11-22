@@ -1060,7 +1060,6 @@ input[type="checkbox"]:checked:disabled::before {
   .smartphones-charts,
   .no-results-container {
     margin-left: 300px;
-    padding-bottom: 0;
   }
 
   .smartphones {

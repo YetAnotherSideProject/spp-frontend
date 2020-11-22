@@ -59,7 +59,7 @@ class FilterStore {
   sidebarHidden = getSidebarHiddenInitialState();
   country = "de";
 
-  activeFilterBox = "Sorting Options";
+  activeFilterBox = "sortingOptions";
 
   searchQuery = "";
   sortBy = "totalscore";

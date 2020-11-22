@@ -168,7 +168,7 @@ export const SmartphoneDetails = observer(
               <p>{smartphone.design}</p>
             </div>
             <div className="flexBetween">
-              <p className="">{i18n("processor")}</p>
+              <p className="">{i18n("cpu")}</p>
               <p>{smartphone.cpu}</p>
             </div>
             <div className="flexBetween">

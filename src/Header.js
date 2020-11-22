@@ -84,7 +84,7 @@ export const Header = observer(() => {
                   clickHandler: action(() => {
                     FilterStore.resetFilters();
                     FilterStore.design = "3";
-                    FilterStore.processor = "3";
+                    FilterStore.cpu = "3";
                     FilterStore.updates = "4";
                     FilterStore.camera = "3";
                     FilterStore.battery = "3";

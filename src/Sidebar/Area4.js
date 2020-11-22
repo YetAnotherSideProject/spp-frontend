@@ -17,12 +17,12 @@ export const Area4 = observer(() => {
         step={1}
         onChange={(e, value) => FilterStore.changeAttribute("design", value)}
       />
-      <p>{i18n("processor")}</p>
+      <p>{i18n("cpu")}</p>
       <Slider
         min={1}
         max={5}
         step={1}
-        onChange={(e, value) => FilterStore.changeAttribute("processor", value)}
+        onChange={(e, value) => FilterStore.changeAttribute("cpu", value)}
       />
       <p>{i18n("updates")}</p>
       <Slider
