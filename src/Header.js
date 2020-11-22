@@ -150,7 +150,7 @@ export const Header = observer(() => {
           <TextSelect
             name="country"
             options={[["de", i18n("germany")]]}
-            colorScheme="blue-white"
+            className="btn-transparent"
             style={{
               alignSelf: "flex-end",
               flex: "none",

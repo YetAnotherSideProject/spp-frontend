@@ -11,7 +11,7 @@
 
 .lightmode {
   --text-color: #4f4e56;
-  --border-color: #e0e0e0;
+  --border-color: #c7c7c7;
   --background-color: #fff;
   --background-color-hover: #f9f9f9;
   --scrollbar-track: var(--border-color);
@@ -112,6 +112,7 @@ body {
   display: flex;
   height: 100%;
   flex-flow: column;
+  background-color: var(--background-color);
 }
 
 .sidebar {
@@ -131,7 +132,6 @@ body {
 
 .sidebar.hidden {
   transform: translateX(calc(-1 * 100vw));
-  width: 0;
 }
 
 .sidebar-fav-button {
@@ -253,8 +253,7 @@ body {
   position: relative;
   will-change: transform;
   z-index: 0;
-  padding: 48px 16px;
-  background-color: var(--background-color);
+  padding: 48px calc(8px + 1vw);
 }
 
 .about {
@@ -283,8 +282,7 @@ body {
 
 .smartphones {
   display: grid;
-  padding: 16px;
-  grid-gap: 16px;
+  grid-gap: 16px calc(8px + 1vw);
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 
@@ -561,10 +559,16 @@ button,
 textarea {
   border-radius: 3px;
   font-size: 16px;
-  padding: 2px;
+  padding: 3px 4px;
   color: var(--text-color);
   background-color: transparent;
   box-sizing: border-box;
+  border: 1px solid #8a8886;
+  box-sizing: border-box;
+}
+
+select {
+  padding: 2px 0;
 }
 
 .rotate-sorting-order {
@@ -629,12 +633,9 @@ textarea {
 }
 
 .smartphone-price-details {
-  border-radius: 4px;
-  border: 1px solid var(--border-color);
   margin-bottom: 8px;
   width: 100%;
   font-size: 1em;
-  padding: 2px 0;
 }
 
 .smartphone-price-item {
@@ -834,7 +835,7 @@ textarea {
   margin-bottom: 4px;
 }
 
-.blue-white {
+.btn-transparent {
   color: var(--just-white);
   background-color: transparent;
   border: transparent;

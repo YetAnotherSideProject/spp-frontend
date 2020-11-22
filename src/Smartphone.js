@@ -118,11 +118,11 @@ export const Smartphone = observer(
           >
             {smartphone.models.map((model, modelIndex) => {
               return (
-                <React.Fragment key={model.id}>
+                <React.Fragment key={`${model.memory}:${model.storage}`}>
                   {model.types.map((type, typeIndex) => (
                     <option
                       value={modelIndex + ":" + typeIndex}
-                      key={type.id}
+                      key={type.itemId}
                       className="smartphone-price-item"
                     >
                       {`${type.name} ${model.memory}GB ${model.storage}GB ${
