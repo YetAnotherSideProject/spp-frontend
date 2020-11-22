@@ -1,4 +1,15 @@
 {
   "germany": "Deutschland",
-  "about": "Über"
+  "about": "Über",
+
+  "sortingOptions": "Sortieroptionen",
+  "searchPhones": "Smartphones suchen",
+  "sortBy": "Sortieren nach",
+  "price": "Preis",
+  "totalScore": "Gesamtpunktzahl",
+  "totalSize": "Gesamtgröße",
+  "displaySize": "Bildschirmgröße",
+  "releaseDate": "Veröffentlichungsdatum",
+  "scalePhones": "Smartphones skalieren",
+  "emptyDisplays": "Leere Bildschirme"
 }

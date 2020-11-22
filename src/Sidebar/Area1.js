@@ -7,6 +7,7 @@ import { TextField } from "../TextField";
 
 import Slider from "@material-ui/core/Slider";
 import FilterStore from "../FilterStore.js";
+import {i18n} from "../LocalizationStore";
 
 const changeAttributeDateSlider = (e, value) => {
   FilterStore.changeAttribute(
@@ -55,24 +56,24 @@ const getMaxDateInMonths = (maxDate) => {
 
 export const Area1 = observer(() => {
   return (
-    <FilterBox header="Sorting Options">
+    <FilterBox header={i18n("sortingOptions")}>
       <label className="filterBoxLabel">
-        Search phones
+      {i18n("searchPhones")}
         <div className={"searchQuery"}>
           <TextField name="searchQuery" />
         </div>
       </label>
       <label className="filterBoxLabel">
-        Sort by
+        {i18n("sortBy")}
         <div className="flex">
           <TextSelect
             name="filterType"
             options={[
-              ["price", "Price"],
-              ["totalscore", "Total Score"],
-              ["length", "Body-Size"],
-              ["display", "Screen-Size"],
-              ["released", "Release Date"],
+              ["price", i18n("price")],
+              ["totalscore", i18n("totalScore")],
+              ["length", i18n("totalSize")],
+              ["display", i18n("displaySize")],
+              ["released", i18n("releaseDate")],
             ]}
           />
           <div style={{ display: "flex", overflow: "hidden" }}>
@@ -94,15 +95,15 @@ export const Area1 = observer(() => {
         </div>
       </label>
       <div className="flex">
-        <p>Scale phones</p>
+            <p>{i18n("scalePhones")}</p>
         <ToggleSwitch name="scaleInput" />
       </div>
       <div className="flex">
-        <p>Empty phones</p>
+            <p>{i18n("emptyDisplays")}</p>
         <ToggleSwitch name="emptySmartphones" />
       </div>
       <label className="filterBoxLabel">
-        Release
+        {i18n("releaseDate")}
         <div>
           <div>
             <Slider

@@ -1,4 +1,15 @@
 {
   "germany": "Germany",
-  "about": "About"
+  "about": "About",
+
+  "sortingOptions": "Sorting Options",
+  "searchPhones": "Search phones",
+  "sortBy": "Sort by",
+  "price": "Price",
+  "totalScore": "Total Score",
+  "totalSize": "Total Size",
+  "displaySize": "Display Size",
+  "releaseDate": "Release Date",
+  "scalePhones": "Scale Phones",
+  "emptyDisplays": " Empty displays"
 }
