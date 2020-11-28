@@ -29,9 +29,9 @@ export const resetCopy = {
   price_maximum: 2000,
   size_minimum_1: 4.6,
   size_maximum_1: 7,
-  size_minimum_2: 135,
+  size_minimum_2: 130,
   size_maximum_2: 170,
-  size_minimum_3: 65,
+  size_minimum_3: 60,
   size_maximum_3: 80,
   design: 1,
   cpu: 1,
@@ -77,10 +77,10 @@ class FilterStore {
   size_minimum_1 = 4.6;
   size_maximum_1 = 7;
 
-  size_minimum_2 = 135;
+  size_minimum_2 = 130;
   size_maximum_2 = 170;
 
-  size_minimum_3 = 65;
+  size_minimum_3 = 60;
   size_maximum_3 = 80;
 
   design = 1;
