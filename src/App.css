@@ -36,7 +36,8 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Open Sans2", Sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   transition: color, background-color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -56,56 +57,6 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
-}
-
-@font-face {
-  font-family: "Open Sans2";
-  font-weight: 300;
-  font-style: normal;
-  src: local("Open Sans Light"), local("OpenSans-Light"),
-    url("./fonts/open-sans-v15-latin-ext_latin-300.woff2") format("woff2"),
-    url("./fonts/open-sans-v15-latin-ext_latin-300.woff") format("woff");
-  font-display: swap;
-}
-/* open-sans-regular - latin-ext_latin */
-@font-face {
-  font-family: "Open Sans2";
-  font-weight: 400;
-  font-style: normal;
-  src: local("Open Sans Regular"), local("OpenSans-Regular"),
-    url("./fonts/open-sans-v15-latin-ext_latin-regular.woff2") format("woff2"),
-    url("./fonts/open-sans-v15-latin-ext_latin-regular.woff") format("woff");
-  font-display: swap;
-}
-/* open-sans-600 - latin-ext_latin */
-@font-face {
-  font-family: "Open Sans2";
-  font-weight: 600;
-  font-style: normal;
-  src: local("Open Sans SemiBold"), local("OpenSans-SemiBold"),
-    url("./fonts/open-sans-v15-latin-ext_latin-600.woff2") format("woff2"),
-    url("./fonts/open-sans-v15-latin-ext_latin-600.woff") format("woff");
-  font-display: swap;
-}
-/* open-sans-700 - latin-ext_latin */
-@font-face {
-  font-family: "Open Sans2";
-  font-weight: 700;
-  font-style: normal;
-  src: local("Open Sans Bold"), local("OpenSans-Bold"),
-    url("./fonts/open-sans-v15-latin-ext_latin-700.woff2") format("woff2"),
-    url("./fonts/open-sans-v15-latin-ext_latin-700.woff") format("woff");
-  font-display: swap;
-}
-/* open-sans-800 - latin-ext_latin */
-@font-face {
-  font-family: "Open Sans2";
-  font-weight: 800;
-  font-style: normal;
-  src: local("Open Sans ExtraBold"), local("OpenSans-ExtraBold"),
-    url("./fonts/open-sans-v15-latin-ext_latin-800.woff2") format("woff2"),
-    url("./fonts/open-sans-v15-latin-ext_latin-800.woff") format("woff");
-  font-display: swap;
 }
 
 .react-head {
@@ -926,7 +877,7 @@ select {
 }
 
 .modal-overlay {
-  background: rgba(9, 30, 66, 0.54);
+  background: rgba(4, 13, 28, 0.73);
   position: absolute;
   top: 0;
   left: 0;
