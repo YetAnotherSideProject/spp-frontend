@@ -24,7 +24,7 @@
 
   "ratings": "Bewertungen",
   "decayFactorDescription": "(Punkteabzug für alte Smartphones)",
-  "shopNow": "Jetzt kaufen",
+  "shopNow": "Bei Amazon kaufen",
   "points": "Punkte",
   "selectAll": "Alle auswählen",
 
@@ -55,6 +55,11 @@
   "size_minimum_3": "Min Breite",
   "size_maximum_3": "Max Breite",
 
+  "release": "Erscheinung",
+  "size": "Größe",
+  "specs": "Spezifikationen",
+
+  "showBacksideDefault": "Rückseite zeigen",
   "emptySmartphones": "Bildschirm ausblenden",
   "showPhonesWithoutPrices": "Zeige Smartphones ohne Preis",
   "searchQuery": "Such Filter",

@@ -24,7 +24,7 @@
 
   "ratings": "Ratings",
   "decayFactorDescription": "(Subtract points for old phones)",
-  "shopNow": "Shop Now",
+  "shopNow": "Buy at Amazon",
   "points": "Points",
   "selectAll": "Select all",
 
@@ -55,6 +55,11 @@
   "size_minimum_3": "Min Width",
   "size_maximum_3": "Max Width",
 
+  "release": "Release",
+  "size": "Size",
+  "specs": "Specs",
+
+  "showBacksideDefault": "Show backside",
   "emptySmartphones": "Empty phones",
   "showPhonesWithoutPrices": "Show phones without prices",
   "searchQuery": "Search Query",

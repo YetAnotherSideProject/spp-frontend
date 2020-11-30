@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { action } from "mobx";
 import { observer } from "mobx-react-lite";
-import amazonIcon from "./images/Amazon-Favicon-64x64.png";
 import { getAttributeFromSmartphone } from "./helperFunctions";
 import { i18n } from "./LocalizationStore";
 
@@ -40,16 +39,6 @@ export const Smartphone = observer(
           >
             <img
               style={
-                filterStore.scaleInput ? { height } : { height: 100 + "%" }
-              }
-              className="qtip-img qtip-img-backside"
-              onError={(e) => (e.target.alt = "No image")}
-              src={"images/" + smartphone.image + "_back.jpg"}
-              loading="lazy"
-              alt=""
-            />
-            <img
-              style={
                 filterStore.scaleInput
                   ? { height }
                   : {
@@ -63,6 +52,16 @@ export const Smartphone = observer(
                   ? "images/" + smartphone.image + "_blank.png"
                   : "images/" + smartphone.image + ".jpg"
               }
+              loading="lazy"
+              alt=""
+            />
+            <img
+              style={
+                filterStore.scaleInput ? { height } : { height: 100 + "%" }
+              }
+              className="qtip-img qtip-img-backside"
+              onError={(e) => (e.target.alt = "No image")}
+              src={"images/" + smartphone.image + "_back.jpg"}
               loading="lazy"
               alt=""
             />
@@ -164,31 +163,14 @@ export const Smartphone = observer(
               {price !== -1 ? price : "N/A"}€
             </span>
             {link && (
-              <div
-                className="a-button a-button-primary"
-                onClick={(e) => e.stopPropagation()}
+              <a
+                className="a-button"
+                href={link}
+                target="_blank"
+                rel="noreferrer noopener"
               >
-                <a
-                  className="a-link"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  href={link}
-                >
-                  <span className="a-button-inner">
-                    <img
-                      alt=""
-                      src={amazonIcon}
-                      className="a-icon a-icon-shop-now"
-                    />
-                    <input
-                      className="a-button-input"
-                      type="submit"
-                      value="Add to cart"
-                    />
-                    <span className="a-button-text">{i18n("shopNow")}</span>
-                  </span>
-                </a>
-              </div>
+                {i18n("shopNow")}
+              </a>
             )}
           </div>
         </div>
