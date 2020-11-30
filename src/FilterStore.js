@@ -39,6 +39,7 @@ export const resetCopy = {
   camera: 1,
   battery: 1,
   storage: 8,
+  memory: 1,
   headphoneJack: false,
   simCards: false,
   sdSlot: false,
@@ -90,6 +91,7 @@ class FilterStore {
   battery = 1;
 
   storage = 8;
+  memory = 1;
   headphoneJack = false;
   simCards = false;
   sdSlot = false;

@@ -42,7 +42,7 @@ export const Smartphone = observer(
                 filterStore.scaleInput
                   ? { height }
                   : {
-                      height: (165 / 165) * 100 + "%",
+                      height: 100 + "%",
                     }
               }
               className="qtip-img"

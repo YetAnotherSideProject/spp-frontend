@@ -164,6 +164,11 @@ class SmartphoneStore {
           t--;
           continue;
         }
+        if (phone.models[t].memory < FilterStore.memory) {
+          phone.models.splice(t, 1);
+          t--;
+          continue;
+        }
         for (let c = 0; c < phone.models[t].types.length; c++) {
           //price
           if (

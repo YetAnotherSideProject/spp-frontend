@@ -43,6 +43,29 @@ const storageMarks = [
   },
 ];
 
+const memoryMarks = [
+  {
+    value: 0,
+    label: "1",
+  },
+  {
+    value: 1,
+    label: "2",
+  },
+  {
+    value: 2,
+    label: "4",
+  },
+  {
+    value: 3,
+    label: "8",
+  },
+  {
+    value: 4,
+    label: "16",
+  },
+];
+
 export const Area3 = observer(() => {
   return (
     <FilterBox header="personalPreferences">
@@ -51,10 +74,22 @@ export const Area3 = observer(() => {
         <Slider
           marks={storageMarks}
           min={0}
-          max={7}
+          max={storageMarks.length - 1}
           step={null}
           onChange={(e, value) =>
             FilterStore.changeAttribute("storage", 8 * Math.pow(2, value))
+          }
+        />
+      </div>
+      <p>{i18n("memory")}</p>
+      <div className="memorySlider">
+        <Slider
+          marks={memoryMarks}
+          min={0}
+          max={memoryMarks.length - 1}
+          step={null}
+          onChange={(e, value) =>
+            FilterStore.changeAttribute("memory", Math.pow(2, value))
           }
         />
       </div>

@@ -544,7 +544,8 @@ select {
   margin-top: 5px;
 }
 
-.storageSlider {
+.storageSlider,
+.memorySlider {
   padding-right: 20px;
 }
 
@@ -581,11 +582,12 @@ select {
   flex: 1;
   display: grid;
   grid-template-columns: 1fr 2fr;
+  margin-right: calc(8px + 1vw);
 }
 
 .details-grid > * {
   border-top: 1px solid #f6f7f9;
-  padding: 4px 0;
+  padding: 4px 8px 4px 0;
 }
 
 .details-grid-subheader {
@@ -661,13 +663,6 @@ select {
   padding: 0 5px;
   left: 14px;
   top: 12px;
-}
-
-.smartphone-release,
-.smartphone-width-length {
-  color: var(--text-color);
-  margin-right: 8px;
-  white-space: nowrap;
 }
 
 .smartphone-price {

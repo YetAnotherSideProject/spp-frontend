@@ -98,7 +98,7 @@ export const SmartphoneDetails = observer(
           </select>
           <div
             className="flexBetween"
-            style={{ justifyContent: "flex-end", marginBottom: 8 }}
+            style={{ justifyContent: "flex-end", marginBottom: 16 }}
           >
             <span className="smartphone-price">
               {price !== -1 ? price : "N/A"}€
@@ -116,22 +116,23 @@ export const SmartphoneDetails = observer(
           </div>
           <div className="flex" style={{ alignItems: "center" }}>
             <div className="details-grid">
-              <p className="details-grid-subheader">{i18n("specs")}</p>
-              <p className="details-grid-subheader"></p>
+              <p className="details-grid-subheader" style={{ paddingTop: 0 }}>
+                {i18n("specs")}
+              </p>
+              <p
+                className="details-grid-subheader"
+                style={{ paddingTop: 0 }}
+              ></p>
               <p className="details-grid-header">{i18n("release")}</p>
-              <span className="smartphone-release ">{smartphone.released}</span>
+              <span>{smartphone.released}</span>
               <p className="details-grid-header">{i18n("size")}</p>
-              <span className="smartphone-width-length ">
-                {smartphone.width + "*" + smartphone.length + " mm"}
-              </span>
+              <span>{smartphone.width + "*" + smartphone.length + " mm"}</span>
               <p className="details-grid-header">{i18n("display")}</p>
               <span>{smartphone.display + '"'}</span>
               <p className="details-grid-header">{i18n("battery")}</p>
               <span>{smartphone.batterysize}mAh</span>
               <p className="details-grid-header">{i18n("refreshRate")}</p>
-              <span>
-                {smartphone.refreshRate + "Hz " + i18n("refreshRate")}
-              </span>
+              <span>{smartphone.refreshRate + "Hz"}</span>
               <p className="details-grid-subheader">{i18n("ratings")}</p>
               <p className="details-grid-subheader"></p>
               <p className="details-grid-header">{i18n("design")}</p>
@@ -183,15 +184,7 @@ export const SmartphoneDetails = observer(
                 }
               >
                 <img
-                  style={
-                    filterStore.scaleInput
-                      ? {
-                          height: height,
-                        }
-                      : {
-                          height: (165 / 165) * 100 + "%",
-                        }
-                  }
+                  style={{ height: "100%" }}
                   className="qtip-img"
                   onError={(e) => (e.target.alt = "No image")}
                   src={
@@ -203,9 +196,7 @@ export const SmartphoneDetails = observer(
                   alt=""
                 />
                 <img
-                  style={
-                    filterStore.scaleInput ? { height } : { height: 100 + "%" }
-                  }
+                  style={{ height: "100%" }}
                   className="qtip-img qtip-img-backside"
                   onError={(e) => (e.target.alt = "No image")}
                   src={"images/" + smartphone.image + "_back.jpg"}
