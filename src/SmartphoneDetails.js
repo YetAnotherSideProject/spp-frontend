@@ -23,7 +23,6 @@ export const SmartphoneDetails = observer(
       setSelectedModel(0);
       setSelectedType(0);
     }, [smartphone.models, filterStore.showPhonesWithoutPrices]);
-    let height = (smartphone.length / 170) * 100 + "%";
     return (
       <div ref={ref} className="modal smartphoneModal" style={style}>
         <div className="smartphoneModal-details">
