@@ -5873,10 +5873,10 @@ find-up@^3.0.0:
   dependencies:
     locate-path "^3.0.0"
 
-firebase-firestore-lite@^1.0.0-RC2.1:
-  version "1.0.0-RC2.1"
-  resolved "https://registry.yarnpkg.com/firebase-firestore-lite/-/firebase-firestore-lite-1.0.0-RC2.1.tgz#3a2e4524570f4d8e49dab2865946213bcb620eab"
-  integrity sha512-vsGTe4RVUVYtnxnZsBAmJ1M2kvDP1VpanRCOLBg99S7aY1jRxtJ0rC8pmbqFdCXcsQY7hNdwhZIHQZ6xQ/Zvpw==
+firebase-firestore-lite@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/firebase-firestore-lite/-/firebase-firestore-lite-1.0.1.tgz#01d64fc196501ca8011c8cfe961fbf1dc5c85e92"
+  integrity sha512-HVyn1FObp6JGGuCeGmOMLeDkIil3EuX0nZEKgqVDt7Apm7Creq2lbK7yFJ4/Tylz/ilFakxaY0o1NLiEG/Tmaw==
 
 firebase@8.0.0:
   version "8.0.0"
