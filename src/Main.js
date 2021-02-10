@@ -7,6 +7,7 @@ import FilterStore from "./FilterStore.js";
 
 import { observer } from "mobx-react-lite";
 import SmartphoneStore from "./SmartphoneStore";
+import { useWindowSize } from "./hooks/useWindowSize";
 
 const NoResultsInfo = () => (
   <div className="no-results-container">
@@ -35,6 +36,7 @@ const LoadingInfo = () => (
 );
 
 export const Main = observer(({ currentURL }) => {
+  const size = useWindowSize();
   let content = <Content />;
   switch (currentURL) {
     case "/about":
@@ -52,9 +54,5 @@ export const Main = observer(({ currentURL }) => {
   if (SmartphoneStore.hasLoaded === false) {
     content = <LoadingInfo />;
   }
-  return !FilterStore.sidebarHidden && window.innerWidth < 600 ? (
-    <div />
-  ) : (
-    content
-  );
+  return !FilterStore.sidebarHidden && size.width < 600 ? <div /> : content;
 });

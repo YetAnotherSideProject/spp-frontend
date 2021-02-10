@@ -162,6 +162,7 @@ body {
   border-radius: 8px;
   transform-style: preserve-3d;
   transition: transform 0.6s ease-in-out;
+  height: 250px;
 }
 
 /*when backsideDefault is activated then it starts flipped*/
@@ -975,6 +976,10 @@ input[type="checkbox"]:checked:disabled::before {
   /* only apply hover on non-mobile*/
   .smartphone-fav-star:hover {
     fill: var(--just-yellow-light);
+  }
+
+  .img-container {
+    height: 450px;
   }
 
   /*only allow desktop devices to flip with hover*/

@@ -33,7 +33,6 @@ export const Smartphone = observer(
               height: maxImgHeight,
             }}
             onClick={(e) =>
-              window.innerWidth < 600 && //only allow mobile devices to switch with click
               e.currentTarget.classList.toggle("img-container--is-flipped")
             }
           >

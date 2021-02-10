@@ -80,7 +80,6 @@ const App = observer(() => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const maxImgHeight = window.innerWidth < 600 ? 250 : 450;
   return (
     <ThemeProvider theme={theme}>
       <div
@@ -101,7 +100,6 @@ const App = observer(() => {
           <div className="modal-container">
             <SmartphoneDetails
               smartphone={FilterStore.modalSmartphone}
-              maxImgHeight={maxImgHeight}
               filterStore={FilterStore}
             ></SmartphoneDetails>
             <div className="modal-overlay"> </div>

@@ -20,7 +20,11 @@ export const Header = observer(() => {
         />
         <div className="flex" style={{ flex: "1", alignItems: "center" }}>
           <TemplateDropDown
-            summary={<span className="logo-text">smartphone-picker</span>}
+            summary={
+              <a className="logo-text" href="/home">
+                smartphone-picker
+              </a>
+            }
             detailCategories={{
               Views: [
                 {

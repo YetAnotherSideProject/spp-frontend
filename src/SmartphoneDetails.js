@@ -6,7 +6,7 @@ import { useOnClickOutside } from "./hooks/useOnClickOutside";
 import { i18n } from "./LocalizationStore";
 
 export const SmartphoneDetails = observer(
-  ({ smartphone, maxImgHeight, style, filterStore }) => {
+  ({ smartphone, style, filterStore }) => {
     const ref = useRef();
     useOnClickOutside(ref, () => {
       setTimeout(
@@ -173,12 +173,10 @@ export const SmartphoneDetails = observer(
                     : "")
                 }
                 style={{
-                  height: maxImgHeight,
                   padding: 0,
                   margin: 0,
                 }}
                 onClick={(e) =>
-                  window.innerWidth < 600 && //only allow mobile devices to switch with click
                   e.currentTarget.classList.toggle("img-container--is-flipped")
                 }
               >
