@@ -5,7 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "customize-cra": "1.0.0",
-    "firebase": "8.2.6",
+    "firebase": "8.2.10",
     "firebase-firestore-lite": "^1.0.3",
     "mobx": "^6.1.5",
     "mobx-react-lite": "^3.2.0",
