@@ -143,20 +143,6 @@ export const Smartphone = observer(
               );
             })}
           </select>
-
-          <details className="smartphone-totalscore">
-            <summary style={{ padding: 2 }}>
-              <span
-                style={
-                  smartphone.totalscore > 0
-                    ? { color: "var(--highlight-color)" }
-                    : { color: "var(--bad-color)" }
-                }
-              >
-                {smartphone.totalscore} {i18n("points")}
-              </span>
-            </summary>
-          </details>
           <div className="flexBetween">
             <span className="smartphone-price">
               {price !== -1 ? price : "N/A"}€

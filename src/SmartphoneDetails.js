@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { action } from "mobx";
 import { observer } from "mobx-react-lite";
-import { monthDiff } from "./helperFunctions";
 import { useOnClickOutside } from "./hooks/useOnClickOutside";
 import { i18n } from "./LocalizationStore";
 
@@ -132,37 +131,6 @@ export const SmartphoneDetails = observer(
               <span>{smartphone.batterysize}mAh</span>
               <p className="details-grid-header">{i18n("refreshRate")}</p>
               <span>{smartphone.refreshRate + "Hz"}</span>
-              <p className="details-grid-subheader">{i18n("ratings")}</p>
-              <p className="details-grid-subheader"></p>
-              <p className="details-grid-header">{i18n("design")}</p>
-              <p>{smartphone.design}</p>
-              <p className="details-grid-header">{i18n("cpu")}</p>
-              <p>{smartphone.cpu}</p>
-              <p className="details-grid-header">{i18n("updates")}</p>
-              <p>{smartphone.updates}</p>
-              <p className="details-grid-header">{i18n("camera")}</p>
-              <p>{smartphone.camera}</p>
-              <p className="details-grid-header">{i18n("battery")}</p>
-              <p>{smartphone.battery}</p>
-              <p className="details-grid-header">{i18n("decayFactor")}</p>
-              <p className="smartphone-decay ">
-                {Math.round(
-                  monthDiff(new Date(smartphone.released), new Date()) *
-                    filterStore.decayFactor *
-                    10
-                ) / 10}
-              </p>
-              <p></p>
-              <span
-                className="bold"
-                style={
-                  smartphone.totalscore > 0
-                    ? { color: "var(--highlight-color)" }
-                    : { color: "var(--bad-color)" }
-                }
-              >
-                {smartphone.totalscore} {i18n("points")}
-              </span>
             </div>
             <div className="img-container-container">
               <div

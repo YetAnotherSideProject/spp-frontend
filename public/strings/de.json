@@ -23,10 +23,7 @@
   "ipx7": "IP X7 Eintauchen bis zu 1m",
   "ipx8": "IP X8 Eintauchen über 1m hinaus",
 
-  "ratings": "Bewertungen",
-  "decayFactorDescription": "(Punkteabzug für alte Smartphones)",
   "shopNow": "Bei Amazon kaufen",
-  "points": "Punkte",
   "selectAll": "Alle auswählen",
 
   "fiveg": "5G",
@@ -37,11 +34,7 @@
   "waterproof": "Wasserdicht",
   "refreshRate": "Aktualisierungsrate",
 
-  "design": "Design",
-  "updates": "Updates",
-  "camera": "Kamera",
   "battery": "Batterie",
-  "cpu": "Prozessor",
   "selectedBrands": "Hersteller",
 
   "release_minimum": "Min Erscheinung",
@@ -64,6 +57,5 @@
   "emptySmartphones": "Bildschirm ausblenden",
   "showPhonesWithoutPrices": "Zeige Smartphones ohne Preis",
   "searchQuery": "Such Filter",
-  "sortBy": "Sortieren nach",
-  "decayFactor": "Zeitverfall"
+  "sortBy": "Sortieren nach"
 }

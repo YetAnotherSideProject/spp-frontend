@@ -23,10 +23,7 @@
   "ipx7": "IP X7 Immersion up to 1m",
   "ipx8": "IP X8 Immersion beyond 1m",
 
-  "ratings": "Ratings",
-  "decayFactorDescription": "(Subtract points for old phones)",
   "shopNow": "Buy at Amazon",
-  "points": "Points",
   "selectAll": "Select all",
 
   "fiveg": "5G",
@@ -37,11 +34,7 @@
   "waterproof": "Waterproof",
   "refreshRate": "Refresh Rate",
 
-  "design": "Design",
-  "updates": "Updates",
-  "camera": "Camera",
   "battery": "Battery",
-  "cpu": "Processor",
   "selectedBrands": "Brands",
 
   "release_minimum": "Min Release",
@@ -64,6 +57,5 @@
   "emptySmartphones": "Empty phones",
   "showPhonesWithoutPrices": "Show phones without prices",
   "searchQuery": "Search Query",
-  "sortBy": "Sort by",
-  "decayFactor": "Decay"
+  "sortBy": "Sort by"
 }

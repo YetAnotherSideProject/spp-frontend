@@ -19,7 +19,6 @@ export const resetCopy = {
   country: "de",
   searchQuery: "",
   sortBy: "totalscore",
-  decayFactor: 0.2,
   isDescending: true,
   scaleInput: true,
   emptySmartphones: false,
@@ -33,11 +32,6 @@ export const resetCopy = {
   size_maximum_2: 170,
   size_minimum_3: 60,
   size_maximum_3: 80,
-  design: 1,
-  cpu: 1,
-  updates: 1,
-  camera: 1,
-  battery: 1,
   storage: 8,
   memory: 1,
   headphoneJack: false,
@@ -64,7 +58,6 @@ class FilterStore {
 
   searchQuery = "";
   sortBy = "totalscore";
-  decayFactor = 0.2;
   isDescending = true;
   scaleInput = true;
   emptySmartphones = false;
@@ -83,12 +76,6 @@ class FilterStore {
 
   size_minimum_3 = 60;
   size_maximum_3 = 80;
-
-  design = 1;
-  cpu = 1;
-  updates = 1;
-  camera = 1;
-  battery = 1;
 
   storage = 8;
   memory = 1;

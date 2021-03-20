@@ -1,6 +1,5 @@
 import { makeAutoObservable } from "mobx";
 import FilterStore from "./FilterStore.js";
-import { monthDiff } from "./helperFunctions";
 import { Database } from "firebase-firestore-lite";
 
 class SmartphoneStore {
@@ -86,31 +85,6 @@ class SmartphoneStore {
         FilterStore.size_minimum_3 > phone.width ||
         FilterStore.size_maximum_3 < phone.width
       ) {
-        continue;
-      }
-
-      //design
-      if (phone.design < FilterStore.design) {
-        continue;
-      }
-
-      //processor
-      if (phone.cpu < FilterStore.cpu) {
-        continue;
-      }
-
-      //software updates
-      if (phone.updates < FilterStore.updates) {
-        continue;
-      }
-
-      //camera
-      if (phone.camera < FilterStore.camera) {
-        continue;
-      }
-
-      //battery
-      if (phone.battery < FilterStore.battery) {
         continue;
       }
 
@@ -204,25 +178,10 @@ class SmartphoneStore {
         continue;
       }
 
-      phone.totalscore = this.calculateScore(phone, FilterStore.decayFactor);
       listOfFilteredObjects.push(phone);
     }
     return listOfFilteredObjects;
   }
-
-  calculateScore = (smartphone, decay) => {
-    return (
-      Math.round(
-        (smartphone.design +
-          smartphone.cpu +
-          smartphone.updates +
-          smartphone.camera +
-          smartphone.battery -
-          monthDiff(new Date(smartphone.released), new Date()) * decay) *
-          10
-      ) / 10
-    );
-  };
 
   get listOfFilteredAndScoredObjects() {
     let listOfFilteredAndScoredObjects = this.listOfFilteredObjects.slice(0);

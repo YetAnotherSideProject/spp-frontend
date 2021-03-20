@@ -673,16 +673,6 @@ select {
   margin-right: 16px;
 }
 
-.smartphone-decay {
-  color: var(--bad-color);
-  font-weight: bold;
-}
-
-.smartphone-decay:before {
-  content: "-";
-  margin-left: -5.28px;
-}
-
 .smartphone-totalscore {
   text-align: right;
   margin-bottom: 4px;
