@@ -92,7 +92,7 @@ c45.4,27,100.5-15,86.5-65.9l-71.3-247.7l209.2-181.399C960.443,389.172,938.744,32
         onClick={() => shareCurrentFilters()}
       >
         <span className="smartphoneCount">
-          {SmartphoneStore.listOfFilteredAndScoredObjects.length +
+          {SmartphoneStore.listOfFilteredAndSortedObjects.length +
             "/" +
             SmartphoneStore.obj.length}
         </span>

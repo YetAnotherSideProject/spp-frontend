@@ -183,26 +183,26 @@ class SmartphoneStore {
     return listOfFilteredObjects;
   }
 
-  get listOfFilteredAndScoredObjects() {
-    let listOfFilteredAndScoredObjects = this.listOfFilteredObjects.slice(0);
+  get listOfFilteredAndSortedObjects() {
+    let listOfFilteredAndSortedObjects = this.listOfFilteredObjects.slice(0);
 
     switch (FilterStore.sortBy) {
       case "price":
-        return listOfFilteredAndScoredObjects.sort((a, b) => {
+        return listOfFilteredAndSortedObjects.sort((a, b) => {
           return this.compareFunctionLowest(a, b, "price");
         });
 
       case "length":
-        return listOfFilteredAndScoredObjects.sort((a, b) => {
+        return listOfFilteredAndSortedObjects.sort((a, b) => {
           return this.compareFunctionNormal(a, b, "length");
         });
 
       case "display":
-        return listOfFilteredAndScoredObjects.sort((a, b) => {
+        return listOfFilteredAndSortedObjects.sort((a, b) => {
           return this.compareFunctionNormal(a, b, "display");
         });
       case "released":
-        return listOfFilteredAndScoredObjects.sort((a, b) => {
+        return listOfFilteredAndSortedObjects.sort((a, b) => {
           return this.compareDates(a, b, "released");
         });
 

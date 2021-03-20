@@ -35,7 +35,7 @@ const getRandomInt = (min, max) => {
 
 export const SmartphoneIndicator = observer(() => (
   <span className="smartphoneCount">
-    {SmartphoneStore.listOfFilteredAndScoredObjects.length +
+    {SmartphoneStore.listOfFilteredAndSortedObjects.length +
       "/" +
       SmartphoneStore.obj.length}
   </span>

@@ -8,7 +8,7 @@ import { Smartphone } from "./Smartphone.js";
 export const Content = observer(() => {
   return (
     <main id="smartphones" className="smartphones">
-      {SmartphoneStore.listOfFilteredAndScoredObjects.map((phone) => (
+      {SmartphoneStore.listOfFilteredAndSortedObjects.map((phone) => (
         <Smartphone
           key={phone.brand + phone.name}
           smartphone={phone}

@@ -48,7 +48,7 @@ export const Main = observer(({ currentURL }) => {
       break;
   }
 
-  if (SmartphoneStore.listOfFilteredAndScoredObjects.length < 1) {
+  if (SmartphoneStore.listOfFilteredAndSortedObjects.length < 1) {
     content = <NoResultsInfo />;
   }
   if (SmartphoneStore.hasLoaded === false) {
