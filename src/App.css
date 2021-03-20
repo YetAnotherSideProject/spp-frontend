@@ -584,6 +584,7 @@ select {
   display: grid;
   grid-template-columns: 1fr 2fr;
   margin-right: calc(8px + 1vw);
+  align-self: flex-start;
 }
 
 .details-grid > * {
