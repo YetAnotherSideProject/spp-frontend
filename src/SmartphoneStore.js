@@ -192,11 +192,6 @@ class SmartphoneStore {
           return this.compareFunctionLowest(a, b, "price");
         });
 
-      case "totalscore":
-        return listOfFilteredAndScoredObjects.sort((a, b) => {
-          return this.compareFunctionNormal(a, b, "totalscore");
-        });
-
       case "length":
         return listOfFilteredAndScoredObjects.sort((a, b) => {
           return this.compareFunctionNormal(a, b, "length");

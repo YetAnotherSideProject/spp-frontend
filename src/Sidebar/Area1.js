@@ -70,7 +70,6 @@ export const Area1 = observer(() => {
             name="sortBy"
             options={[
               ["price", i18n("price")],
-              ["totalscore", i18n("totalScore")],
               ["length", i18n("totalSize")],
               ["display", i18n("displaySize")],
               ["released", i18n("releaseDate")],

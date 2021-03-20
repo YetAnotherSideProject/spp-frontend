@@ -18,7 +18,7 @@ export const resetCopy = {
   sidebarHidden: false,
   country: "de",
   searchQuery: "",
-  sortBy: "totalscore",
+  sortBy: "price",
   isDescending: true,
   scaleInput: true,
   emptySmartphones: false,
@@ -57,7 +57,7 @@ class FilterStore {
   activeFilterBox = "sortingOptions";
 
   searchQuery = "";
-  sortBy = "totalscore";
+  sortBy = "price";
   isDescending = true;
   scaleInput = true;
   emptySmartphones = false;
