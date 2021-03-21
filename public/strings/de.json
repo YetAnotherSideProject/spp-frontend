@@ -56,5 +56,6 @@
   "emptySmartphones": "Bildschirm ausblenden",
   "showPhonesWithoutPrices": "Zeige Smartphones ohne Preis",
   "searchQuery": "Such Filter",
-  "sortBy": "Sortieren nach"
+  "sortBy": "Sortieren nach",
+  "onlyShowFavedPhones": "Ausgewählte Favouriten"
 }

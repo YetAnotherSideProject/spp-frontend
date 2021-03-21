@@ -56,5 +56,6 @@
   "emptySmartphones": "Empty phones",
   "showPhonesWithoutPrices": "Show phones without prices",
   "searchQuery": "Search Query",
-  "sortBy": "Sort by"
+  "sortBy": "Sort by",
+  "onlyShowFavedPhones": "Selected Favourites"
 }
