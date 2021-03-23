@@ -56,6 +56,10 @@ export const ActiveFilters = observer(() => {
         break;
     }
   }
+  if (activeFilters.length < 1) {
+    return null;
+  }
+
   return (
     <div
       style={{

@@ -91,10 +91,10 @@ const App = observer(() => {
         {currentURL === "/about" ? (
           <About />
         ) : (
-          <React.Fragment>
+          <div className="container">
             <Sidebar />
             <Main currentURL={currentURL} />
-          </React.Fragment>
+          </div>
         )}
         {FilterStore.modalSmartphone && (
           <div className="modal-container">

@@ -12,7 +12,7 @@ import { i18n } from "./LocalizationStore";
 export const Header = observer(() => {
   return (
     <header className="header">
-      <div className="logo flex" style={{ alignItems: "center" }}>
+      <div className="logo container" style={{ alignItems: "center" }}>
         <img
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMS42/U4J6AAAAORJREFUWEftjkEOgkAQBHmL+k1j4sc1MdMtKRlpXU5KJ3UAtoqd9u0b3eF4un1D6eNbiieUPj4Fz5frg/lP5vB76ePrfkBWLzA/nFDaywXWoO/pQ0pp21+AB7v3pf3wBToYSD1B30tDDKSeoO+lIQZST9D30hADqSfoe2mIgdQT9L00xEDqCfpeGmIg9QR9Lw0xkHqCvpeGGEg9Qd9LQwyknqDvpSEGUk/Q99IQA6kn6HtpiIHUE/S9NMRA6gn6HkN67t6XtuqJzve6g9370ra/QEppH3ui9OeWDr2jtO0u8Kebpjtt39HxDQn2FwAAAABJRU5ErkJggg=="
           alt="logo"
@@ -43,23 +43,6 @@ export const Header = observer(() => {
                     </svg>
                   ),
                   desc: "Side by side comparison",
-                },
-                {
-                  href: "/releases",
-                  icon: (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 448 512"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M400 64h-48V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H160V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zm-6 400H54c-3.3 0-6-2.7-6-6V160h352v298c0 3.3-2.7 6-6 6z"
-                      />
-                    </svg>
-                  ),
-                  desc: "Smartphone timeline",
                 },
               ],
               Presets: [

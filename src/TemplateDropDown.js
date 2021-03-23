@@ -3,18 +3,7 @@ import React, { useRef } from "react";
 export const TemplateDropDown = ({ summary, detailCategories }) => {
   const detailsRef = useRef();
   return (
-    <details
-      ref={detailsRef}
-      onMouseOver={(e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        detailsRef.current.setAttribute("open", "open");
-      }}
-      onMouseLeave={(e) => {
-        detailsRef.current.removeAttribute("open");
-      }}
-      style={{ position: "relative" }}
-    >
+    <details ref={detailsRef} style={{ position: "relative" }}>
       <summary
         className="filter__summary"
         onFocus={(e) => {

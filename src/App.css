@@ -1,3 +1,106 @@
+/*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
+
+/*
+Document
+========
+*/
+
+/**
+Use a better box model (opinionated).
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/**
+1. Correct the line height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+*/
+
+html {
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+Forms
+=====
+*/
+
+/**
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+Remove the inheritance of text transform in Edge and Firefox.
+1. Remove the inheritance of text transform in Firefox.
+*/
+
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+Correct the inability to style clickable types in iOS and Safari.
+*/
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/**
+Remove the inner border and padding in Firefox.
+*/
+
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+Restore the focus styles unset by the previous rule.
+*/
+
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+Remove the additional ':invalid' styles in Firefox.
+See: https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
 :root {
   --primary-color: red;
   --show-sidebar-button: #1b875b;
@@ -68,6 +171,16 @@ body {
   background-color: var(--background-color);
 }
 
+.container {
+  display: flex;
+  max-width: 1440px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
 .sidebar {
   position: fixed;
   transform: translateX(0);
@@ -78,9 +191,9 @@ body {
   background-color: var(--background-color);
   border-right: 1px solid var(--border-color);
   transition: transform 0.25s ease;
-  box-sizing: border-box;
   overflow-y: auto;
   padding: 48px 0;
+  margin-left: -16px;
 }
 
 .sidebar.hidden {
@@ -116,7 +229,6 @@ body {
 
 .logo-text {
   font-weight: bold;
-  font-size: 16px;
   text-decoration: none;
   color: var(--just-white);
 }
@@ -151,14 +263,12 @@ body {
 }
 
 .img-container {
-  box-sizing: border-box;
   padding: 0 8px 4px;
   position: relative;
   align-items: flex-end;
   display: flex;
   justify-content: center;
   margin-bottom: 4px;
-  background-color: var(--just-white);
   border-radius: 8px;
   transform-style: preserve-3d;
   transition: transform 0.6s ease-in-out;
@@ -197,13 +307,12 @@ body {
 }
 
 .smartphones,
-.smartphones-releases,
-.smartphones-charts,
 .no-results-container {
+  width: 100%;
   position: relative;
   will-change: transform;
   z-index: 0;
-  padding: 48px calc(8px + 1vw);
+  padding: 48px 0 32px 0;
   background-color: var(--background-color);
 }
 
@@ -232,67 +341,13 @@ body {
 
 .smartphones {
   display: grid;
-  grid-gap: 16px calc(8px + 1vw);
+  grid-gap: 32px calc(8px + 1vw);
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 
-.smartphones-charts {
-  display: flex;
-  overflow: hidden;
-  flex-wrap: wrap;
-  justify-content: center;
-  min-width: 800px;
-  padding: 0 32px;
-}
-
-.chart-tooltip {
-  padding: 4px;
-  background-color: var(--background-color);
-  box-shadow: 0 3px 12px rgba(27, 31, 35, 0.35), 0 0 1px rgba(27, 31, 35, 0.4);
-}
-
-.timeline-top-border {
-  border: 1px solid var(--border-color);
-  width: 16px;
-  position: absolute;
-  top: 0;
-  left: 10px;
-}
-
-.timeline-bottom-border {
-  border: 1px solid var(--border-color);
-  width: 16px;
-  position: absolute;
-  left: 10px;
-}
-
-.smartphones-releases-month {
-  position: relative;
-  margin-bottom: 20px;
-  padding-left: 32px;
-  border-top: 1px solid var(--border-color);
-  font-weight: 600;
-  font-size: 14px;
-  color: var(--text-color);
-  font-size: 16px;
-  padding-top: 4px;
-}
-
-.smartphones-in-month {
-  padding-left: 8px;
-  padding-bottom: 8px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 16px;
-}
-
-.smartphones-in-month > .smartphone {
-  flex: none;
-}
-
 .logo {
-  box-sizing: border-box;
-  padding: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   position: relative;
   z-index: 0;
   text-align: left;
@@ -312,10 +367,10 @@ body {
   position: absolute;
   top: 22px;
   left: 8px;
-  margin-right: 8px;
   border-radius: 8px;
   box-shadow: 0 3px 12px rgba(27, 31, 35, 0.35), 0 0 1px rgba(27, 31, 35, 0.4);
   overflow: hidden;
+  min-width: 350px;
 }
 
 .filter-drop-down__header {
@@ -368,7 +423,6 @@ body {
 }
 
 .main-menu {
-  box-sizing: border-box;
   position: relative;
   margin-top: 0;
 
@@ -512,9 +566,7 @@ textarea {
   padding: 3px 4px;
   color: var(--text-color);
   background-color: transparent;
-  box-sizing: border-box;
   border: 1px solid #8a8886;
-  box-sizing: border-box;
 }
 
 select {
@@ -557,14 +609,12 @@ select {
 .smartphone-details {
   font-size: 0.7em;
   letter-spacing: 0.1px;
-  line-height: 1.3;
-  background-color: var(--background-color);
   color: var(--text-color);
   padding: 8px 0.875em;
   border-radius: 8px;
   border: var(--border-color) 1px solid;
   cursor: pointer;
-  width: 91%;
+  width: 100%;
 }
 
 .smartphone-details:hover {
@@ -580,10 +630,8 @@ select {
 }
 
 .details-grid {
-  flex: 1;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  margin-right: calc(8px + 1vw);
   align-self: flex-start;
 }
 
@@ -624,15 +672,6 @@ select {
   border-bottom: 1px solid var(--border-color);
 }
 
-.smartphone-filtercriteria {
-  font-weight: bold;
-  padding-top: 4px;
-  padding-bottom: 8px;
-  vertical-align: top;
-  text-align: center;
-  color: var(--text-color);
-}
-
 .smartphone-name {
   font-size: 1.3em;
   padding: 2px 0;
@@ -645,6 +684,7 @@ select {
 
 .smartphone-fav-star {
   padding: 4px;
+  min-height: 24px;
   fill: var(--border-color);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -658,7 +698,6 @@ select {
 
 .fav-sidebar-counter {
   position: absolute;
-  box-sizing: border-box;
   background-color: var(--background-color);
   border-radius: 100%;
   height: 18px;
@@ -708,7 +747,6 @@ select {
 }
 
 .a-button {
-  box-sizing: border-box;
   display: block;
   cursor: pointer;
   background: #f3d079;
@@ -842,7 +880,6 @@ select {
   align-items: center;
   justify-content: center;
   padding: 32px 0;
-  box-sizing: border-box;
 }
 
 .modal-overlay {
@@ -878,7 +915,6 @@ input[type="checkbox"]:before {
   content: "";
   display: inline-block;
   position: absolute;
-  box-sizing: border-box;
   height: 14px;
   width: 14px;
   border-radius: 2px;
@@ -902,7 +938,6 @@ input[type="checkbox"]:checked:before {
   content: "";
   display: inline-block;
   position: absolute;
-  box-sizing: border-box;
   height: 14px;
   width: 14px;
   border-radius: 2px;
@@ -916,7 +951,6 @@ input[type="checkbox"]:checked:after {
   position: absolute;
   top: 5px;
   left: 2px;
-  box-sizing: border-box;
   height: 5px;
   width: 10px;
   border-left: 2px solid #fff;
@@ -984,14 +1018,13 @@ input[type="checkbox"]:checked:disabled::before {
   }
 
   .smartphones,
-  .smartphones-releases,
-  .smartphones-charts,
   .no-results-container {
     margin-left: 300px;
+    padding-left: 32px;
   }
 
   .smartphones {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   }
 
   .smartphone {

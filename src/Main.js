@@ -1,8 +1,6 @@
 import "./App.css";
 
 import { Content } from "./Content.js";
-import { ContentReleases } from "./ContentReleases.js";
-
 import FilterStore from "./FilterStore.js";
 
 import { observer } from "mobx-react-lite";
@@ -41,9 +39,6 @@ export const Main = observer(({ currentURL }) => {
   switch (currentURL) {
     case "/about":
       return;
-    case "/releases":
-      content = <ContentReleases />;
-      break;
     default:
       break;
   }

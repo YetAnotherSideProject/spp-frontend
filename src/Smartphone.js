@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { action } from "mobx";
 import { observer } from "mobx-react-lite";
-import { getAttributeFromSmartphone } from "./helperFunctions";
 import { i18n } from "./LocalizationStore";
 
 export const Smartphone = observer(
@@ -19,9 +18,6 @@ export const Smartphone = observer(
     return (
       <div className="smartphone" style={style}>
         <div className="img-container-container">
-          <div className="smartphone-filtercriteria">
-            {getAttributeFromSmartphone(smartphone, filterStore.sortBy)}
-          </div>
           <div
             className={
               "img-container " +
