@@ -1,158 +1,57 @@
 import React from "react";
-import { action } from "mobx";
 import { observer } from "mobx-react-lite";
 
-import { TextSelect } from "./TextSelect";
-
-import FilterStore from "./FilterStore.js";
 import { IconSwitch } from "./IconSwitch";
-import { TemplateDropDown } from "./TemplateDropDown";
 import { i18n } from "./LocalizationStore";
 
 export const Header = observer(() => {
   return (
     <header className="header">
-      <div className="logo container" style={{ alignItems: "center" }}>
+      <div className="header-inner container" style={{ alignItems: "center" }}>
         <img
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMS42/U4J6AAAAORJREFUWEftjkEOgkAQBHmL+k1j4sc1MdMtKRlpXU5KJ3UAtoqd9u0b3eF4un1D6eNbiieUPj4Fz5frg/lP5vB76ePrfkBWLzA/nFDaywXWoO/pQ0pp21+AB7v3pf3wBToYSD1B30tDDKSeoO+lIQZST9D30hADqSfoe2mIgdQT9L00xEDqCfpeGmIg9QR9Lw0xkHqCvpeGGEg9Qd9LQwyknqDvpSEGUk/Q99IQA6kn6HtpiIHUE/S9NMRA6gn6HkN67t6XtuqJzve6g9370ra/QEppH3ui9OeWDr2jtO0u8Kebpjtt39HxDQn2FwAAAABJRU5ErkJggg=="
           alt="logo"
           style={{ marginRight: 4 }}
         />
-        <div className="flex" style={{ flex: "1", alignItems: "center" }}>
-          <TemplateDropDown
-            summary={
-              <a className="logo-text" href="/home">
-                smartphone-picker
-              </a>
-            }
-            detailCategories={{
-              Views: [
-                {
-                  href: "/home",
-                  icon: (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 320 512"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z"
-                      />
-                    </svg>
-                  ),
-                  desc: "Side by side comparison",
-                },
-              ],
-              Presets: [
-                {
-                  clickHandler: action(() => {
-                    FilterStore.resetFilters();
-                    FilterStore.sortBy = "released";
-                    FilterStore.isDescending = true;
-                  }),
-                  icon: (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 448 512"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm0 400H48V80h352v352zm-35.864-241.724L191.547 361.48c-4.705 4.667-12.303 4.637-16.97-.068l-90.781-91.516c-4.667-4.705-4.637-12.303.069-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l59.792 60.277 141.352-140.216c4.705-4.667 12.303-4.637 16.97.068l22.536 22.718c4.667 4.706 4.637 12.304-.068 16.971z"
-                      />
-                    </svg>
-                  ),
-                  desc: "Latest smartphones",
-                },
-                {
-                  clickHandler: action(() => {
-                    FilterStore.resetFilters();
-                    FilterStore.size_maximum_2 = 152;
-                  }),
-                  icon: (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 448 512"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm0 400H48V80h352v352zm-35.864-241.724L191.547 361.48c-4.705 4.667-12.303 4.637-16.97-.068l-90.781-91.516c-4.667-4.705-4.637-12.303.069-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l59.792 60.277 141.352-140.216c4.705-4.667 12.303-4.637 16.97.068l22.536 22.718c4.667 4.706 4.637 12.304-.068 16.971z"
-                      />
-                    </svg>
-                  ),
-                  desc: "Small smartphones",
-                },
-                {
-                  clickHandler: action(() => {
-                    FilterStore.resetFilters();
-                    FilterStore.size_minimum_2 = 152;
-                  }),
-                  icon: (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 448 512"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm0 400H48V80h352v352zm-35.864-241.724L191.547 361.48c-4.705 4.667-12.303 4.637-16.97-.068l-90.781-91.516c-4.667-4.705-4.637-12.303.069-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l59.792 60.277 141.352-140.216c4.705-4.667 12.303-4.637 16.97.068l22.536 22.718c4.667 4.706 4.637 12.304-.068 16.971z"
-                      />
-                    </svg>
-                  ),
-                  desc: "Big smartphones",
-                },
-              ],
-            }}
-          />
-          <TextSelect
-            name="country"
-            options={[["de", i18n("germany")]]}
-            className="btn-transparent"
-            style={{
-              alignSelf: "flex-end",
-              flex: "none",
-              fontSize: 11,
-              paddingLeft: 0,
-              marginLeft: -2,
-              textTransform: "uppercase",
-            }}
-          />
-          <span style={{ flex: 1 }}></span>
-          <a
-            href="/about"
-            className="main-menu-link"
-            onClick={(e) => {
-              e.preventDefault();
-              window.history.pushState(null, "", "/about");
-              window.dispatchEvent(
-                new PopStateEvent("popstate", { state: null })
-              );
-            }}
-          >
-            {i18n("about")}
-          </a>
-          <IconSwitch
-            name="lightmode"
-            icon={
-              <svg
-                className="nightmode-switch"
-                viewBox="0 0 1000 1000"
-                height="28px"
-              >
-                <title>Toggle nightmode</title>
-                <g>
-                  <path d="M500,10C229.4,10,10,229.4,10,500s219.4,490,490,490s490-219.4,490-490S770.6,10,500,10z M387.5,728C250,634.6,217.9,452.6,315.8,321.6c83.5-111.8,234.5-150.1,362.5-100.9c-56.3,14.6-107.8,47.1-144.3,95.9C450,428.9,477.6,584.9,595.4,665c51.3,34.8,111.1,49.5,169.3,45.8C660.6,797,504.8,807.8,387.5,728z" />
-                </g>
-              </svg>
-            }
-          />
-        </div>
+        <a className="logo-text" href="/">
+          smartphone-picker
+        </a>
+
+        <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 5 3">
+          <desc>Flag of Germany</desc>
+          <rect width="5" height="3" y="0" x="0" fill="#000" />
+          <rect width="5" height="2" y="1" x="0" fill="#D00" />
+          <rect width="5" height="1" y="2" x="0" fill="#FFCE00" />
+        </svg>
+        <span style={{ flex: 1 }}></span>
+        <a
+          href="/about"
+          className="main-menu-link"
+          onClick={(e) => {
+            e.preventDefault();
+            window.history.pushState(null, "", "/about");
+            window.dispatchEvent(
+              new PopStateEvent("popstate", { state: null })
+            );
+          }}
+        >
+          {i18n("about")}
+        </a>
+        <IconSwitch
+          name="lightmode"
+          icon={
+            <svg
+              className="nightmode-switch"
+              viewBox="0 0 1000 1000"
+              height="28px"
+            >
+              <title>Toggle nightmode</title>
+              <g>
+                <path d="M500,10C229.4,10,10,229.4,10,500s219.4,490,490,490s490-219.4,490-490S770.6,10,500,10z M387.5,728C250,634.6,217.9,452.6,315.8,321.6c83.5-111.8,234.5-150.1,362.5-100.9c-56.3,14.6-107.8,47.1-144.3,95.9C450,428.9,477.6,584.9,595.4,665c51.3,34.8,111.1,49.5,169.3,45.8C660.6,797,504.8,807.8,387.5,728z" />
+              </g>
+            </svg>
+          }
+        />
       </div>
     </header>
   );

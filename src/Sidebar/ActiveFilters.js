@@ -66,7 +66,6 @@ export const ActiveFilters = observer(() => {
         display: "flex",
         flexWrap: "wrap",
         padding: 10,
-        borderTop: " 1px solid var(--border-color)",
       }}
     >
       {activeFilters.map((key) => (

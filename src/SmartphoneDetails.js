@@ -103,13 +103,8 @@ export const SmartphoneDetails = observer(
               })}
             </select>
             <div className="details-grid">
-              <p className="details-grid-subheader" style={{ paddingTop: 0 }}>
-                {i18n("specs")}
-              </p>
-              <p
-                className="details-grid-subheader"
-                style={{ paddingTop: 0 }}
-              ></p>
+              <p className="details-grid-subheader">{i18n("specs")}</p>
+              <p className="details-grid-subheader"></p>
               <p className="details-grid-header">{i18n("release")}</p>
               <span>{smartphone.released}</span>
               <p className="details-grid-header">{i18n("size")}</p>
@@ -122,7 +117,7 @@ export const SmartphoneDetails = observer(
               <span>{smartphone.refreshRate + "Hz"}</span>
             </div>
             <div style={{ flex: 1 }}></div>
-            <div className="flexBetween" style={{ marginBottom: 16 }}>
+            <div className="flexBetween">
               <span className="smartphone-price">
                 {price !== -1 ? price : "N/A"}€
               </span>
