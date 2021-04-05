@@ -193,6 +193,7 @@ body {
   transition: transform 0.25s ease;
   overflow-y: auto;
   margin-top: 48px;
+  padding-bottom: 96px;
   margin-left: -16px;
 }
 
@@ -314,7 +315,7 @@ body {
   position: relative;
   will-change: transform;
   z-index: 0;
-  padding: 48px 0 32px 0;
+  padding: 52px 0 52px 0;
   background-color: var(--background-color);
 }
 
@@ -344,7 +345,7 @@ body {
 .smartphones {
   display: grid;
   grid-gap: 32px calc(8px + 1vw);
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
 }
 
 .header-inner {
@@ -703,9 +704,7 @@ select {
 }
 
 .smartphone-price {
-  color: var(--highlight-color);
   font-weight: bold;
-  font-size: 0.875em;
   margin-right: 8px;
 }
 
