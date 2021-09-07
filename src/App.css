@@ -703,9 +703,14 @@ select {
   top: 12px;
 }
 
+.smartphone-price-container {
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .smartphone-price {
   font-weight: bold;
-  margin-right: 8px;
+  flex: 1;
 }
 
 .smartphone-totalscore {
@@ -752,12 +757,14 @@ select {
   border-radius: 2px;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 4px 8px;
   text-decoration: none;
   color: #0f1111;
   font-weight: 500;
   font-size: 0.875em;
   white-space: nowrap;
+  flex: 1;
 }
 
 .a-button:hover {
