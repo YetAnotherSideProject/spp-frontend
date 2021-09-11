@@ -7,7 +7,7 @@ export const Smartphone = observer(
   ({ smartphone, maxImgHeight, style, filterStore }) => {
     const [selectedModel, setSelectedModel] = useState(0);
     const [selectedType, setSelectedType] = useState(0);
-    const { price, link, fetchDate } = smartphone.models[selectedModel].types[
+    const { price, link } = smartphone.models[selectedModel].types[
       selectedType
     ];
     useEffect(() => {
