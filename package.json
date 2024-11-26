@@ -9,9 +9,9 @@
     "firebase-firestore-lite": "^1.0.3",
     "mobx": "^6.1.8",
     "mobx-react-lite": "^3.2.0",
-    "react": "^17.0.1",
+    "react": "^17.0.2",
     "react-app-rewired": "^2.1.8",
-    "react-dom": "^17.0.1",
+    "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "source-map-explorer": "^2.5.2"
   },
